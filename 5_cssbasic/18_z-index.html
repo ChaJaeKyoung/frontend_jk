@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z-index</title>
+  <style>
+    .parent {     
+     width: 600px;
+     height: 350px;
+     background-color: darkgreen;
+     padding: 20px; 
+     position: relative;
+    }
+
+    .child-1 {
+      width: 250px;
+      height: 150px;
+      background-color: yellow;
+      position: relative;
+      z-index: 999;
+    }
+    .child-2 {
+      width: 350px;
+      height: 250px;
+      background-color: cadetblue;
+
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      
+      z-index:1;
+    }
+    .child-3 {
+      width: 250px;
+      height: 150px;
+      background-color: orange;
+
+      position: absolute;
+      bottom: -80px;
+      right:-30px;
+    }
+   /* z-index: 요소의 쌓임 순서 지정, 숫자가 높을수록 위에 쌓임 */
+   /* position 속성의 값(static 제외)이 있거나 Flex  Items에서도 사용 가능 */
+   /* 예) 슬라이드 메뉴, 드롭다운(콤보 박스), 모달창, 백그라운드 비활성화 등에 사용 */
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="child-1"></div>
+    <div class="child-2"></div>
+    <div class="child-3"></div>
+  </div>
+
+  <!-- 인라인요소 span같은 경우 position을 쓰면 block요소로 변함 그렇지만 width는 부모의 너비를 따라가지 않음!! -->
+</body>
+</html>

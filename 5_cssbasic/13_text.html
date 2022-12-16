@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text</title>
+  <style>
+    div.box {
+      width: 150px;
+      border: 1px solid #000;
+      /*
+       <말줄임표 만드는 순서>
+       1. 자동 줄바꿈을 해제 white-space: nowrap;
+       2. 넘친부분을 숨긴다 overflow: hidden;
+       3. 생략된 부분을 말 줄임표로 바꾼다 text-overflow: ellipsis;      
+      */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    div.box-multiline {
+      width: 300px;
+      border: 1px solid #000;
+
+      /* 1줄에서 생략하는것 중 nowrap을 배야함 */
+      /* white-space: nowrap;  */     
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      /* 특정라인수를 추가해서 생략하고 싶을 때 */
+      display: -webkit-box; /* 해당 영역을 box 형태로 관리 */      
+      -webkit-line-clamp: 2;  /* 영역 박스 안 내용의 최대 라인 수 */
+      -webkit-box-orient: vertical; /* 영역 박스 안의 내용을 세로로 배치 */
+    }
+
+    /* 
+      벤더 프리픽스:
+      CSS3 표준으로 확정되기 이전 또는 브라우저 개발사가
+      실험적으로 제공하는 기능을 사용하기 위해서 
+      이전 버전의 브라우저까지 지원하려면 벤더 프리픽스를 붙여야 함
+      
+      -webkit- =크롬, 사파리
+      -moz = 모질라 파이어폭스
+      -o = 오페라
+      -ms = 익스플로러
+
+      caniuse.com 에서 확인 가능
+    */
+  </style>
+</head>
+<body>
+  <!-- 넘치는 텍스트에 말 줄임표 만들기 -->
+  <h1>text-overflow: 오버플로우 된 내용을 어떻게 보일지 지정</h1>
+  <h2>ellipsis: 생략(...)</h2>
+  <div class="box">이것은 매우 긴 제목입니다.</div>
+
+  <h2>2줄 이상일 때</h2>
+  <div class="box-multiline">
+    이것은 매우 긴 설명입니다.
+    이것은 매우 긴 설명입니다.
+    이것은 매우 긴 설명입니다.
+    이것은 매우 긴 설명입니다.
+    이것은 매우 긴 설명입니다.
+    이것은 매우 긴 설명입니다.
+  </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <!-- input(인라인 블록): 데이터를 입력하는 요소 -->
+  <!-- type 속성: 입력받을 데이터 타입을 지정 -->
+  <!-- 
+    인라인-블록 요소:
+    기본적인 특징은 인라인 요소와 동일
+    블록 요소처럼 가로/세로 길이와 상하/좌우 여백을 모두 지정 가능
+   -->
+   <!-- 일반 텍스트 사용법 -->
+  <input type="text">
+  <!-- 값을 미리 입력 -->
+  <input type="text" value="goni.kim">
+  <!-- 입력할 값의 힌트 -->
+  <input class="fd" type="text" placeholder="이름을 입력하세요!">
+  <!-- 비활성화: 선택 불가, submit 불가 -->
+  <input type="text" disabled>
+  <!-- 읽기 전용: 선택 가능, submit 가능 -->
+  <input type="text" value="jenny.cha" readonly>
+
+  <hr>
+  <!-- 체크박스 사용법 -->
+  <h4>1. label안에 배치</h4>
+  <label>
+    <input type="checkbox"> Apple
+  </label>
+  <label>
+    <input type="checkbox"> Banana
+  </label>
+
+  <br>
+  <h4>2. label의 for와 input의 id속성 사용 </h4>
+  <input type="checkbox" id="apple">
+  <label for="apple">Apple</label>
+  <input type="checkbox" id="banana">
+  <label for="banana">Banana</label>
+
+  <!-- 
+    label 바인딩 조건:
+    1. label 요소 내부에 요소를 배치하여 레이블을 요소에 바인딩
+    2. for 속성이 <label> 관련 요소의 id 속성과 같아야 함
+   -->
+
+   <!-- 
+    label 사용 이점 (웹 접근성과 관련) : 
+    1. 스크린 리더 사용자(사용자가 요소에 초점을 맞추면 레이블을 소리내어 읽음)
+    2. 매우 작은 영역(예: 확인란)을 클릭하는 데 어려움이 있는 사용자
+     - 사용자가 요소 내의 텍스트를 클릭하면 입력이 토글되기 때문 (히트영역이 증가함)
+    -->
+
+    <!-- 값을 미리 체크해 둘 수 있음 -->
+    <h4>3. checked</h4>
+    <label>
+      <input type="checkbox"> Apple
+    </label>
+    <label>
+      <input type="checkbox" checked> Banana
+    </label>
+
+    <!-- 라디오 버튼 사용법 -->
+    <!-- type만 썼을 경우 제대로 동작을 안한다 -->
+    <h4>4. radio</h4>
+    <label>
+      <input type="radio"> Apple
+    </label>
+    <label>
+      <input type="radio"> Banana
+    </label>
+    <hr>
+    <!-- name이란 속성으로 그룹화를 시켜줘야 같은 그룹 중 택1이 가능 -->
+    <!-- radio는 체크박스처럼 한번 더 클릭해서 토글상태를 해제할 수 없다 -->
+    <!-- 체크박스는 중복 선택 가능, 라디오 버튼은 그룹당 한개만 선택 가능 -->
+    <label>
+      <input type="radio" name="fruits" checked> Apple
+    </label>
+    <label>
+      <input type="radio" name="fruits"> Banana
+    </label>
+
+    <!-- 그 밖의 다른 입력 양식들 (w3school 참고) -->
+
+    <h4>5. etc</h4>
+    <h5>-input button</h5>
+    <input type="button" value="닫기">
+    <h5>-button</h5>
+    <button type="button"><b>닫기</b></button>
+    <!-- input과 button의 차이점
+       - button태그는 요소 내부에 텍스트 뿐만 아니라 태그 사용가능.
+    -->
+    <!-- type 속성을 항상 지정하여 브라우저에 버튼 유형을 알려주는게 좋음 -->
+    <!-- button type에는 button, submit, reset 등이 있음 -->
+    <h5>-button type="color" 컬러피커</h5>
+      <input type="color" name="" id="" value="#ff0000"> 
+    <h5>-button type="datetime-local" 달력</h5>
+      <input type="datetime-local" name="" id=""> 
+
+    <h5>-file 선택</h5>
+      <h6>한개선택</h6>
+        <input type="file" name="" id="">
+      <h6>복수선택</h6>
+        <input type="file" name="" id="" multiple>
+
+    <h5>-range</h5>
+      <input type="range" name="" id="" min="0" max="10">
+    <h5>-password</h5>
+      <input type="password" name="" id="">
+    <h5>-select box</h5>
+      <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="benz">Benz</option>
+        <option value="audi">Audi</option>
+      </select>
+
+      <!-- style이 올드할 때 이미 만들어진 bootstrap등을 이용하여 css를 바꾼다 -->
+    <h5>-textarea</h5>
+      <textarea name="" id="" cols="30" rows="6">사이즈조정가능</textarea>
+      <textarea name="" id="" cols="30" rows="6" style="resize:none;">사이즈조정불가</textarea>
+</body>
+</html>

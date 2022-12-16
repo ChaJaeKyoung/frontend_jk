@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- html5를 인식한다고 해석하는 것 -->
+<html lang="ko">
+<!-- 이 html문서가 어디까지인지 를 알려준다 (범위알림), ""안의 영어는 언어설정 ex)en:영어페이지 ko:한글페이지 -->
+<head>
+    <meta charset="UTF-8">
+    <!-- 인코딩 문자 형식 unicode 중에서 UTF0-8을 전세계에서 가장 많이 쓴다 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 메타테그 -->
+    <title>LOVE</title>
+    <!-- title은 말 그대로 제목을 의미한다 -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- link tab 누르고 href에 ctrl+space 누르고 main.css 클릭 -->
+    <!-- css 파일이나 아이콘을 연결할 때 link를 쓴다 *hypertext reference의 약자 *relative의 약자-->
+    <script src="js/main.js"></script>
+    <!-- src누르고 src 입력후 옆에 main.js입력 -->
+    <script>
+        console.log('haha');
+    </script>
+    <style>
+        div {
+            text-decoration: underline;
+        }
+    </style>
+    <!-- style은 내부스타일시트인데 유지보수 비효율적이라 권장하지 않는다 -->
+</head>
+<!-- 문서의 정보를 표현 -->
+<body>
+    
+    <!-- <div>Hello world!</div> -->
+    <!-- <img src="images/logo (1).png" alt="로고"> -->
+        <!-- alt 안에 대체택스트 인 로고가 나옴 웹접근성 검사 중 시각장애인을 위한 이미지 대체 텍스트-->
+        <!-- /는 절대경로 ./는 상대경로 같은수준에서의 폴더 ex)../는 상위폴더 -->
+    <!-- <img src="https://heropy.blog/css/images/logo.png" alt="HEROPY"> -->
+
+    <a href="http://www.naver.com">NAVER</a>
+    <a href="/about">About</a>
+    <!-- 폴더 내에 하위 주소를 작성 하지 않으면 자동으로 index파일을 찾아서 들어가게됨 -->
+</body>
+<!--사용자 화면 본문  -->
+</html>

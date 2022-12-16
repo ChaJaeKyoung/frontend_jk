@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex box</title>
+  <style>
+    div {
+      text-align: center;
+      box-sizing:border-box;
+      padding: 10px;
+      font-weight:700;
+      
+    }
+    .parent {
+      height: 200px;
+      background: #e6e6e6;
+      
+    }
+    .child-1 {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+    .child-2 {
+      width: 150px;
+      height: 150px;
+      background-color: yellowgreen;
+    }
+    .child-3 {
+      width: 100px;
+      height: 200px;
+      background-color: darkred;
+    }
+    /* 클레스의 값이 d-flex이면서 다음에 나오는 게 d-flex일 경우  */
+    .parent.d-flex + .parent.d-flex {
+      margin-top: 20px;
+    }
+    
+    .parent.d-inline-flex + .parent.d-inline-flex {
+      margin-left: 20px;
+    }
+    
+    /* 선생님께서 미리 만들어 놓은 flex css 코드  */
+    .d-flex {
+      display: flex;
+    }
+    .d-inline-flex {
+      display: inline-flex;
+    }
+
+    .flex-row {
+      flex-direction: row;
+    }
+    .flex-row-reverse {
+      flex-direction: row-reverse;
+    }
+    .flex-column {
+      flex-direction: column;
+    }
+    .flex-column-reverse {
+      flex-direction: column-reverse;
+    }
+  </style>
+</head>
+<body>
+  <h1>display</h1>
+  <h2>flex: Flex container를 블록 요소처럼 정의</h2>
+  <h2>inline-flex: Flex container를 인라인 요소처럼 정의</h2>
+
+  
+  
+  <!-- Flex Container: 정렬할 요소들의 묶음 -->
+  <!-- <div class="parent d-flex"> -->
+    <!-- 자식 div들은 Flex Items: 정렬할 요소들 -->
+    <!-- <div class="child-1"></div>
+    <div class="child-2"></div>
+    <div class="child-3"></div>
+  </div>
+  <div class="parent d-flex">
+    <div class="child-1"></div>
+    <div class="child-2"></div>
+    <div class="child-3"></div>
+  </div>
+  <div class="parent d-flex">
+    <div class="child-1"></div>
+    <div class="child-2"></div>
+    <div class="child-3"></div>
+  </div> -->
+
+  <!-- Flex Container: 정렬할 요소들의 묶음 -->
+  <div class="parent d-inline-flex">
+    <!-- 자식 div들은 Flex Items: 정렬할 요소들 -->
+    <div class="child-1"></div>
+    <div class="child-2"></div>
+    <div class="child-3"></div>
+  </div>
+  <div class="parent d-inline-flex">
+    <div class="child-1"></div>
+    <div class="child-2"></div>
+    <div class="child-3"></div>
+  </div>
+  <div class="parent d-inline-flex">
+    <div class="child-1"></div>
+    <div class="child-2"></div>
+    <div class="child-3"></div>
+  </div>
+
+  <!-- 정방향인 row를 가장 많이 쓴다 -->
+  <h1>flex-direction</h1>
+  <h2>row: 좌에서 우로 정방향</h2>
+  <div class="parent d-flex flex-row">
+    <div class="child-1">1</div>
+    <div class="child-2">2</div>
+    <div class="child-3">3</div>
+  </div>
+
+  <h2>row-reverse: 우에서 좌로 역방향</h2>
+  <div class="parent d-flex flex-row-reverse">
+    <div class="child-1">1</div>
+    <div class="child-2">2</div>
+    <div class="child-3">3</div>
+  </div>
+
+  <h2>column: 위에서 아래로 정방향 default값</h2>
+  <div class="parent d-flex flex-column">
+    <div class="child-1">1</div>
+    <div class="child-2">2</div>
+    <div class="child-3">3</div>
+  </div>
+
+  <h2>column-reverse: 아래서 위로 역방향 </h2>
+  <div class="parent d-flex flex-column-reverse">
+    <div class="child-1">1</div>
+    <div class="child-2">2</div>
+    <div class="child-3">3</div>
+  </div>
+
+</body>
+</html>

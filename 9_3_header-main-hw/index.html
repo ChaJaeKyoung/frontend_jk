@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="./css/main.css">  
+  <script defer src="./js/main.js"></script>
+  <title>header hw</title>
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <div class="header-wrapper">
+      <!-- logo -->
+        <h1>
+          <a href="/">
+            <img src="./images/logo.png" alt="logo">
+          </a>
+        </h1>
+        <!-- top-menu -->
+        <div class="top-menu">
+          <ul>          
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">기타메뉴</a></li>
+          </ul>
+          <div class="search">
+            <input type="text">
+            <span class="material-symbols-outlined">search</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- NAV -->
+    <div class="gnb">
+      <div class="inner">    
+          <ul class="nav">
+            <li>
+              <h2><a href="#">메인메뉴1</a></h2> 
+              <ul>
+                <li>
+                  <a href="#">서브메뉴1</a>
+                  <a href="#">서브메뉴2</a>
+                  <a href="#">서브메뉴3</a>
+                </li>
+              </ul>         
+            </li>
+            <li>
+              <h2><a href="#">메인메뉴2</a></h2>
+              <ul>
+                <li>
+                  <a href="#">서브메뉴1</a>
+                  <a href="#">서브메뉴2</a>
+                  <a href="#">서브메뉴3</a>
+                </li>
+              </ul>              
+            </li>
+            <li>
+              <h2><a href="#">메인메뉴3</a></h2>
+              <ul>
+                <li>
+                  <a href="#">서브메뉴1</a>
+                  <a href="#">서브메뉴2</a>
+                  <a href="#">서브메뉴3</a>
+                </li>
+              </ul>              
+            </li>
+            <li>
+              <h2><a href="#">메인메뉴4</a></h2>
+              <ul>
+                <li>
+                  <a href="#">서브메뉴1</a>
+                  <a href="#">서브메뉴2</a>
+                  <a href="#">서브메뉴3</a>
+                </li>
+              </ul>           
+            </li>        
+          </ul>
+      </div>  
+      
+      <div class="nav-bg"></div>
+    </div>    
+  </header>
+  <main>
+    <!-- Main Visual -->
+    <!-- 
+      TODO 
+      어떤 홈페이지를 만들건지? 
+    
+      1. 회사홈페이지 
+    
+      풀페이지 동영상 메인비쥬얼로 영상미있는 동영상 몇가지를 섞어서 재생 ,안돼면 일단 하나라도 스크롤 섹션을 넘어가면 자연스럽게
+
+      2. 판매사이트 (브랜디나 올리브영)
+
+      (벤치마킹을 해본다)
+
+      3. 개인포트폴리오 사이트
+
+      눈길을 끄는 효과 반응형
+    -->
+    <!-- 
+      TODO
+      0. 연습용 페이지
+      영상으로 풀페이지(CSS를 어떻게 줘야할까? 뷰포트에서 풀페이지방식?)
+      메인비쥬얼
+      위에 글자효과 추가!
+    -->
+    <section class="mainVisual">
+      <div class="mainvisual-wrapper">
+        <video src="./video/main-visual-video.mp4" loop autoplay muted ></video>
+              
+        <h3><em>CHACHA COFFEE</em>OFFICIAL</h3>
+        
+      </div>
+    </section>
+
+
+    <!-- TODO 
+      비쥬얼 아래 컨텐츠 영역에
+      숫자가 움직이는 효과주기
+      스크롤을 내리면 아래로 내려가지 않고
+      오른쪽으로 이동하게 만들어보기
+      *컨텐츠 영역단위로 위치 이동
+    -->
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>

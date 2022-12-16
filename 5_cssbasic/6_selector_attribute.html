@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>selector attribute</title>
+  <style>   
+    /* 속성 선택자: HTML의 속성과 값으로 요소 선택, [] 기호 */
+    /* [disabled] {
+      color: red;
+    } */
+
+    /* 이렇게 쓰면 전부 선택되니까 구체적으로 사용해야됨 */
+    /* [type] {
+      color: blue;
+    } */
+
+    /* 구체적인 타입내용 설정 */
+    /* [type="password"] {
+      color:blue;
+    } */
+
+    /* 구체적인 value값 설정 */
+    [value="JENNY"] {
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" value="JENNY">
+  <input type="password" value="1234">
+  <input type="text" value="disabled" disabled>  
+</body>
+</html>

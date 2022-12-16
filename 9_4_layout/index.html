@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본 레이아웃 - 가운데 정렬 메뉴</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <!-- 레이아웃: 기본은 크게 행으로 자르고 그 안에서 행과 열로 나눔 -->
+  <header>
+    <div class="inner">
+      <h1>로고자리</h1>
+      <!-- gnb(global navigation bar): 사이트에서 큰 메뉴 -->
+      <nav class="gnb">
+        <ul class="main-menu">
+          <li><a href="#">메인 메뉴1</a></li>
+          <li>
+            <a href="#">메뉴2</a>
+            <ul class="sub-menu">
+              <li><a href="#">메뉴2 - 서브1</a></li>
+              <li><a href="#">메뉴2 - 서브2</a></li>
+              <li><a href="#">메뉴2 - 서브3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">메인 메뉴3</a></li>
+          <li>
+            <a href="#">긴 메인 메뉴4</a>
+            <ul class="sub-menu">
+              <li><a href="#">메뉴4 - 서브1</a></li>
+              <li><a href="#">메뉴4 - 서브2</a></li>
+              <li><a href="#">메뉴4 - 서브3</a></li>
+              <li><a href="#">메뉴4 - 서브4</a></li>
+            </ul>
+          </li>
+          <li><a href="#">메인 메뉴5</a></li>
+        </ul>
+      </nav>
+      <!-- lnb(local navigation bar): 사이트에서 작은 메뉴 -->
+      <nav class="lnb">
+        <ul>
+          <li><a href="#">상단 메뉴1</a></li>
+          <li><a href="#">상단 메뉴2</a></li>
+          <li><a href="#">상단 메뉴3</a></li>
+          <li><a href="#">상단 메뉴4</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- main 안 쓰고 section으로 나눠도 됨 -->
+  <main class="inner">
+    <section>
+      <article>
+        <h1>글 제목1</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, excepturi unde blanditiis ullam deserunt voluptas aperiam officia molestias vitae fuga eum beatae quod, et alias quam porro earum! Beatae, illo!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure amet eos accusamus doloremque rerum sed modi nam fugiat eligendi id, labore molestias aliquid totam consequuntur voluptatibus qui accusantium? Ipsum, nesciunt?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsum dolore mollitia exercitationem dolorem ullam, earum debitis. Sit, veritatis fugit. Sequi distinctio quisquam tenetur tempora ad odio cum pariatur ducimus!</p>
+      </article>
+      <article>
+        <h1>글 제목2</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, excepturi unde blanditiis ullam deserunt voluptas aperiam officia molestias vitae fuga eum beatae quod, et alias quam porro earum! Beatae, illo!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure amet eos accusamus doloremque rerum sed modi nam fugiat eligendi id, labore molestias aliquid totam consequuntur voluptatibus qui accusantium? Ipsum, nesciunt?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsum dolore mollitia exercitationem dolorem ullam, earum debitis. Sit, veritatis fugit. Sequi distinctio quisquam tenetur tempora ad odio cum pariatur ducimus!</p>
+      </article>
+      <article>
+        <h1>글 제목3</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, excepturi unde blanditiis ullam deserunt voluptas aperiam officia molestias vitae fuga eum beatae quod, et alias quam porro earum! Beatae, illo!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure amet eos accusamus doloremque rerum sed modi nam fugiat eligendi id, labore molestias aliquid totam consequuntur voluptatibus qui accusantium? Ipsum, nesciunt?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsum dolore mollitia exercitationem dolorem ullam, earum debitis. Sit, veritatis fugit. Sequi distinctio quisquam tenetur tempora ad odio cum pariatur ducimus!</p>
+      </article>
+      <article>
+        <h1>글 제목4</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, excepturi unde blanditiis ullam deserunt voluptas aperiam officia molestias vitae fuga eum beatae quod, et alias quam porro earum! Beatae, illo!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure amet eos accusamus doloremque rerum sed modi nam fugiat eligendi id, labore molestias aliquid totam consequuntur voluptatibus qui accusantium? Ipsum, nesciunt?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsum dolore mollitia exercitationem dolorem ullam, earum debitis. Sit, veritatis fugit. Sequi distinctio quisquam tenetur tempora ad odio cum pariatur ducimus!</p>
+      </article>
+      <article>
+        <h1>글 제목5</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, excepturi unde blanditiis ullam deserunt voluptas aperiam officia molestias vitae fuga eum beatae quod, et alias quam porro earum! Beatae, illo!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure amet eos accusamus doloremque rerum sed modi nam fugiat eligendi id, labore molestias aliquid totam consequuntur voluptatibus qui accusantium? Ipsum, nesciunt?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsum dolore mollitia exercitationem dolorem ullam, earum debitis. Sit, veritatis fugit. Sequi distinctio quisquam tenetur tempora ad odio cum pariatur ducimus!</p>
+      </article>
+    </section>
+    <aside>
+      <img src="https://via.placeholder.com/150" alt="img1">
+      <img src="https://via.placeholder.com/150" alt="img2">
+    </aside>
+  </main>
+  <footer>
+    <div class="inner">
+      <address>서울시 영등포구 문래동</address>
+      <p>&copy;Company. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

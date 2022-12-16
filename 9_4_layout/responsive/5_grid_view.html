@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid view</title>
+</head>
+<style>
+  * {
+      box-sizing: border-box;
+    }
+
+    .box {
+      border: 1px solid black;
+      text-align: center;
+      padding: 80px 0;
+    }
+    /* .box + .box {
+      border-left: 0;
+    } */
+    .row {
+      display: flex;      
+    }
+    @media screen and (max-width: 768px) {
+      /* 모바일 */
+      .row {
+        flex-direction: column;
+      }
+      /* 속성 선택자! col- 로시작하는 클래스를 갖는 모든 요소 선택 */
+      [class*="col-"] {
+        width: 100%;
+      }
+    }
+
+    /* 데스크탑 */
+    .col-1 { width: 8.33%; }
+    .col-2 { width: 16.66%; }
+    .col-3 { width: 25%; }
+    .col-4 { width: 33.33%; }
+    .col-5 { width: 41.66%; }
+    .col-6 { width: 50%; }
+    .col-7 { width: 58.33%; }
+    .col-8 { width: 66.66%; }
+    .col-9 { width: 75%; }
+    .col-10 { width: 83.33%; }
+    .col-11 { width: 91.66%; }
+    .col-12 { width: 100%; }
+</style>
+<body>
+  <h1>Grid View (Grid System : 부트스트랩에서 부르는 명칭)</h1>
+  <h2>화면을 12등분해서 레이아웃 구성</h2>
+  <div class="row">
+    <div class="box col-3">3</div>
+    <div class="box col-9">9</div>
+  </div>
+  <div class="row">
+    <div class="box col-4">4</div>
+    <div class="box col-5">5</div>
+    <div class="box col-3">3</div>
+  </div>
+</body>
+</html>

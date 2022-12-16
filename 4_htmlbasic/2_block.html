@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>block</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+</head>
+<body>
+  <!-- 상자(레이아웃)를 다루기 위한 요소  -->
+  <!-- 특징 :블록 요소는 수직으로 쌓인다. 가로 너비의 크기는 부모요소의 크기만큼 자동으로 늘어난다!세로는 컨텐츠 크기에 맞춰서 줄어듦 (auto)-->
+  <div>Hello</div>
+  <div>World</div>
+  <br>
+  <!-- 가로/세로 길이 지정 가능 -->
+  <div style="width: 100px;">Hello</div>
+  <div style="height: 40px;">World</div>
+  <br>
+  <!-- 상하/좌우 여백 지정 가능 --> 
+  <div style="margin: 12px; background-color: orange;">Hello</div>
+  <div style="padding: 12px; background-color: pink;">World</div>
+  <br>
+  <!-- 블록 요소 안에 블록/인라인 요소 모두 사용 가능! -->
+  <div><div>div in div</div></div>
+  <div><span>div in span</span></div>
+</body>
+</html>

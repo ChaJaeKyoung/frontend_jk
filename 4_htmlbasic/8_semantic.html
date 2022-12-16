@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>semantic</title>
+</head>
+<style>
+  body { height: 3000px;}
+  article { margin-top: 400px;}
+</style>
+<body>
+  <!--
+    시맨틱 태그(블록 요소): 의미론적인, 의미가 있는 태그 (HTML5에서 등장), div처럼 어떠한 기능도 없음 
+    (즉, 시각적으로 어떠한 변화도 없음)
+  -->
+  <!-- HTML 코딩할때는 의미와 구조에 집중 (스타일은 CSS에서)  -->
+
+  <!-- 1. header: 웹사이트 전체에 대한 중요한 정보가 표현되는 부분이라는 의미만을 가지는 태그 -->
+  <!-- 시맨틱 테그 이전 표현 기법 <div id="header"></div> -->
+  <header>
+    <h1>
+      <a href="#">프론트엔드 개발 첫 걸음</a>
+    </h1>
+  </header>
+  <!-- 3. nav: 
+    컨텐츠를 탐색할 때 사용하는 내비게이션 역할(메인메뉴, 서브메뉴)에 해당하는 정보가 이곳에 담김
+    보통 header 안에 들어가거나 header 바깥쪽 밑에 위치함
+    개발자들이 레이아웃 잡기 나름 
+  -->
+  <nav>
+    <ol>
+      <li><a href="#html">HTML5</a></li>
+      <li><a href="#css">CSS3</a></li>
+      <li><a href="#js">JavaScript</a></li>
+      <li><a href="#semantic">Semantic Tag</a></li>
+    </ol>
+  </nav>
+
+  <!-- 6. main:
+    메인 콘텐츠 영역을 의미, 웹 페이지의 가장 핵심적인 내용이 들어감
+    본문의 전체 또는 일부 묶음
+    (다른 시멘틱 테그에 비해 사용율이 낮음..)
+  -->
+  <main>
+
+    <!-- 5. section: 
+      문서의 구획을 정의, 어떤 특정한 역할로 정의하기 애매한 것들은 센견으로 묶어줌
+      아티클들을 묶어서하나의 섹션으로
+      (*W3C 정의: 섹션은 일반적으로 제목이 있는 콘텐츠의 주제별 그룹이다. 예를 들어 챕터)
+    -->
+    <section>
+      <!-- 4. article: 글, 기사라는 뜻, 하나의 본문 글(독립적인 콘텐츠)을 의미 -->
+      <article id="html">
+        <h2>HTML5 학습</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur quis nostrum ea quisquam, minima enim iure! Autem placeat fuga optio nam voluptate aut quasi? Tempora aut architecto dicta pariatur non!
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur quis nostrum ea quisquam, minima enim iure! Autem placeat fuga optio nam voluptate aut quasi? Tempora aut architecto dicta pariatur non!
+        </p>
+      </article>
+      <article id="css">
+        <h2>CSS3 학습</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur quis nostrum ea quisquam, minima enim iure! Autem placeat fuga optio nam voluptate aut quasi? Tempora aut architecto dicta pariatur non!
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur quis nostrum ea quisquam, minima enim iure! Autem placeat fuga optio nam voluptate aut quasi? Tempora aut architecto dicta pariatur non!
+        </p>
+      </article>
+      <article id="js">
+        <h2>JavaScript 학습</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur quis nostrum ea quisquam, minima enim iure! Autem placeat fuga optio nam voluptate aut quasi? Tempora aut architecto dicta pariatur non!
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur quis nostrum ea quisquam, minima enim iure! Autem placeat fuga optio nam voluptate aut quasi? Tempora aut architecto dicta pariatur non!
+        </p>
+      </article>
+      <article id="semantic">
+        <h2>Semantic Tag 학습</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur quis nostrum ea quisquam, minima enim iure! Autem placeat fuga optio nam voluptate aut quasi? Tempora aut architecto dicta pariatur non!
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur quis nostrum ea quisquam, minima enim iure! Autem placeat fuga optio nam voluptate aut quasi? Tempora aut architecto dicta pariatur non!
+        </p>
+      </article>
+    </section>
+  
+    <!-- 참고!
+      section 안에 article, article 안에 section ? 가능!
+      article 들을 묶어서 하나의 section으로(일반적) 또는 article 안에 특정 영역을 section으로 사용 가능함!
+  
+      또는 section 으로만 구성해도 되고 article로만 구성해도 됨.
+    -->
+
+  </main>
+  <!-- 2. footer:
+    웹 사이트에 대한 부가적인 설명이 들어오는 항목
+    사이트의 맨 하단에 위치
+    <div id="footer"></div>
+  -->
+  <footer>
+    <ul>
+      <li><a href="#">회사소개</a></li>
+      <li><a href="#">개인정보 보호정책</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

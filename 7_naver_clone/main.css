@@ -1,0 +1,166 @@
+* {
+  /* 스타일 공통 폰트, 컬러 등을 넣어준다. */
+  box-sizing: border-box;
+  outline: none; /*input 이나 button 등에 텍스트 박스를 클릭 할 경우 활성화 되는 라인을 없애주는 css태그 */
+}
+
+body {
+  /* 폰트서체, background 같은 것들 */
+  font-family: Dotum, 돋움, Helvetica, sans-serif;
+  background-color: #f5f6f7;
+}
+
+a {
+  /* 기본적으로 브라우저가 a태그의 스타일을 정해준다. 밑줄같은것(text-decoration) 색깔(color) 바뀌는 것 등등 초기화 */
+  text-decoration: none;
+  color: #000;
+}
+
+#header {
+  background-color: orange;
+}
+
+.top {
+  
+  max-width: 768px;
+  min-width: 453px;
+  height: 124px;
+
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#container {
+  max-width: 768px;
+  height: 996px;
+  background-color: cornflowerblue;
+  margin: 0 auto;
+}
+
+.section-input {
+  margin: 0 auto;
+  width: 460px;
+  height: 51px;
+  display:flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.section-input > div {
+  width: 460px;
+
+  border: 1px solid #000;
+}
+
+
+
+.section-input > div > input {
+  width: 100%;
+  height: 30px;
+}
+
+.section-input > div > select {
+  width: 100%;
+  height: 30px;
+}
+
+.section-input > div > button {
+  width: 100%;
+  height: 30px;
+}
+
+.section-input > div > div > * {
+  width: 100%;
+  height: 30px
+}
+
+.section-input .uid .id-wrap {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  top:0;
+  right:0; 
+  
+}
+.section-input .uid .id-wrap input {
+  width: 100%;
+  padding-right:100px ;
+
+}
+
+.section-input .uid .id-wrap span {
+  
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  top: 6px;
+  right: 0;
+  color:gray
+  /* background-color: yellow; */
+}
+
+.section-input .ubd {
+  
+}
+
+
+.section-input .ubd .ubd-wrap {
+  display: flex;
+  justify-content: space-between; 
+ 
+} 
+
+.section-input .ubd .ubd-wrap * {
+  width: 147px;
+  height:30px;
+  /* flex-grow:1;
+  flex-basis: 0; */
+}
+
+.section-input .uphn .phn  {
+width: 100%;
+height: 30px;
+display: flex;
+justify-content:space-between
+}
+
+.section-input .uphn .phn > div > * { 
+
+}
+
+.section-input .uphn .phn div {
+width: 100%;
+
+}
+
+.section-input .uphn .phn div:first-child {
+  width: 200%;  
+}
+
+.section-input .uphn .phn > div > input { 
+ width: 100%;
+ height: 30px;
+ 
+}
+.section-input .uphn .phn > div > button { 
+width: 100%;
+height: 30px;
+
+}
+
+#footer {
+  background-color: darkgray;
+}
+
+.bottom {
+  max-width: 768px;
+  height: 83px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}

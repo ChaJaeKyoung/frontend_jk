@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nav bar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <style>
+    /* 전역 변수 설정 */
+    :root {
+      --color-text: #f2f2f2;
+      --color-background: #044288;
+      --color-orange: #ff9950;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    .btn {
+      width:100px;
+      height: 40px;
+      border-color: var(--color-orange);
+      border-radius: 4px;
+      font-size: 1rem; /*rem: root 기준 배수, 따로 주지 않으면 16px기본값 , em은 부모기준으로 배수 */
+      color: var(--color-orange);
+      background-color: transparent;
+      cursor: pointer;
+    }
+    .btn:hover {
+      color: var(--color-text);
+      background-color: var(--color-orange);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--color-background);
+      padding: 10px 20px;
+    }
+    header .logo {
+      font-size: 48px;
+      display: flex;
+      align-items: center;
+    }
+    .material-icons {
+      font-size: inherit;
+      color: var(--color-orange);
+    }
+    header .nav__menu--main  {
+      display: flex;
+    }
+    header .nav__menu--main > li  {
+      padding: 8px 12px;
+    }
+    header .nav__menu--main > li:hover  {
+      background-color: var(--color-orange);
+      border-radius: 4px;
+    }
+    .btn-hamburger {
+      position: absolute;
+      right: 32px;
+      font-size: 3rem;
+      display: none;
+    }
+    .nav.active {
+      display: block;
+    }
+    header .btn-group.active {
+      display: flex;
+    }
+    @media screen and (max-width: 767px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;        
+      }
+      .nav {
+        width: 100%;
+        /* background-color: yellowgreen; */
+        display: none;
+      }
+      .nav__menu--main {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav__menu--main > li {
+        width: 100%;
+        text-align: center;
+      }
+      header .btn-group {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+        column-gap: 10px; /* colum-gap, row-gap, gap 아이템 사이에 갭을 줄 때 편하다*/
+        display: none;
+      }
+      header .btn-hamburger {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="logo">
+      <span class="material-icons">logo_dev</span>
+      <a href="#">Jenny</a>
+    </h1>    
+    <nav class="nav">
+      <ul class="nav__menu--main">
+        <li><a href="#">메뉴1</a></li>
+        <li><a href="#">메뉴2</a></li>
+        <li><a href="#">메뉴3</a></li>
+        <li><a href="#">메뉴4</a></li>
+        <li><a href="#">메뉴5</a></li>
+      </ul>
+    </nav>
+    <div class="btn-group">
+      <button type="button" class="btn">Sign In</button>
+      <button type="button" class="btn">Sign Up</button>
+    </div>
+
+    <a href="#" class="btn-hamburger">
+      <span class="material-icons">menu</span>
+    </a>
+  </header>  
+</body>
+  <!-- 햄버거 토글 -->
+  <!-- 버튼그룹, 메뉴 그룹, 햄버거그룹 가져오기-->
+  <script>
+    const btnHamburger = document.querySelector('.btn-hamburger');
+    const navEl = document.querySelector('.nav');
+    const btnGroup = document.querySelector('.btn-group');
+
+    // 햄버거를 눌렀을 때 이벤트 감지
+    btnHamburger.addEventListener('click', function () {
+      // toggle 메서드 기능 : 클래스가 없으면 붙이고 있으면 떼고 한번에 가능 (add,remove 합침)!
+      navEl.classList.toggle('active');
+      btnGroup.classList.toggle('active');
+    })
+  </script>
+</html>

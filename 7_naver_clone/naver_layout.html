@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>네이버 : 회원가입</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <style>
+    * {
+      /* 스타일 공통 폰트, 컬러 등을 넣어준다. */
+      box-sizing: border-box;
+      outline: none; /*input 이나 button 등에 텍스트 박스를 클릭 할 경우 활성화 되는 라인을 없애주는 css태그 */
+    }
+    
+    body {
+      /* 폰트서체, background 같은 것들 */
+      font-family: Dotum, 돋움, Helvetica, sans-serif;
+      background-color: #f5f6f7;
+    }
+
+    a {
+      /* 기본적으로 브라우저가 a태그의 스타일을 정해준다. 밑줄같은것(text-decoration) 색깔(color) 바뀌는 것 등등 초기화 */
+      text-decoration: none;
+      color: #000;
+    }
+
+    #header {
+      background-color: orange;
+    }
+
+    .top {
+      
+      max-width: 768px;
+      min-width: 453px;
+      height: 124px;
+
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    #container {
+      max-width: 768px;
+      height: 996px;
+      background-color: cornflowerblue;
+      margin: 0 auto;
+    }
+
+    .section-input {
+      margin: 0 auto;
+      width: 460px;
+      height: 51px;
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      /* align-items: center; */
+    }
+
+    .section-input > div {
+      width: 460px;
+    
+      border: 1px solid #000;
+    }
+
+   
+
+    .section-input > div > input {
+      width: 100%;
+      height: 30px;
+    }
+
+    .section-input > div > select {
+      width: 100%;
+      height: 30px;
+    }
+    
+    .section-input > div > button {
+      width: 100%;
+      height: 30px;
+    }
+
+    .section-input > div > div > * {
+      width: 100%;
+      height: 30px
+    }
+
+    .section-input .uid .id-wrap {
+      width: 100%;
+      height: 30px;
+      position: relative;
+      background-color: yellow;
+    }
+    .section-input .uid .id-wrap input {
+      
+    }
+
+    .section-input .uid .id-wrap span {
+      display:block;
+      position: absolute;
+      right:0px;
+      top: 0px;
+    }
+
+    .section-input .ubd {
+      
+    }
+    
+
+    .section-input .ubd .ubd-wrap {
+      display: flex;
+      justify-content: space-between; 
+     
+    } 
+  
+    .section-input .ubd .ubd-wrap * {
+      width: 147px;
+      height:30px;
+      /* flex-grow:1;
+      flex-basis: 0; */
+    }
+
+    .section-input .uphn .phn  {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content:space-between
+    }
+
+    .section-input .uphn .phn > div > * { 
+    height: 30px;
+    }
+
+    .section-input .uphn .phn > div > input { 
+    width: 170px;
+    }
+    .section-input .uphn .phn > div > button { 
+    width: 170px;
+    }
+
+    #footer {
+      background-color: darkgray;
+    }
+    
+    .bottom {
+      max-width: 768px;
+      height: 83px;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- 헤더 영역 -->
+  <div id="header">
+    <div class="top">
+      <h1>
+        <!-- a태그 안 주소에 임시태그 #을 넣어서 새로고침을 막는다 -->
+        <a href="#">
+          로고자리
+        </a>
+      </h1>
+    </div>
+  </div>
+  <!-- 메인(컨테이너) 영역 -->
+  <div id="container">
+    <!-- <form action="" method="post">
+      <div class="section-input">
+        <label for="userid">아이디</label>
+        <input type="text" id="userid" name="userid" placeholder="@naver.com" required>
+        <span></span>
+        <label for="userpw">비밀번호</label>
+        <input type="password" id="userpw" title="8자리 이상을 입력해 주세요" required minlength="8"> 
+        <span></span>
+        <label for="userpw2">비밀번호 재확인</label>
+        <input type="password" id="userpw2" patter="8" title="8자리 이상을 입력해 주세요" required minlength="8"> 
+        <span></span>
+        <label for="username">이름</label>
+        <input type="text" id="username" required>
+        <span></span>
+        <label for="">생년월일</label>
+        <input type="date">
+      </div>
+    </form> -->
+    <div class="section-input">
+      <div class="uid">
+        <h3>
+          <label for="userid">아이디</label>
+        </h3>
+        <div class="id-wrap">
+          <input type="text" id="userid">
+          <span>@naver.com</span>
+        </div>
+      </div>
+      <div class="upw">
+        <h3>
+          <label for="userpw">비밀번호</label>
+        </h3>
+        <input type="password" id="userpw">
+        <span></span>
+      </div>
+      <div class="re-upw">
+        <h3>
+          <label for="userpw2">비밀번호 재확인</label>
+        </h3>
+        <input type="password" id="userpw2">
+      </div>
+      <div class="uname">
+        <h3>
+          <label for="username">이름</label>
+        </h3>
+        <input type="text" id="username">
+      </div>
+      <div class="ubd">
+        <h3>생년월일</h3>
+        <div class="ubd-wrap">
+          <div class="ubd-yy">
+            <label for="btyear"></label>
+            <input type="text" id="btyear">
+          </div> 
+          <div class="ubd-mm">
+            <label for="btmon"></label>           
+            <select name="month" id="btmon">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>            
+          </div> 
+          <div class="ubd-dd">
+            <label for="btdate"></label>
+            <input type="text" id="btdate">
+          </div> 
+        </div>
+      </div>
+      <div class="ugd">
+        <h3>
+          <label for="usergd">성별</label>
+        </h3>
+        <select name="gender" id="usergd">
+          <option selected>성별</option>
+          <option value="M">남자</option>
+          <option value="F">여자</option>
+          <option value="U">선택 안함</option>
+        </select>
+      </div>  
+      <div class="ueml">
+        <h3>본인 확인 이메일<span>선택</span></h3>
+        <label for="uemail"></label>
+        <input type="text" id="uemail">
+      </div>  
+      <div class="uphn">
+        <h3>휴대전화</h3>
+        <div class="country">
+          <select name="ctrnum" id="ctrnum">
+            <option value="southkorea" selected>대한민국 +82</option>
+            <option value="usa" selected>미국 +1</option>
+          </select>
+        </div>
+        <div class="phn">          
+          <div class="input-phn">
+            <label for="phon"></label>
+            <input type="text" id="phon">            
+          </div>
+          <div class="btn-phn">            
+            <button type="button">인증번호 받기</button>
+          </div>          
+        </div>
+        <div class="ctf-num">          
+          <label for="certif"></label>          
+          <input type="text" id="certif" placeholder="인증번호 입력하세요">
+        </div>
+      </div>
+      <div class="usubmit">        
+        <button type="button">가입하기</button>
+      </div>  
+    </div>
+  </div>
+  <!-- 푸터 영역 -->
+  <div id="footer">
+    <div class="bottom">
+      <div class="bt-menu">
+        하단 메뉴 영역
+      </div>
+      <div class="copyright">
+        카피라이트 자리
+      </div>
+    </div>
+  </div>
+</body>
+</html>

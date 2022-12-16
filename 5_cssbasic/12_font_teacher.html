@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    .fst-italic { font-style: italic; }
+
+    .fw-bold { font-weight: bold; }
+    .fw-900 { font-family: 'Noto Sans KR', sans-serif; font-weight: 900; }
+
+    .fs-large { font-size: large; }
+    .fs-150p { font-size: 150%; }
+
+    .lh-2 { line-height: 2; }
+    .lh-200p { line-height: 200%; }
+  </style>
+  
+</head>
+<body>
+  <h1>font-style: 글꼴의 기울기</h1>
+  <p>이것은 문단입니다, normal.</p>
+  <p class="fst-italic">이것은 문단입니다, italic.</p>
+  
+  <h1>font-weight: 글꼴 두께</h1>
+  <p>이것은 문단입니다, normal.</p>
+  <p class="fw-bold">이것은 문단입니다, bold. (700과 동일)</p>
+  <p class="fw-900">이것은 문단입니다, 900</p>
+
+  <h1>font-size: 글꼴 크기</h1>
+  <div>이것은 텍스트입니다, medium. (16px)</div>
+  <div class="fs-large">이것은 텍스트입니다, large.</div>
+  <div class="fs-150p">이것은 텍스트입니다, 150%.</div>
+
+  <h1>line-height: 한 줄의 높이(행간)</h1>
+  <h2>normal:</h2>
+  <div>이것은 표준 줄 높이를 갖는 문단입니다.<br>
+  대부분의 브라우저에서 표준 줄 높이는 약 110% ~ 120% 입니다.</div>
+  <h2>2 (권장 방식, 단위 없음):</h2>
+  <div class="lh-2">이것은 권장 줄 높이를 갖는 문단입니다.<br>
+  줄 높이가 요소의 글꼴 크기에 배수로 지정됩니다.</div>
+  <h2>200%:</h2>
+  <div class="lh-200p">이것은 비율 줄 높이를 갖는 문단입니다.<br>
+  줄 높이는 여기서 200%로 설정됩니다.</div>
+
+  <!-- Tip -->
+  <h2>텍스트의 수직 정렬</h2>
+  <div style="height: 80px; background-color: orange; line-height: 80px;">
+    이것은 문단입니다.
+  </div>
+</body>
+</html>

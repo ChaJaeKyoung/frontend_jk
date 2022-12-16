@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transition</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      
+    }
+    div + div {
+      margin-top: 20px;
+    }
+    .transition-1 {
+     /* 너비 시간 높이 시간 타이밍함수 딜레이시간 */
+     /* https://cubic-bezier.com/ 타이밍함수 사이트 */
+
+     transition: width 2s, height 2s, background-color 2s  cubic-bezier(1,.18,.62,.85) 0.5s;
+    }
+    .transition-1:hover {
+      width: 300px;
+      height: 300px;
+      background-color: rgb(238, 152, 23);
+    }
+
+    .transition-2 {
+      transition: left 1s ease-in-out ;
+      position:relative;
+      left: 0px;
+    }
+
+    .transition-2:hover {
+      /* margin: 0 auto; */
+      /* width: 300px;
+      height: 500px; */
+      left: 200px;
+    }
+
+    .transition-3 {
+      position: relative;
+      left:0;
+      
+      transition: left 2s;
+    }
+    .transition-3:active {
+      left:300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="transition-1"></div>
+  <div class="transition-2"></div>
+  <div class="transition-3"></div>
+</body>
+</html>

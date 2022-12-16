@@ -1,0 +1,12 @@
+/* import 방식 : css내에서 다른 css파일을 가져와 연결 */
+/* 
+main.css 파일의 해석이 끝나고 가져옴(일반적인 경우 권장x) 
+스타일 적용이 main.css의 모든 코드를 적용하고 맨 마지막에 적용
+*/
+@import url("./box.css");
+
+div {
+  font-size: 50px;
+  color: blue;
+  text-decoration: underline;
+}

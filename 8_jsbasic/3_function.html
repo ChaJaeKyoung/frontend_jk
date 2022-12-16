@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>function</title>
+  <style>
+    div {     
+      height: 1000px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script>
+    // 함수
+    // 기능(동작)을 수행하는 코드의 집합
+    // 변수와 마찬가지로 한번 선언해두고 재활용이 가능
+
+    // 함수의 선언과 호출
+    // function키워드 함수이름(매개변수) { 실행블록 안에 실행 코드 }
+    // 매개변수(옵션): 외부로부터 받을 값(데이터)을 저장 -> 비워도 되고 써도 됨
+    // 실행블록: 실행할 코드를 작성
+    
+    // 선언이 끝나면 필요한 곳에서 호출해서 사용
+    // 호출방법 -> 함수이름();
+    // 실행블록 안에 여러 가지 코드가 한번에 실행됨
+    
+
+    // 변수명, 함수명 카멜케이스로 선언한다
+    function helloFunc() {
+      // 실행할 코드들
+      console.log(1234);
+    }
+
+    // 함수 호출
+    helloFunc();
+    helloFunc();
+    helloFunc();
+
+    // 함수의 데이터 반환
+    // 내부에서 return 키워드를 사용하면 데이터를 반환하고 함수가 종료됨
+    // 예) 계산기의 덧셈 기능 -> 덧셈을 한 후 결과를 반환해야 됨
+    function returnFunc() {
+      console.log('JENNYLOVEU');
+      return 123; // 데이터를 반환하고 함수 종료
+      // return; // 함수 종료
+      console.log('ABC'); // return 뒤라 실행되지 않음 -> 다른언어들은 이미 return을 미리 위에 써서 뒤에 함수가 실행이 되지 않으면 에러처리가 되어 동작하지 않음. (자바스크립트의 유연성)
+      
+    }
+    // returnFunc(); -> 콘솔창 확인 결과 123으로 할당 되었지만 담을 변수가 없고 출력 명령이 없기 때문에 아무런 실행하지 않음
+    // returnFunc();
+    const a = returnFunc(); // 실행 결과 반환되는 값을 변수 a에 할당
+    console.log(a);
+
+    // 선언된 함수 재사용
+    // 유효한 범위 내에서 재사용 가능
+    // 매개변수는 그냥 괄호 안에서 변수명만 써주면 자동으로 선언됨 let이나 const를 쓰면 오히려 에러가 난다! 
+    function sum(num1, num2) { // num1, num2는 매개변수 (Parameter)
+      // 매개변수를 사용하여 함수 외부로부터 값을 받음 -> 그 이후 내부에서 사용
+      return num1 + num2;
+    }
+
+    // 재사용 가능!
+    const result1 = sum(10, 20); // 전달하는 값 10, 20을 인수(또는 인자값)라고 부름 (Argument)
+    const result2 = sum(2, 4);
+    const result3 = sum(3 ,7);
+    
+    console.log(result1, result2, result3);
+
+
+    // 기명(이름이 있는) 함수와 익명(이름이 없는) 함수
+    // 일반적으로 함수에는 이름이 존재하지만 때로는 없을 수도 있음
+    // 함수는 그 자체가 하나의 값(데이터)으로 변수에 할당이 가능(변수의 이름 = 함수의 이름)
+
+    // 기명함수
+    // 함수 선언문
+    function hello() {
+      console.log('Hello~');
+    }
+    hello();
+
+    // 익명함수
+    // 함수 표현식
+    // 익명 함수는 이름이 없기 때문에 변수에 할당하지 않으면 재사용 불가!
+    const world = function () {
+      console.log('World~');
+    }
+    world();
+
+    // 함수는 그 자체가 하나의 값(데이터)이라 함수를 호출할 때 인수로 사용 가능 => 콜백함수라 부름
+    // 함수는 function functionName () {
+
+    // } 중괄호 옆에 세미콜론 마감은 안 찍는다.
+  
+    function handler() { 
+      console.log('Clicked!');
+    }
+
+    document.body.addEventListener('click', handler);
+
+    handler();
+    handler(); //총 3번 재사용
+
+    // 함수를 재사용 할 필요가 없으면(1회성) 굳이 이름을 붙이지 않고 익명 함수를 사용
+    document.body.addEventListener('click', function () { // 콜백함수
+      console.log('익명함수!');  
+    }); // 1회성
+
+    // 메소드에 대해
+    // 객체에 저장하는 데이터가 함수인 경우, 그 속성을 메소드라 부름!!
+    // 자신이 속한 객체의 각 속성에 this라는 키워드로 접근이 가능
+    const user = {
+      // key: value 
+      // 개체의 속성(property)라고 부른다
+      name: 'GONI.KIM',
+      age: 99,
+      isValid: true,
+      getName: function () {
+        return this.name;
+      }
+    };
+    // 여기서 getName은 메소드이고 값으로 익명 함수 저장
+    // this는 객체 자기 자신을 가르킴
+
+    const hisName = user.getName(); // 메소드 호출-> 값이랑 다른 점은 함수 호출이라 괄호를 뒤에 넣어줘야 한다.
+
+    console.log(hisName);
+
+    // 변수 할당 없이 바로 사용해도 됨
+    console.log(user.getName());
+
+    // 차이점: 변수에 할당하면 함수(메소드) 호출 한 번으로 해당 데이터를 재사용 가능
+    // 변수에 할당하면 장점은 불필요한 함수호출 (퍼포먼스)를 줄여서 실행시간을 단축하여 사용자의 시간을 효율적으로 사용하게 한다
+  </script>
+</body>
+</html>

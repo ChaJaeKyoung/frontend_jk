@@ -1,0 +1,156 @@
+/* 공통 영역 */
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  
+}
+
+/* 헤더영역 */
+header {
+  width: 100%;
+  height: 160px;
+  background-color: #cae5fc;
+  position: relative;
+  
+  box-sizing: border-box;
+}
+header > .inner {
+ 
+  height: 160px;
+}
+
+.header-wrapper {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  background-color: #cae5fc; 
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.header-wrapper > h1 {    
+    
+}
+
+.top-menu {  
+  height: 120px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  align-items:center;
+  display: flex;
+  
+}
+.top-menu > ul {   
+  display: flex;
+  background-color: pink;
+  justify-content: center;
+}
+
+.top-menu > ul > li {
+  
+  padding-right: 12px;
+} 
+.top-menu > ul > li > a {
+  /* line-height: 30px; */
+  color: #333;
+} 
+.top-menu .search {
+  display: flex;
+  align-items: center;
+  background-color: yellow;
+  cursor:pointer;
+  } 
+.top-menu .search input {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #c8c8c8;
+  outline: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #777;
+  font-size: 12px;
+  transition: width .4s;
+  padding: 14px;
+  cursor: pointer;
+}
+.top-menu .search input:focus {
+  width: 200px;  
+  border-color:#ff1199;
+} 
+.top-menu .search .material-symbols-outlined {
+
+} 
+
+.gnb {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto; 
+  z-index: 10;
+}
+.gnb .nav {
+  height: 40px;  
+  display: flex;
+  justify-content : space-evenly;  
+  /* background-color: yellow; */
+  
+}
+.gnb .nav > li {
+  flex: 1;
+  transition: height .4s;    
+}
+.gnb .nav > li  a {
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+}
+.gnb .nav > li:hover > h2 > a {
+  color: orange;
+  transition: .4s;
+}
+.gnb .nav  li  ul {
+  display: none; 
+}
+.gnb .nav li ul.on {
+  display:block;
+}
+.gnb .nav ul li {
+  
+}
+.gnb .nav ul li a {
+  opacity: 0;
+  transition: opacity 1s auto 1s;
+}
+.gnb .nav ul.on li a {  
+  opacity: 1;
+}
+.gnb .nav ul li a:hover {
+  color: orange;
+}
+.nav-bg {
+  width: 100%;
+  height: 0px;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  background-color: #cae5fc;  
+  transition: 0.4s;
+  z-index: -1;
+  border-top: 1px solid #fff;
+}
+.nav-bg.on {
+  height: 200px; 
+}
+
