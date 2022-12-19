@@ -9,6 +9,11 @@
     * {
       box-sizing: border-box;
     }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
     div.inner {
       max-width: 1200px;
       margin: 0 auto;
@@ -18,36 +23,35 @@
     .gallery h1 {
       text-align: center;
     }
-    .gallery .img-group {
-      display: flex;
-      flex-wrap : wrap; /*줄바꿈*/
-      gap: 10px; /*플렉스 아이템들간 사이가 다 10px로 자동 정렬*/
+    .gallery li {
+    float: left;
+    width: 25%
     }
     .gallery img {
-      width: calc(25% - 8px);
-    }
+      width: 100%;
+    } 
     @media screen and (min-width: 768px) and (max-width: 960px) {
-      .gallery img {
-        width: calc(33% - 4px);
+      .gallery li {
+        width: 33.33%
       }
     }
     @media screen and (min-width: 480px) and (max-width: 767px) {
-      .gallery img {
-        width: calc(50% - 6px);
+      .gallery li {
+        width: 50%
       }
     }
     @media screen and (max-width: 479px) {
-      .gallery img {
+      .gallery li {
         width: 100%;
       }
-    }
+    }   
   </style>
 </head>
 <body>
   <section class="gallery">
     <div class="inner">
       <h1>갤러리</h1>
-      <!--  -->
+      <!-- 갤러리의 이미지들도 이미지 목록이므로 ul-li 사용 가능 -->
       <ul>
         <li>
           <img src="https://via.placeholder.com/1024x768" alt="img1">
