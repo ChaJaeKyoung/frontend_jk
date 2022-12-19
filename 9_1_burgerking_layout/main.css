@@ -121,4 +121,13 @@ footer {
   background-color: rgb(87, 86, 86);
 }
 
+@media screen and (max-width: 760px ) {
+  .guide__content {
+    flex-direction: column;
+  }
+  .store__content ul li {
+    width :33.33%;
+  }
+}
+
 
