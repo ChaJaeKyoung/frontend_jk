@@ -119,13 +119,14 @@ footer {
   width: 100%;
   height: 680px;
   background-color: rgb(87, 86, 86);
+  /* background-color: #444; */
 }
-
-@media screen and (max-width: 760px ) {
+/* 미디어쿼리는 내가 적용한 css에 가장 아래에 넣어 이미 있는 css 위에 덮어서 사용해야 한다. */
+@media screen and (max-width: 767px ) {
   .guide__content {
     flex-direction: column;
   }
-  .store__content ul li {
+  .store__content ul > li {
     width :33.33%;
   }
 }
