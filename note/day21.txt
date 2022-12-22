@@ -1,0 +1,4 @@
+flex-shrink
+flex-basis
+flex-grow
+이 css는 flex부모 말고 자식 items에게 적용시켜야 됨
