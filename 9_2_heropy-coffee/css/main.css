@@ -39,6 +39,9 @@ a {
   position: relative;
 }
 img {
+  /* img는 inline요소이기 때문에(그러나 실제로는 inline-block 처럼 행동한다) 
+    글자취급을 하여서 baseline이라는 개념이 생긴다*/
+  /* 이미지가 인라인 요소라서 발생하는 문자 기준선(Baseline) 아래의 공간을 제거하기 위해 dispaly: block을 해준다 */
   display: block;
 }
 /* 전역 버튼 스타일 */
