@@ -1,0 +1,36 @@
+개인 포폴 수정사항 
+1. link 태그 줄바꿈=>link테그 구글폰트 갖고 왔는데 이것도 다 보기 편하게 줄바꾸기
+2. javascript.void(0)
+3. # 이랑 void(0) 중에 통일 => javascript:void(0)으로 통일
+4. lnb에 시맨틱 태그 안씀 => nav
+5. <div class="main-visual">?? 시맨틱 태그?? => section
+6. 각 섹션별 줄바꿈 =>보기 편함
+7. 맨 마지막 div는???? => 삭제
+8. rem을 활용하려면!!
+html {
+  font-size: 10px;
+}
+
+9. .inner {
+고정 크기??? 스크롤 생김 => max-width값으로 변경
+
+
+lnb도 네비게이션바라고 생각이 든다면
+nav라는 시멘틱 테그를 이용해 주는 것이 좋다.
+
+
+반응형 폰트사이즈 변경하는 것
+extention 중에 rem 변화하는 것을 깔아주면 됨 : pix to rem
+
+
+Q1. 헤더 중에 메뉴만 가운데에 고정시키고 나머지 logo와 top-menu는 space between 하고 싶어요..
+->>>   justify-self는 grid에서 사용가능하므로 flex에서는 사용이 불가능
+
+->>> 해결1. position absolute를 활용하여 main-menu만 가운데 배치
+    	      heropy coffee 예제 중에서 유튜브 배치했던 것을 떠올려서 
+	   left: 50%를 하고 margin-left값을 컨텐츠의 50%를 빼 주면 정 중앙 배치완료(내껀 -250px정도)
+
+Q2. 로고 이미지 사이즈 변경 확인해보고 싶은것이 있어요
+header에 높이를 주는게 좋을지 padding으로 하면 좋을지 모르겠어요
+=>>> 정답은 없는데 외국사이트들은 다 패딩으로 맞춰줬음 
+개발자 도구로 이미지 누르면 원본사이즈가 뜨고 변형된 사이즈가 뜸
