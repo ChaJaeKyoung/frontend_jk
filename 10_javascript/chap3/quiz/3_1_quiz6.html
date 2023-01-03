@@ -11,8 +11,28 @@
     // (수학: 01, 영어:02, 국어: 03, 국사:04, 기타:00)
 
     // 풀이6
-    const subject = prompt('과목 입력', '');
+    let subject = prompt('과목 입력', '');
     let code;
+    switch (subject) {
+      case '수학':
+        code = '01';
+        break;
+      case '영어':
+        code = '02';
+        break;
+      case '국어':
+        code = '03';
+        break;
+      case '국사':
+        code = '04';
+        break;
+    
+      default:
+      subject = '기타';  
+      code = '00';
+        break;
+    }
+    document.write(`${subject} : ${code}`)
   </script>
 </head>
 <body>
