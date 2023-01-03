@@ -21,14 +21,71 @@
 
     const money = Number(prompt('돈을 넣어주세요.', '0'));
     let change = 0; // 거스름돈
-
+    let price =0; //과자값
     // 풀이6
-    if (money <= 0) {
-      
-    } 
+    if (money <= 0 || money == null || typeof money !== number) {
+      alert('돈을 다시 넣어주세요');
+      location.reload();
+    } else {
+      let snack = prompt('과자 이름을 입력해 주세요','');  
+      switch (snack) {
+      case '허니버터':
+        price = 1300;
+        break;
+      case '칸쵸':
+        price = 1500;
+        break;
+      case '프링글스':
+        price = 3000;
+        break;
+
+      default:
+      alert('없는 과자 입니다. 다시 입력해 주세요');
+      location.reload();
+        break;
+      }  
+      change = money - price;
+      if (change < 0) {
+       alert ('돈을 다시 넣어주세요!'); 
+       location.reload();
+      }
+
+      document.write('투입금액 : ' + money +'원','<br>');
+      document.write('과자종류 : ' + snack + ' ' + price + '원','<br>'); 
+      document.write('거스름돈 : ' + change +'원','<br>'); 
+    }
+ 
+  
+  
+  
+
   </script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .snack-wrap {
+      max-width: 1000px;
+      display: flex;
+      justify-content: space-evenly;
+      background: pink;
+    }
+    .snack {
+      width: 100px;
+      height: 50px;
+      border: 1px solid #000;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  
+  <!-- <div class="snack-wrap">
+    <div class="snack honey-butter">허니버터</div>
+    <div class="snack can-cho">칸쵸</div>
+    <div class="snack pringles">프링글스</div>
+    <div class="snack">기타</div>
+  </div> -->
 </body>
 </html>
