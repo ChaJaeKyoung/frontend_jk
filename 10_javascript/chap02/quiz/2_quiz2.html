@@ -22,13 +22,19 @@
 
 
   // 2번 풀이
-    const price1 = Number(prompt('교통비를 입력해 주세요')); 
-    const price2 = Number(prompt('식비를 입력해 주세요')); 
-    const price3 = Number(prompt('음료비를 입력해 주세요')); 
-  
-    let result = price1 + price2 + price3;
+    // const price1 = Number(prompt('교통비를 입력해 주세요')); 
+    // const price2 = Number(prompt('식비를 입력해 주세요')); 
+    // const price3 = Number(prompt('음료비를 입력해 주세요')); 
+    // total>10000?document.write(total-10000+'원 초과'):document.write('돈관리 잘 했어요!^^');
 
-    result>10000?document.write(result-10000+'원 초과'):document.write('돈관리 잘 했어요!^^');
+    // 쌤풀이
+    const price1 = 3000; 
+    const price2 = 6000; 
+    const price3 = 3000; 
+    const total = price1 + price2 + price3;
+
+    const result = total>10000?total-10000+'원 초과':'돈관리 잘 했어요!^^';
+    document.write(result);
 </script>
 </body>
 </html>

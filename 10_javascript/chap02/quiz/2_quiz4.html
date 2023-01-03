@@ -30,10 +30,16 @@
   const highAvrWeight = avrWeight + 5;
   const lowAvrWeight = avrWeight - 5;
 
+  // if (weight>=lowAvrWeight && weight<=highAvrWeight) {
+  //   document.write(name + '님은 적정 체중입니다.');
+  // } else {
+  //   document.write(name + '님은 적정 체중이 아닙니다.');
+  // }
+  // 백틱사용
   if (weight>=lowAvrWeight && weight<=highAvrWeight) {
-    document.write(name + '님은 적정 체중입니다.');
+    document.write(`${name} 님은 적정 체중입니다.`);
   } else {
-    document.write(name + '님은 적정 체중이 아닙니다.');
+    document.write(`${name} 님은 적정 체중이 아닙니다.`);
   }
 
 </script>
