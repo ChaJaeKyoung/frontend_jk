@@ -32,9 +32,9 @@
     const avrSales = (quarterSales1 + quarterSales2 + quarterSales3) /3;
 
     const quarterSales4 = Number(prompt('4분기 판매량을 입력해 주세요'));
-  
-    quarterSales4>=avrSales ? document.write('판매량이 평균 이상입니다.'):document.write('판매량이 평균 미달입니다.');
-
+    
+    let result =quarterSales4>=avrSales ? '판매량이 평균 이상입니다.':'판매량이 평균 미달입니다.';
+    document.write(result);
 </script>
 </body>
 </html>

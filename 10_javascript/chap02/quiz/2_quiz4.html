@@ -23,8 +23,8 @@
 
   // 4번 풀이
   const name = prompt('당신의 이름은?','');
-  const height = Number(prompt('당신의 신장은?','0'));
-  const weight = Number(prompt('당신의 몸무게는?','0'));
+  const height = Number(prompt('당신의 신장은?',0));
+  const weight = Number(prompt('당신의 몸무게는?',0));
 
   const avrWeight = (height-100) * 0.9;
   const highAvrWeight = avrWeight + 5;
@@ -35,13 +35,17 @@
   // } else {
   //   document.write(name + '님은 적정 체중이 아닙니다.');
   // }
+  
   // 백틱사용
-  if (weight>=lowAvrWeight && weight<=highAvrWeight) {
-    document.write(`${name} 님은 적정 체중입니다.`);
-  } else {
-    document.write(`${name} 님은 적정 체중이 아닙니다.`);
-  }
+  // if (weight>=lowAvrWeight && weight<=highAvrWeight) {
+  //   document.write(`님은 적정 체중입니다.`);
+  // } else {
+  //   document.write(`${name} 님은 적정 체중이 아닙니다.`);
+  // }
 
+  // 삼항문을 변수에 담기
+  let result = weight>=lowAvrWeight && weight<=highAvrWeight ? `적정 체중입니다.`:`적정 체중이 아닙니다.`;
+  document.write(`${name} 님은 ${result}`);
 </script>
 </body>
 </html>
