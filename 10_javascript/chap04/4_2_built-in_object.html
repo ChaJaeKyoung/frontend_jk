@@ -55,7 +55,9 @@
     const classEndDate = new Date(2023, 2, 10); //2023년 3월 10일 객체 생성 (실제 월은 +1 한 값)
     const diffDate = classEndDate.getTime() - new Date().getTime(); 
     // getTime(): 1970년 1월 1일 0시 0분 0초로부터 지금까지 몇 ms가 지났는지..?
-    const result = Math.ceil(diffDate / (1000 * 60 * 60 * 24)); // Math.ceil 올림
+    const result = Math.ceil(diffDate / (1000 * 60 * 60 * 24)); // Math.ceil 소숫점 올림매서드
+    const test = Math.ceil(125.4);
+    document.write('소숫점 올림 매서드 Math.ceil(125.4) 결과 값 : '+test);
     document.write('<h1>오늘부터 종강까지 남은 날짜</h1>')
     document.write(`D-day: ${result}일 남았습니다.`)
   </script>
