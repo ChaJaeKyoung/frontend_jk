@@ -23,11 +23,11 @@
     let change = 0; // 거스름돈
     let price =0; //과자값
     // 풀이6
-    if (money <= 0 || money == null || typeof money !== 'number' ) {
+    if (money <= 0 || money == null || isNaN(money) ) {
       alert('돈을 다시 넣어주세요');
       location.reload();
     } else {
-      let snack = prompt('과자 이름을 입력해 주세요','');  
+      let snack = prompt('과자 이름을 입력해 주세요(허니버터, 칸쵸, 프링글스)','');  
       switch (snack) {
       case '허니버터':
         price = 1300;
@@ -46,15 +46,15 @@
       }  
       change = money - price;
       if (change < 0) {
-       alert ('돈을 다시 넣어주세요!'); 
-       location.reload();
+        alert ('돈이 모자랍니다!'); 
+        location.reload();
       }
 
       document.write('투입금액 : ' + money +'원','<br>');
       document.write('과자종류 : ' + snack + ' ' + price + '원','<br>'); 
       document.write('거스름돈 : ' + change +'원','<br>'); 
     }
- 
+    
   
   
   

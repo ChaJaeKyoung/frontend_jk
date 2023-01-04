@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 문제7 - 보너스 문제
+    // 과자 자판기 만들기
+    // 자판기에 넣을 돈을 먼저 입력받은 후 정상적으로 돈이 입력되었으면 뽑을 과자 종류를 입력받는다.
+    // 내가 뽑은 과자 종류와 거스름돈을 브라우저에 출력해보세요.
+    
+    // 입력받을 과자 종류는 다음과 같다.
+    // 과자 종류: 허니버터(1300원), 칸쵸(1500원), 프링글스(3000원)
+
+    // 유효성 검사
+    // 1) 정상적인 돈 값이 입력되지 않았을 때(예: 0원 이하일 때) 에러 메시지 출력 후 새로고침(location.reload();)
+    // 2) 없는 과자 종류를 입력했을 때 에러 메시지 출력 후 새로고침(location.reload();)
+    // 3) 돈이 모자랄 때 에러 메시지 출력 후 새로고침(location.reload();)
+
+    const money = Number(prompt('돈을 넣어주세요.', '0'));
+    let change = 0; // 거스름돈
+    let price =0; //과자값
+    // 풀이6
+    // if (money <= 0 || money == null || typeof money !== 'number' ) {
+    //   alert('돈을 다시 넣어주세요');
+    //   location.reload();
+    // } else {
+    //   let snack = prompt('과자 이름을 입력해 주세요','');  
+    //   switch (snack) {
+    //   case '허니버터':
+    //     price = 1300;
+    //     break;
+    //   case '칸쵸':
+    //     price = 1500;
+    //     break;
+    //   case '프링글스':
+    //     price = 3000;
+    //     break;
+
+    //   default:
+    //   alert('없는 과자 입니다. 다시 입력해 주세요');
+    //   location.reload();
+    //     break;
+    //   }  
+    //   change = money - price;
+    //   if (change < 0) {
+    //     alert ('돈을 다시 넣어주세요!'); 
+    //     location.reload();
+    //   }
+
+    //   document.write('투입금액 : ' + money +'원','<br>');
+    //   document.write('과자종류 : ' + snack + ' ' + price + '원','<br>'); 
+    //   document.write('거스름돈 : ' + change +'원','<br>'); 
+    // }
+    if(money > 0) {
+      let snack = prompt('과자 이름을 입력해 주세요','');  
+      switch (snack) {
+      case '허니버터':
+        price = 1300;
+        break;
+      case '칸쵸':
+        price = 1500;
+        break;
+      case '프링글스':
+        price = 3000;
+        break;
+
+      default:
+      alert('없는 과자 입니다. 다시 입력해 주세요');
+      location.reload();
+        break;
+      }  
+      change = money - price;
+      if (change < 0) {
+        alert ('돈을 다시 넣어주세요!'); 
+        location.reload();
+      }
+
+      document.write('투입금액 : ' + money +'원','<br>');
+      document.write('과자종류 : ' + snack + ' ' + price + '원','<br>'); 
+      document.write('거스름돈 : ' + change +'원','<br>'); 
+    }else {
+      alert('돈을 다시 넣어주세요');
+      location.reload();
+    }
+  
+  
+  
+
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .snack-wrap {
+      max-width: 1000px;
+      display: flex;
+      justify-content: space-evenly;
+      background: pink;
+    }
+    .snack {
+      width: 100px;
+      height: 50px;
+      border: 1px solid #000;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="snack-wrap">
+    <div class="snack honey-butter">허니버터</div>
+    <div class="snack can-cho">칸쵸</div>
+    <div class="snack pringles">프링글스</div>
+    <div class="snack">기타</div>
+  </div> -->
+</body>
+</html>

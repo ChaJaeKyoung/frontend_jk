@@ -13,6 +13,7 @@
     // 풀이5
     // 주의! 덧셈을 하려면 숫자로 변환해 줄 것!!
     const num1 = Number(prompt('정수1 입력', '0'));
+    // const num1 = +prompt('정수1 입력', '0'); 양수로 변환해주면 간단하게 숫자로 바뀌게 할 수 있다!
     const num2 = Number(prompt('정수2 입력', '0'));
     const num3 = Number(prompt('정수3 입력', '0'));
 
@@ -36,11 +37,13 @@
     }
 
     document.write(`
-      합계:${sum}
-      평균:${avg}
-      최대값:${max}
+      합계:${sum}<br>
+      평균:${avg}<br>
+      최대값:${max}<br>
       최소값:${min}
       `)
+
+      
   </script>
 </head>
 <body>
