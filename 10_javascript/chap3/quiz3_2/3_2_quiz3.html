@@ -8,9 +8,13 @@
   <script>
     // 문제3
     // for문을 사용하여 0부터 10미만의 정수의 합을 출력하세요. (결과는 45)
-
+    let sum = 0;
+    // sum에 초기화0 을 안 넣어주면 undefined 이기 때문에 숫자를 더하면 NaN 오류 출력됨
     // 풀이3
-
+    for(let i = 0; i < 10; i++) {
+      sum += i;
+    }
+    document.write(sum);
   </script>
 </head>
 <body>
