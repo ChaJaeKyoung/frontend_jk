@@ -14,7 +14,10 @@
 
     // 풀이1
       const theDay = new Date(2023, 1, 20, 03, 12);
-      // document.write(theDay);
+      document.write(theDay,'<br>'); //일반 출력
+
+      const theDay2 = new Date('2023-02-20T03:12:00') //입력방식2
+      document.write(theDay2,'<br>'); 
 
       const theYear = theDay.getFullYear();
       const theMonth = theDay.getMonth();
@@ -22,7 +25,7 @@
       const theHour = theDay.getHours();
       const theMin = theDay.getMinutes();
 
-      document.write(`${theYear}년 ${theMonth}월 ${theDate}일 ${theHour}시간 ${theMin}분` );
+      document.write(`${theYear}년 ${theMonth}월 ${theDate}일 ${theHour}시 ${theMin}분` );
   </script>
 </head>
 <body>
