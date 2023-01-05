@@ -63,6 +63,34 @@
   </script>
 </head>
 <body>
+  <h1>오늘부터 특정일까지 남은 실시간 시간</h1>
+  <h2 class="d-day-count"></h2>
+  <script>
+    //(응용) D-day를 '일 시간 분 초'로 실시간 표시하기 
+    const tomorrow = new Date(2023, 0, 6); //1월 5일 ~ 1월 6일까지의 시간
+    const dDayCountEl = document.querySelector('.d-day-count');
+    
+    function counter() {
+      const diff = tomorrow.getTime() - new Date().getTime();
+      // document.write(diff, '밀리초<br>');
+      
+      // document.write(diff/ (1000 * 60 * 60 * 24), '일<br>');
+      const dDay = Math.floor(diff/ (1000 * 60 * 60 * 24)); // Math.floor(0.2121)->소숫점 뒤 버림
+      
+      // document.write(diff/ ((1000 * 60 * 60 )) % 24, '시간<br>');
+      const dHour = Math.floor(diff/ ((1000 * 60 * 60 )) % 24); 
   
+      // document.write((diff/ (1000 * 60) % 60 ), '분<br>');
+      const dMin = Math.floor(diff/ (1000 * 60) % 60);
+  
+      // document.write((diff/ (1000) % 60 ), '초<br>');
+      const dSec = Math.floor(diff/ (1000) % 60 );
+  
+      dDayCountEl.textContent = `${dDay}일 ${dHour}시간 ${dMin}분 ${dSec}초 남음`;
+    }
+
+    setInterval(counter, 1000); // setInterval(함수명,밀리초(1000ms =1s))
+
+  </script>
 </body>
 </html>
