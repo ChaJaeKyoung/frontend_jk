@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="file">
+  <!-- <input type="file" multiple> 여러개  -->
+
+
+  <script>
+    // 문제5
+    // 문자열 객체를 이용하여 파일 확장자를 추출해서 fileExt 변수에 저장하고,
+    // 이미지 파일(jpg, png, gif)이 맞는지 검사하여
+    // 아닐 경우에만 alert() 창을 띄워 경고하기.
+
+    // 샘플 코드
+    // const imgFileExt = ['jpg', 'png', 'gif'];
+    // let fileExt;
+    // const fileInput = document.querySelector('input[type=file]');
+    // fileInput.addEventListener('change', function () {
+    //   // debugger; 디버깅모드로 들어갈 수 있다 화살표를 눌러야 콘솔로 넘어갔다
+    //   console.log(fileInput);
+    //   console.log(fileInput.files);
+    //   console.log(fileInput.files[0]);
+    // });
+
+    // 풀이5
+    const imgFileExt = ['jpg', 'png', 'gif'];
+    let fileExt;
+    const fileInput = document.querySelector('input[type=file]');
+    fileInput.addEventListener('change',function() {
+      // debugger;
+      console.log(fileInput);
+      console.log(fileInput.files);
+      console.log(fileInput.files[0].name);
+      fileExt = fileInput.name;
+      console.log(fileExt);
+    })
+    
+  </script>
+</body>
+</html>
