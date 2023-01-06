@@ -14,7 +14,16 @@
     const lottoArr = []; // 빈 배열
     
     // 풀이7
-    
+    let i = 0;
+    while ( i < 6 ) {
+      let lotto = Math.floor((Math.random()*45)) +1;
+      if (!lottoArr.includes(lotto)) {
+        lottoArr[i] = lotto;
+        i++;
+      }
+    }
+    document.write(lottoArr.sort());
+
   </script>
 </head>
 <body>

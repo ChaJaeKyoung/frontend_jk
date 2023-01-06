@@ -217,6 +217,14 @@
     console.log(shiftData);
     console.log(yellowArr); //최종 yellowArr 에는 정자밖에 남지 않았다.
 
+
+    //push() : 배열의 끝에 새 요소를 추가(원본 배열이 변경됨)
+    yellowArr.push(shiftData);
+    console.log(yellowArr);
+    //unshift() : 배열의 시작 부분에 새 요소를 추가(원본 배열이 변경됨)
+    yellowArr.unshift(popData);
+    console.log(yellowArr);
+
     // 배열 객체의 메소드(3) - 검색
     const fruits = ['Banana', 'Orange', 'Apple', 'Mango', 'Apple'];
     // indexOf(): 지정된 값의 첫번째 인덱스(위치)를 반환, 찾을 수 없는 경우 -1
@@ -227,6 +235,25 @@
     // includes(): 지정된 값이 포함된 경우 true, 포함되지 않은 경우 false (ES7차)
     console.log(fruits.includes('mango'));
     console.log(fruits.includes('Mango', 3)); // 검색 시작 위치 지정 가능
+
+    // array.sort (비교 함수) : 숫자를 정렬하기 위한 비교 함수 필요
+    // 비교 함수: function(a, b) { return a - b; }
+    document.write('<h1>배열에서 숫자 데이터 정렬</h1>');
+    const score = [40, 100, 65, 35, 9, 12];
+    document.write(score.sort(), '<br>'); //알파벳순으로 정렬되어 우리가 원하는 값이 아닌 다른것이 나옴
+    document.write(score.sort(function(a, b) {return a - b}), '<br>'); 
+    // 오름차순 정렬(작은수부터)
+    // 음수가 반환되면 a, b순으로 정렬 
+    // 양수가 반환되면 b, a순으로 정렬
+    // 0이 반환되면, 변화 없음 
+    
+    // 내림차순 정렬(큰수부터)
+    // return값의 a ,b 위치를 바꾸면 된다
+    // 정렬 알고리즘 google에 검색해라!
+
+
+    
+  
   </script>
 </head>
 <body>
