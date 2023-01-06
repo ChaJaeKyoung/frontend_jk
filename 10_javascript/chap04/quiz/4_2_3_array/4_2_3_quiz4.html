@@ -9,18 +9,26 @@
     // 문제3
     // 배열에서 최대값, 최소값 구하기
     const points = [40, 100, 1, 5, 25, 10];
-    let compareNum = 0;
-    let max = 0;
-    let min = 0;
+    let compareNum;
+    let max;
+    let min;
     // 풀이3
-    for (i = 0; i <points.length; i++){
-      compareNum = points[i];
-      if (compareNum > max){
-        max= compareNum;
-      } else if (compareNum < min ){
-        min = compareNum;
+    for (i = 0 ; i < points.length ; i++) {
+      compareNum=points[i];
+      do {max=min=compareNum} 
+      while( i < points.length ) {
+          if (compareNum>max) {
+            compareNum=max;
+          } else if (compareNum<min) {
+            compareNum=min;
+          }
+      
+        }
       }
-    }
+    
+      
+      
+    
     
     
     console.log('최대값은 : ' + max + '최소값은 : '+ min + '입니다');
