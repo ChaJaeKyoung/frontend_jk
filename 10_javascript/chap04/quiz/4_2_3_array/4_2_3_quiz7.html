@@ -22,8 +22,18 @@
         i++;
       }
     }
-    document.write(lottoArr.sort());
+    document.write(lottoArr.sort(),'<br>');
 
+    // 쌤풀이
+    
+    while ( lottoArr.length < 6 ) {
+      const lotto = Math.floor((Math.random()*45)) +1; // const로 선언 가능한 것은 while의 지역변수로 선언되어 중괄호가 끝나면 사용이 불가능하기 때문에 가능!
+      if (!lottoArr.includes(lotto)) {
+        lottoArr.push(lotto);
+        
+      }
+    }
+    document.write(lottoArr.sort());
   </script>
 </head>
 <body>

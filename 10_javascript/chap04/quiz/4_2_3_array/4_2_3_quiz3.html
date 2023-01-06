@@ -14,13 +14,16 @@
 
     // 풀이3
     const disliked = prompt('싫어하는 과일은?');
-    let delFruit = fruits.indexOf(disliked)
+    let delFruit = fruits.indexOf(disliked) 
     if (delFruit >= 0 ) {
       fruits.splice(delFruit,1);
       console.log(fruits);
     } else {
       alert('제거할 과일이 없습니다.');
     } 
+
+    // 쌤 풀이 
+    // indexOf 쓸 변수를 dislikedIndex라고 변수명을 지으심!!
   </script>
 </head>
 <body>
