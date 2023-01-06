@@ -18,9 +18,24 @@
     // console.log(originArr); 
 
     // 풀이1
-      let copyArr = [];
-      copyArr = originArr.concat();
-      console.log(copyArr);
+    let copyArr = [];
+    copyArr = originArr.concat();
+    console.log(copyArr);
+
+    // 쌤 풀이
+    const copyArr1 = originArr.slice(0,4);
+    const copyArr2 = originArr.slice(0); //  뒤에 안적어주면 배열 끝까지!
+    const copyArr3 = originArr.slice(0); //  앞, 뒤에 안적어주면 처음부터 끝까지!   
+    const copyArr4 = originArr.concat(); //  차차가 한 방법
+    console.log(copyArr1);
+    console.log(copyArr2);
+    console.log(copyArr3);
+    console.log(copyArr4);
+    
+    // 참고 - ES6차 spread 연산자
+    const copyArr5 = [...originArr]; //...이라는 것은 배열 안에 있는 모든 값들을 펼쳐 놓는 것
+    console.log(copyArr5);
+      
   </script>
 </head>
 <body>

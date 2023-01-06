@@ -9,29 +9,48 @@
     // 문제3
     // 배열에서 최대값, 최소값 구하기
     const points = [40, 100, 1, 5, 25, 10];
-    let compareNum;
-    let max;
-    let min;
+
+    let compareNum, max, min; 
     // 풀이3
-    for (i = 0 ; i < points.length ; i++) {
+    compareNum=max=min=points[0]; // max 초기값을 배열첫번째 값 말고 -Infinity 를 넣어도 되고, min 초기값을 Infinity 넣어도 된다
+    for (i = 0; i <points.length; i++){
       compareNum=points[i];
-      do {max=min=compareNum} 
-      while( i < points.length ) {
-          if (compareNum>max) {
-            compareNum=max;
-          } else if (compareNum<min) {
-            compareNum=min;
-          }
-      
-        }
+      if (compareNum > max) {
+        max = compareNum;
+      } else if (compareNum < min) {
+        min = compareNum;
       }
-    
-      
-      
-    
-    
+    } 
     
     console.log('최대값은 : ' + max + '최소값은 : '+ min + '입니다');
+    document.write('최대값은 : ' + max + '최소값은 : '+ min + '입니다', '<br>');
+
+    // 쌤 풀이 for of문 =>차차가 푼 방법인데 좀 더 간결하게 생략가능
+    
+    let maxNum = points[0]; //-Infinity
+    let mixNum = points[0]; // Infinity
+
+    for(const el of points)  {
+      // if (maxNum < el) max = el;
+      // if (minNum > el) min = el;
+      
+      maxNum = Math.max(max, el);
+      minNum = Math.min(min, el);
+    }
+    document.write('최대값 :' + maxNum, '<br>');
+    document.write('최소값 :' + minNum, '<br>');
+
+    //sort() 이용 => 정렬시킨다음 첫번째, 마지막번째 배열 출력
+    points.sort(function (a, b) {
+      return a - b;
+    })
+    document.write('최대값 :' + points[points.length-1], '<br>');
+    document.write('최소값 :' + points[0], '<br>');
+
+    // 참고- spread 연산자 사용 
+    document.write('최대값 :' + Math.max(...points), '<br>');
+    document.write('최소값 :' + Math.min(...points), '<br>');
+
   </script>
 </head>
 <body>
