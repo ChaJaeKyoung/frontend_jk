@@ -29,17 +29,54 @@
     // });
 
     // 풀이5
-    const imgFileExt = ['jpg', 'png', 'gif'];
-    let fileExt;
+    const imgFileExt = ['jpg', 'png', 'gif', 'jpeg'];
+    let fileName;
+    let searchExt;
+    
     const fileInput = document.querySelector('input[type=file]');
     fileInput.addEventListener('change',function() {
       // debugger;
-      console.log(fileInput);
-      console.log(fileInput.files);
-      console.log(fileInput.files[0].name);
-      fileExt = fileInput.name;
-      console.log(fileExt);
+      // console.log(fileInput);
+      // console.log(fileInput.files);
+      // console.log(fileInput.files[0].name);
+      fileName = fileInput.files[0].name;
+      // console.log(fileName);
+      
+      //searchExt = fileName.substr(fileName.length - 3,3); //4글자 확장자는 검색할 수 없는 문제 발생
+      let checkIndex = fileName.lastIndexOf('.') + 1; // .부터 가지고 오기 때문에 +1 을 해 줘야 함
+      searchExt= fileName.substr(checkIndex).toLowerCase();// 끝에 확장자 추출 및 소문자로 변경
+      console.log(searchExt);
+
+      // includes 메서드 쓰기 전 
+      // let check = [];
+      // for(let i = 0; i < imgFileExt.length; i++) {
+      //   if (searchExt == imgFileExt[i]) {
+      //     check[i] = true;
+      //   }  
+      // }
+      // console.log(check[0]);
+      // console.log(check[1]);
+      // console.log(check[2]);
+      // console.log(check[3]);
+      // if ( check[0] || check[1] || check[2] || check[3]) {
+      //   alert('good!');
+      // } else {
+      //   alert('확장자를 확인 해 주세요!');
+      // }
+
+      // includes 메서드 쓴 후
+      if(!imgFileExt.includes(searchExt)){
+        alert('확장자를 확인 해 주세요!');
+      }
     })
+
+    //0. check에 담겨진 true 값을 파일을 넣을 때마다 리셋해야 되므로 지역변수로 선언
+    //1.파일명에서 끝에 세자리 추출 , 
+      // +)파일명에서 마지막 확장자 추출로 수정해야됨!! JPEG 같은 파일때문에 4글자일 경우도 있음 
+      //   =>'.' 뒤에 있는 글자부터 끝까지 추출 해야됨 : ltext.lastIndexOf('검색글자',검색시작위치지정) 사용 할 예정 왜냐하면 파일 이름 중간에도 '.'이 들어갈 수 있기 때문에 맨 뒤에서부터 검색해야됨!
+      // +) substr (가져올인덱스시작,몇개?) => 몇개자리에 생략이 되면 끝까지 다 가져옴
+      // +)확장자가 대문자 소문자일 경우에 하나로 통일 => 난 소문자로 통일 할 예정 text.toLowerCase()
+    //2.이미지파일확장자랑 비교 (X) => 검색기능 배열 메서드 활용하면 간편해짐!! 검색할집단.includes(검색어)
     
   </script>
 </body>
