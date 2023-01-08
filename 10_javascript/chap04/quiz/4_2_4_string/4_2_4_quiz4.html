@@ -19,8 +19,13 @@
     // 1234
     // [1, -, 2, 3, -, 4]
       for(let i = 0; i < str.length; i++ ) {
-        result[i]=
+        if(str.charAt(i)%2 == 0) {
+          result.push('-');
+        }
+        result.push(str.charAt(i));
       }
+      
+      document.write(result);
 
     // 풀이4
 
