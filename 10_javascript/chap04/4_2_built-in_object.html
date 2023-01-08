@@ -237,8 +237,9 @@
     console.log(fruits.includes('mango'));
     console.log(fruits.includes('Mango', 3)); // 검색 시작 위치 지정 가능
 
-    // array.sort (비교 함수) : 숫자를 정렬하기 위한 비교 함수 필요
-    // 비교 함수: function(a, b) { return a - b; }
+    // array.sort(비교 함수) : 숫자를 정렬하기 위한 비교 함수 필요
+    // 비교 함수: function(a, b) {return a - b;} optional parameters 자바스크립트 메서드에서 미리 구현된 함수값을 넣을 수 있다.
+
     document.write('<h1>배열에서 숫자 데이터 정렬</h1>');
     const score = [40, 100, 65, 35, 9, 12];
     document.write(score.sort(), '<br>'); //알파벳순으로 정렬되어 우리가 원하는 값이 아닌 다른것이 나옴
