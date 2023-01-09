@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>function</title>
+  <script>
+    // 함수
+    // 여러 실행 코드들의 묶음(그룹화)
+    // 자주 사용하는 코드들(기능)을 저장했다가 필요할 때 호출해서 사용
+    // function 키워드를 사용하여 정의 => ES6차 에서는 화살표 함수를 사용
+
+    // 함수 정의 방식
+    // 1. 함수 선언문: 기명 함수로 정의
+    // function 함수명() {
+    //   실행코드;
+    // }
+
+    // 2. 함수 표현식: 익명 함수를 변수에 할당\
+    // 변수 = function () {
+    //   실행코드;
+    // };
+
+    // 위와 같이 정의된 함수는 즉시 실행되지 않음, 메모리에 할당되어 있다가 함수가 호출되면 실행
+    // 1. 함수명();
+    // 2. 변수명(); // 변수에 함수가 담겨있기 때문에 변수명 한 뒤 괄호 해 줘도 함수가 호출됨
+
+    function greeting() {
+      document.write('hello<br>');
+    }
+    greeting(); // 함수 호출
+    
+    function greeting(name) { // 매개변수 활용
+      document.write('hello' + name, '<br>');
+    }
+    greeting('김재');
+    // 함수 선언문은 중복선언이 가능하다! 그렇기 때문에 처음에 생성한 greeting()함수가 greeting(name)함수로 덮어씌워지는 현상 (호이스팅 때문에) 발생되어 첫번째 함수 호출에 undefined가 뜸!
+  
+    
+    // (참고) 함수 선언문과 함수 표현식의 차이점
+    // 함수 선언문은 호이스팅(끌어올리기; 호이스트:끌어올리다)이 일어난다.
+    // 해당 스코프(유효범위)의 최상단으로 끌어올려진 것과 같은 현상
+    // 변수나 함수 선언이 코드 실행보다 먼저 메모리에 할당(저장)되는 과정
+
+    let count = 0;
+
+    myFunc();// 함수가 만들어지기도 전에 함수 선언을 한 뒤 함수를 만들어도 실행하는데에 이상은 없다! 호이스팅이 일어나기 때문에!
+    
+    function myFunc() {
+      count++;
+      document.write('hello' + count, '<br>');
+    } 
+
+    myFunc();
+
+    //theFunc(); // error // 함수 표현식은 만들어지기 전에 호출하면 무조건 에러가 난다! 함수 선언문과 표현식의 차이점 호이스팅
+
+    const theFunc = function () {
+      count++;
+      document.write('bye' + count, '<br>');
+    } 
+    
+    theFunc();
+
+    // 버튼 클릭할 때마다 배경색이 바뀌도록 함수 만들기
+    const color = ['yellow', 'aqua', 'purple', 'white'];
+
+    let i = 0;
+    function changeColor() {
+      if (i >= color.length) i = 0; // i가 배열의 마지막 white 까지 온다면 다시 i를 초기화 시켜서 yellow로 돌아갈 수 있게 만들어줌
+      console.log('컬러 바꾸기 전: '+ i);
+      const bodyTag = document.querySelector('body');
+      bodyTag.style.backgroundColor = color[i++];
+      console.log('컬러 바꾼 후: '+ i);
+    }
+  </script>
+</head>
+<body>
+  <button onclick="changeColor()">배경색 바꾸기</button>
+</body>
+</html>
