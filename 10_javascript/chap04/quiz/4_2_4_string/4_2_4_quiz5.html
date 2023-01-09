@@ -8,7 +8,7 @@
 </head>
 <body>
   <input type="file">
-  <!-- <input type="file" multiple> 여러개  -->
+  <!-- <input type="file" multiple> 여러개의 파일 선택가능  -->
 
 
   <script>
@@ -36,9 +36,9 @@
     const fileInput = document.querySelector('input[type=file]');
     fileInput.addEventListener('change',function() {
       // debugger;
-      // console.log(fileInput);
-      // console.log(fileInput.files);
-      // console.log(fileInput.files[0].name);
+      // console.log(fileInput); // input DOM
+      // console.log(fileInput.files); // DOM객체 => FileList 객체 중에 files속성 , key 0 value file 
+      console.log(fileInput.files[0].name); // File 객체 중 0번키 값 , 객체는 .0이라고 접근도 가능하고 대괄호로 [0]접근 가능한데 .0을 찍으면 오류가 나서 [0]로 접근한다 object의 대괄호표기법
       fileName = fileInput.files[0].name;
       // console.log(fileName);
       

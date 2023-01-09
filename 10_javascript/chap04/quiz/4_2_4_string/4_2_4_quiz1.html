@@ -13,16 +13,35 @@
     // 2 또는 4 이면 '여자입니다.'
 
     const ssn = prompt('주민등록번호를 입력하세요.');
-    const check = ssn.substring(ssn.length-7,ssn.length);
-    let result;
+    console.log(ssn.length);
+    const check = ssn.substring(ssn.length-7,ssn.length); //substring은 두번째 인덱스가 끝 전까지의 문자열을 가져옴
+    // const check1 = ssn.substr(시작인덱스,가져올문자개수);
+    console.log(check);
+    // console.log(check1);
+    let result = '존재하지 않는 성별입니다.'; // 초기값으로 예외구문 입력
     // 풀이1
-    if(check[0] ==1 || check[0] ==3 ) {
+    if(check[0] == 1 || check[0] == 3 ) {
       result='남자입니다.'
-    }else {
+    } else if (check[0] == 2 || check[0] == 4) {
       result='여자입니다.'
     }
     document.write(result, '<br>');
     
+
+    // 풀이 쌤꺼
+
+    switch (check) {
+      case '1':
+      case '3':
+        result = '남자입니다.';
+        break;
+      case '2':
+      case '4':
+        result = '여자입니다.';
+      default:
+        break;
+    }
+    document.write(result, '<br>');
   </script>
 </head>
 <body>

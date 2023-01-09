@@ -18,16 +18,19 @@
     // 2. 짝수일때는 먼저 대시를 넣고 그 다음에 입력받은 숫자를 넣는다.
     // 1234
     // [1, -, 2, 3, -, 4]
+
+    // 풀이4
       for(let i = 0; i < str.length; i++ ) {
-        if(str.charAt(i)%2 == 0) {
+        if(str.charAt(i) % 2 === 0) {
           result.push('-');
         }
         result.push(str.charAt(i));
       }
-      
+      console.log(result);
       document.write(result);
       
-    // 풀이4
+    // 쌤풀이는 문자열도 배열로 생각해서 풀었음!
+    // str.charAt(i) 는 str[i] 와 같음!!
 
     
     
