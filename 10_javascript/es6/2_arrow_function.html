@@ -83,8 +83,8 @@
 
     // Quiz2
     function ask(question, yes, no) {
-      if(confirm('동의하십니까?')) yes();
-      else no();
+      if(confirm(question)) yes();
+      else no(); //콜백함수
     }
     
     ask('동의하십니까?', 
