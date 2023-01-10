@@ -30,20 +30,45 @@
     //   }
     // };
 
-    function printNumbers (from, to) {
-      let result = from;
-      while (result <= to) {
-        setInterval( function() {
-        document.write(result, '<br>');
-        }, 1000);
-        result++;
-      }
-    }
-
-
+    
     printNumbers(5, 10);
     // printNumbers(10, 10); 
     // printNumbers(10, 5);
+
+    // 다시 처음부터!!
+
+    function printNumbers(from, to) {
+      let id = setInterval(function abc () {
+        if(from > to) {
+          document.write(from);
+          from--;
+        } else if (from === to) {
+          document.write(from);
+          clearInterval(id);
+        } else {
+          document.write(from);
+          from++;
+        }
+      }, 1000);
+    }
+
+    // function printNumbers2(from, to) {
+    //   debugger;
+    // timer = setInterval(function() {
+    // console.log(from);
+    // if (from == to) 
+    //     clearInterval(timer);
+    // from++;
+    // }, 1000);
+    // }
+    // printNumbers2(1, 10);
+  
+
+    
+
+    // 1. setIntervl 1초마다 함수 실현
+    // 2. 만약 from이 to보다 크다면? from을 하나씩 빼다가 from이 to랑 같아지면 멈춰라!
+
   </script>
 </head>
 <body>
