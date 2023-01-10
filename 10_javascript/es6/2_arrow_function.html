@@ -96,13 +96,17 @@
     const ask2 = (question, yes, no) => {
       if (confirm(question)) yes();
       else no();
-    }
+    };
 
+    // ask2 ('동의하십니까?', 
+    //   yes => {alert('동의하셨습니다.');}, 
+    //   no => {alert('취소 버튼을 누르셨습니다.');}
+    // ); //문법적으로 틀리진 않았다.
+    
     ask2 ('동의하십니까?', 
-      yes => {alert('동의하셨습니다.');}, 
-      no => {alert('취소 버튼을 누르셨습니다.')}
+      () => {alert('동의하셨습니다.');}, 
+      () => {alert('취소 버튼을 누르셨습니다.');}
     );
-
 
 
     // Quiz3

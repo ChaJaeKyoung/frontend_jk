@@ -15,8 +15,24 @@
 
     // 풀이3
     
+    const printNumbers = (from, to) => {
+      let results = [];
+      if (from > to) {
+        for(let i= from; i >= to; i--) {
+          results[i] = i;
+        } 
+      } else {
+        for(let i= from; i <= to; i++) {
+          results[i] = i;
+        }
+      }
+      
+    };
+
 
     printNumbers(5, 10);
+    // printNumbers(10, 10); 
+    // printNumbers(10, 5);
   </script>
 </head>
 <body>
