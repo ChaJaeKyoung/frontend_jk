@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>arrow function</title>
+  <script>
+    // 화살표 함수
+    // 화살표(=>)를 사용해서 함수를 선언하는 방법
+    // 기본 모양
+    // () => {};
+
+    // ES5에서 일반적인 방법
+    const greeting1 = function (name) {
+      return 'hello' + name;
+    };
+    console.log(greeting1('재경'));
+
+    // 화살표 함수로 바꾸면
+    const greeting2 = (name) => {
+      return `hello ${name}`;
+    };
+
+    // 배개변수가 딱 하나만 있으면 괄호 생략이 가능
+    const greeting3 = name => {
+      return `hello ${name}`;
+    };
+
+    // 만약에 매개변수가 전혀 없으면 다음과 같이 빈 괄호를 써야 함
+    const greeting4 = () => {
+      return `hello`;
+    };
+
+    // 암시적 반환 (리턴문 한줄만 있을 경우 return키워드와 {}(중괄호블럭) 동시에 생략 가능) -> greeting3을 한번 더 줄이는 것
+    const greeting5 = name => `hello ${name}`;
+
+    // 주의! 코드의 간결함 보다는 가독성이 우선
+    // 아직 ES6차 익숙하지 않다면 greeting2와 같이 작성하는 것도 좋다.
+    
+    // 객체를 암시적으로 반환하기
+    const race = '100 dash';
+    const runners = ['Kim', 'Lee', 'Park'];
+
+    // map(): 기존 배열의 요소를 이용하여 새로운 배열을 만듦
+    const results1 = runners.map((runner, index) => {
+      return {
+        name: runner,
+        race: race,
+        place: index + 1
+      };
+    }); //for each와 같다고 생각하면 됨
+    
+    // 결과값
+    // [{name: 'Kim', race: '100 dash', place: 1},{name: 'Lee', race: '100 dash', place: 2}, {name: 'Park', race: '100 dash', place: 3}]
+
+    console.log(results1);
+
+    // 만약 resrtu1에서 return이 하나라 return 과 {}를 지우면 
+    // 결과는 에러가 나기 때문에 
+    // 해결책은 객체를 소괄호로 한번 더 감싸줘야 한다!
+    const results2 = runners.map((runner, index) => ({
+        name: runner,
+        race: race,
+        place: index + 1
+    }));
+    console.log(results2); //결과값은 results1과 같게 됨
+
+    // 화살표 함수는 익명함수
+    // 참조할 이름이 필요하다면 함수를 변수에 할당하면 됨
+
+    // Quiz: 화살표 함수로 변경하기
+    // Quiz1
+
+    function add(num1, num2) {
+      return num1 + num2;
+    }
+    console.log(add(1,2));
+
+    // Answer1
+    const add2 = (num1, num2) => num1 + num2;
+    console.log(add2(1,2));
+
+    // Quiz2
+    function ask(question, yes, no) {
+      if(confirm('동의하십니까?')) yes();
+      else no();
+    }
+    
+    ask('동의하십니까?', 
+      function () { alert('동의하셨습니다.');},
+      function () { alert('취소 버튼을 누르셨습니다.');}
+    );
+
+    // Answer2
+    const ask2 = (question, yes, no) => {
+      if (confirm(question)) yes();
+      else no();
+    }
+
+    ask2 ('동의하십니까?', 
+      yes => {alert('동의하셨습니다.');}, 
+      no => {alert('취소 버튼을 누르셨습니다.')}
+    );
+
+
+
+    // Quiz3
+    function addMember(name) {
+      return {
+        no: 0,
+        name: name
+      };
+    }
+    const member = addMember('김재');
+    console.log(member);
+
+    // Answer3
+    const addMember2 = name => ({
+      no : 0,
+      name: name
+    });
+    const member2 = addMember2('재경');
+    console.log(member2);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

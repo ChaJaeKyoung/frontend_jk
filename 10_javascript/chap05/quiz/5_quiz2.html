@@ -23,23 +23,61 @@
     let result = pow(x, n);
     document.write(result);
 
+    // function pow(a, b) {
+    //   let check = a;
+    //   if(b==parseInt(b) && b >= 1) {
+    //     if (b === 1) {
+    //       return check;
+    //     } else {
+    //       for(let i = 1 ; i < b; i++) {
+    //         check = check * a;
+    //         console.log(check);
+    //       }
+    //       return check;
+    //     }
+    //   } else {
+    //     alert('n값은 1 이상의 자연수를 입력해 주세요!');
+    //     location.reload();
+    //   }
+    // }
+
+    // if(b===1) 줄임
     function pow(a, b) {
       let check = a;
       if(b==parseInt(b) && b >= 1) {
-        if (b === 1) {
-          return check;
-        } else {
+      
           for(let i = 1 ; i < b; i++) {
             check = check * a;
             console.log(check);
           }
           return check;
-        }
+        
       } else {
         alert('n값은 1 이상의 자연수를 입력해 주세요!');
         location.reload();
       }
     }
+
+
+    // <원하는 값이 아님>
+    // function pow(a, b) {
+    //   if(b==parseInt(b) && b >= 1) {
+    //     if (b === 1) {
+    //       return a;
+    //     } else {
+    //       for(let i = 1 ; i < b; i++) { // 2,3 => 2 * 2 * 2 , => 2 * 2 * 4 
+    //         console.log('a: ', a);
+    //         a = a * a;
+    //         console.log(a);
+    //       }
+    //       return a;
+    //     }
+    //   } else {
+    //     alert('n값은 1 이상의 자연수를 입력해 주세요!');
+    //     location.reload();
+    //   }
+    // }
+    // 곱해지는 값 자체가 계속 변해서 기하급수적으로 결과값이 커지게 됨!
 
 
 
