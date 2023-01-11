@@ -68,7 +68,12 @@
     // 2. 배열 구조 분해 할당
     // 배열을 구조 분해할 때는 객체와는 달리 {}가 아닌 []를 사용
     const person = ['Goni', 'Kim', 25]; 
-    const [ name, surname, age ] = person;
+
+
+    // const testName = personp[0];
+    // const testSurname = personp[1];
+    // const testAge = personp[2];
+    const [ name, surname, age ] = person; // 위 3줄 절차를 한줄로 간편하게
     console.log(name, surname, age);
 
     // 생성하려는 변수의 수가 배열의 요소보다 적다면...?
@@ -87,6 +92,8 @@
     // 구조 분해 할당을 사용하면 변수의 값을 쉽게 서로 교체 할 수 있다.
     let hungry = 'yes';
     let full = 'no';
+    // const hungry = 'yes'; // const 타입은 값의 재 할당이 안되기 때문에 불가능
+    // const full = 'no';
     console.log(hungry, full);
 
     // 특정 상황에서 변수값을 교체해야 될 때 사용 할 수 있음
