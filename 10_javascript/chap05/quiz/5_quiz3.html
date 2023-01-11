@@ -37,6 +37,9 @@
 
     // 다시 처음부터!!
 
+    // 1. setIntervl 1초마다 함수 실현
+    // 2. 만약 from이 to보다 크다면? from을 하나씩 빼다가 from이 to랑 같아지면 멈춰라!
+
     function printNumbers(from, to) {
       let id = setInterval(function abc () {
         if(from > to) {
@@ -52,6 +55,32 @@
       }, 1000);
     }
 
+    // 쌤 풀이
+    // 한글로 풀이(플로우 차트를 글로 적기)
+    // 1) 함수 printNumbers(from, to) 선언하기
+    // 2) 1초 간격으로(setInterval(f, 1000)) from 값을 출력시키기
+    // 3) from 값을 1씩 증가시키기 (+ 1, ++)
+    // 4) to 값까지만(조건: from === to, from >= to) 출력하고 멈추기(clearInterval())
+
+    printNumbers0(5, 10);
+    function printNumbers0(from, to) {
+      const timerId = setInterval(function () {
+        console.log(from);
+        if(from >= to) {
+          clearInterval(timerId);
+        }
+        from++;
+      }, 1000);
+    }
+
+
+    // 한기능을 원하는 기능을 먼저 만들고
+    // 테스트 하고 넘어가고
+    // 마지막에 버그잡고 넘어가고~
+    // 시간이 남으면 다시 돌아와서 유효성검사 또해서 업데이트 하는 방식으로 해야된다!
+
+
+    // Jinne 풀이
     // function printNumbers2(from, to) {
     //   debugger;
     // timer = setInterval(function() {
@@ -66,8 +95,7 @@
 
     
 
-    // 1. setIntervl 1초마다 함수 실현
-    // 2. 만약 from이 to보다 크다면? from을 하나씩 빼다가 from이 to랑 같아지면 멈춰라!
+    
 
   </script>
 </head>
