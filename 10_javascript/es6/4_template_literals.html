@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>template literals</title>
+  <script>
+    // 템플릿 리터럴
+    // 백틱(``) 기호를 사용하여 문자열 삽입
+
+    // 1. 문자열 삽입
+    // ES5
+    var name = 'goni';
+    var greeting = 'Hello my name is ' + name;
+    
+    console.log(greeting);
+    
+    // ES6
+    var name2 = 'goni';
+    var greeting2 = `Hello my name is ${name}`;
+    
+    console.log(greeting2);
+
+    // 2. 표현식 삽입
+    // ES5
+    var exp1 = 1; 
+    var exp2 = 10; 
+    console.log('1 * 10 is ' + (exp1 * exp2));
+    
+    // ES6
+    var exp3 = 1; 
+    var exp4 = 10; 
+    console.log(`1 * 10 is ${exp3 * exp4}`);
+    
+    // 3. 여러 줄 문자열 생성
+    // ES5: 각 행마다 백슬래시를 삽입해야 함 
+    // 백슬래시 (\) : 띄어쓰기
+    // 백슬래시n (\n) : 줄바꿈
+    var text = 'hello, \
+my name is goni \
+how are you?'; // 엔터를 치면 구문에러가 난다.
+    console.log(text); // 해결방법은 \ 을 넣어주면 됨 -> 한문장으로 인식
+
+    // ES6: 전체를 백틱으로 감싸기만 하면 됨
+    const content = `hello,
+my name is goni
+how are you?`;
+    console.log(content); // 대신에 여러문장으로 인식이 됨
+
+
+    // 모던 자바스크립트 quiz4.3 p83
+    let str = 'this is a very long text\n' + 'a very long text';
+    console.log(str);
+
+    let str2 = `this is a very long text
+a very long text`;
+    console.log(str2);
+    </script>
+</head>
+<body>
+  
+</body>
+</html>
