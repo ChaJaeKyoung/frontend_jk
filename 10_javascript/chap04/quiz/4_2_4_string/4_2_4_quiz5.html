@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <input type="file">
+  <input type="file" multiple>
   <!-- <input type="file" multiple> 여러개의 파일 선택가능  -->
 
 
@@ -28,6 +28,12 @@
     //   console.log(fileInput.files[0]);
     // });
 
+
+    // 문제6  es6_8_array_metod.html문제
+    // FileList 들을 배열로 바꿔보세요
+
+
+
     // 풀이5
     const imgFileExt = ['jpg', 'png', 'gif', 'jpeg'];
     let fileName;
@@ -41,7 +47,8 @@
       console.log(fileInput.files[0].name); // File 객체 중 0번키 값 , 객체는 .0이라고 접근도 가능하고 대괄호로 [0]접근 가능한데 .0을 찍으면 오류가 나서 [0]로 접근한다 object의 대괄호표기법
       fileName = fileInput.files[0].name;
       // console.log(fileName);
-      
+      console.log(Array.from(fileInput.files)); //FileList 객체를 실제 배열로 변환
+
       //searchExt = fileName.substr(fileName.length - 3,3); //4글자 확장자는 검색할 수 없는 문제 발생
       let checkIndex = fileName.lastIndexOf('.') + 1; // .부터 가지고 오기 때문에 +1 을 해 줘야 함
       searchExt= fileName.substr(checkIndex).toLowerCase();// 끝에 확장자 추출 및 소문자로 변경
@@ -69,6 +76,12 @@
         alert('확장자를 확인 해 주세요!');
       }
     })
+
+
+    // 문제6 풀이
+
+    console.log(Array.from(fileInput.files)); //FileList 객체를 실제 배열로 변환 //50번째 줄에서 확인
+  
 
     //0. check에 담겨진 true 값을 파일을 넣을 때마다 리셋해야 되므로 지역변수로 선언
     //1.파일명에서 끝에 세자리 추출 , 
