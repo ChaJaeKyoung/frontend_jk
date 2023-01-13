@@ -68,13 +68,9 @@
     // 빈 객체를 생성
     const person6 = {};
 
-    person6[name] = 25;
-
-
     // 객체를 업데이트 (객체에 속성을 추가)
-    console.log(person6[name]);
-
-    person6[name] = 'Goni';
+    console.log(person6[name]); // 아직 빈 객체 상태
+    person6[name] = 'Goni'; // 빈 객체에 동적 속성명을 가진 값을 추가
 
     console.log(person6.myname);
     console.log(person6);
@@ -98,7 +94,7 @@
         age,
         color
       };
-      console.log(person.color);
+      console.log(person.color);// error : color is not defined
     }
     quiz_10_3();
 
