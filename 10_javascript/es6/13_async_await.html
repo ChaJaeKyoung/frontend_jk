@@ -160,6 +160,61 @@
     asyncFunc();
 
     // Quiz 19.
+    // 프로미스 체이닝 예제3:
+    // 콜백 지옥 예제2를 프로미스로 리팩토링 하기
+    // 리팩토링이란? 기존코드를 개선해서 다시 만드는 행위
+
+
+    // 콜백 지옥의 예2 리팩토링
+    const loginUser = (id, password) => {
+      return new Promise((resolve, reject) => {
+        // 네트워크 통신을 하는 것처럼 꾸밈(setTimeout 쓴 이유)
+        setTimeout(() => {
+          if (id === 'goni' && password === '1234') {
+            // 로그인과 관련된 작업을 하고 서버에서 받아온 유저 정보(여기서는 그냥 id)를 promise객체의 resolve함수에 전달
+            resolve(id); 
+          } else {
+            reject(new Error('존재하지 않음'));
+          }
+        }, 2000);
+      });
+    };
+
+    const getRoles = (userId) => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (userId === 'goni') {
+            // 권한을 가져오는 작업을 하고 받아온 권한 정보를 promise객체의 resolve함수에 전달
+            resolve({ name: 'JH Kim', role: 'admin' });
+          } else {
+            reject(new Error('접근 권한 없음'));
+          }
+        }, 1000);
+      })
+    };
+
+    const id = prompt('아이디를 입력하세요.');
+    const password = prompt('비밀번호를 입력하세요.');
+
+    // loginUser(id,password)
+    //   .then(userID => { // 로그인이 성공하면 그러면
+    //     return getRoles(userID); // userID 값을 통해 권한 정보를 얻는 getRoles()를 호출
+    //   })
+    //   .then(userInfo => { // 권한 정보를 얻어오면 그러면 alert창 띄움
+    //     alert(`Welcome ${userInfo.name} (${userInfo.role})`);
+    //   })
+    //   .catch(err => { // 에러 핸들링 - 에러가 발생하면 catch해서 알려주겠다.
+    //     console.error(err);
+    //   });
+    
+    
+    async function myAsyncFunction(id, password) {
+      await loginUser(res)
+      .then(res => {
+        await getRoles(res);
+      })
+    }
+    
   </script>
 </head>
 <body>
