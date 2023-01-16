@@ -192,7 +192,7 @@
       })
       .catch(err => { // 에러 핸들링 - 에러가 발생하면 catch해서 알려주겠다.
         console.error(err);
-      })
+      });
     
     // 아래 과정을 간편하게 위로 대체
     // loginUser(id, password, userId => {
@@ -206,7 +206,43 @@
     // }, error => {
     //   console.error(error);
     // });
- 
+    
+    // Quiz 13.2 
+    // 즉시 성공 처리되어 콘솔에 무언가를 출력하는 간단한 프로미스를 작성해라
+    const quizPromise = new Promise((resolve, reject) => {
+      resolve('success!');
+    });
+    
+    // quizPromise
+    //   .then(data => {
+    //     return console.log(data);
+    //   });
+
+    quizPromise
+      .then(data => console.log(data));
+
+    // Quiz 13.4
+    // 다음 코드의 올바른 출력은?
+
+    function forQuizPromise() {
+      return new Promise((resolve, reject) => {
+        reject();
+      });
+    }
+
+    forQuizPromise()
+      .then(() => {
+        console.log(1);
+      })
+      .then(() => {
+        console.log(2);
+      })
+      .catch(() => {
+        console.log(3);
+      })
+      .then(() => { // catch로 받은 결과값도 결국 promise이므로 그 다음 then이 실행된다.
+        console.log(4);
+      });
 
   </script>
 </head>
