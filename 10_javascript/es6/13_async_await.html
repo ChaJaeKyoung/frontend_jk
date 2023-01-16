@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>async await</title>
+  <script>
+    // 3. async/await (ES2017)
+    // "프로미스를 작성하기 쉽게 만듭니다."
+    // async는
+    // - 함수가 프로미스를 반환하도록 함
+    // - 함수 앞에 붙이는 키워드
+    // await는
+    // - 함수가 프로미스를 기다리게 함
+    // - async 함수 내에서만 사용할 수 있음
+    // - 함수 실행을 일시 중지하고 프로미스 결과(성공 또는 실패)를 기다리도록 함
+    
+    // 비동기 함수 만들어보기 예제
+    // 일반적인 함수
+    function fetchData() {
+      // 네트워크 요청을 통해 시간이 걸리는 작업...
+      return new Promise((resolve, reject) => {
+        resolve('네가 원하는 데이터');
+      });  
+    }
+
+    fetchData().then(res => {
+      console.log(res);
+    });
+
+    // 비동기 함수를 만들기 위해 함수 앞에 async 키워드를 붙이면 자동으로 프로미스로 반환됨 
+    async function fetchData2() {
+      // 네트워크 요청을 통해 시간이 걸리는 작업...
+      return '네가 원하는 데이터'; 
+      // 자동적으로 resolve로 반환된다!
+      // 위와같은 코드
+    }
+    fetchData2().then(res => {
+      console.log(res);
+    });
+
+    // function supper() {
+    //   나오늘 저녁으로 (민수)가 정하는거 먹을거야.
+    //   민수는 지영이가 먹고싶은거 먹는데
+    //   지영이한테 전화해봐
+
+    //   지영이는 다이어트 중이라 195칼로리 안넘는것만 먹고싶다는데?
+    //   근데 민수는 9시 이후에 온대
+    //   9시 이후에 배달되는 곳 중에 195칼로리가 넘지 않는 음식으로 시키자
+    // }
+
+    // 3-1) 프로미스를 사용하는 일반적인 방식과 async/await로 리팩터링 하기
+    // 예제1
+    function walk(amount) {
+      return new Promise((resolve, reject) => {
+        if(amount < 500) {
+          reject('the value is too small');
+        }
+        setTimeout(() => {
+          resolve(`you walked for ${amount}ms`);
+        }, amount);
+      }); 
+    }
+
+    // walk(1000)
+    // .then(res => {
+    //   console.log(res);
+    //   return walk(500);
+    // })
+    // .then(res => {
+    //   console.log(res);
+    //   return walk(700);
+    // })
+    // .then(res => {
+    //   console.log(res);
+    //   return walk(800);
+    // })
+    // .then(res => {
+    //   console.log(res);
+    //   return walk(100);
+    // })
+    // .then(res => {
+    //   console.log(res);
+    //   return walk(400);
+    // })
+    // .then(res => {
+    //   console.log(res);
+    //   return walk(600);
+    // });
+
+    // 예제1 리팩토링
+    async function go() {
+      // 프로미스가 완료될 때까지 기다리기 위해 await 키워드를 사용
+      const res = await walk(500); // 0.5초 기다림
+      console.log(res);
+      const res2 = await walk(900); // 0.9초 기다림
+      console.log(res2);
+      const res3 = await walk(600); // 0.6초 기다림
+      console.log(res3);
+      const res4 = await walk(700); // 0.7초 기다림
+      console.log(res4);
+      const res5 = await walk(400); 
+      console.log(res5);
+      // const res6 = await walk(800); 
+      // console.log(res6);
+    }
+    go();
+      // 비고
+      // const res = await walk(500);
+      // console.log(res) //함수 선언 안하고 밖에서 사용하면 에러가 남
+      // await는 비동기 함수 내에서만 사용 가능
+
+    // 예제2
+    // 깃허브API로 특정 깃허브 사용자 정보 조회
+    fetch('https://api.github.com/users/ChaJaeKyoung')
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        // 성공 시 데이터를 출력
+        console.log(res);
+      })
+      .catch(res => {
+        // 실패 시 오류 출력
+        console.error(err);
+      });
+
+    // 예제2 리팩토링
+    const getGithubUserInfo = async username => {
+      const res = await fetch(`https://api.github.com/users/${username}`); 
+      const userInfo = await res.json();
+      console.log(userInfo);
+    };
+    getGithubUserInfo('ChaJaeKyoung');
+
+    // 3-2) 오류 처리
+    // 일반적인 프로미스에서는 catch()를 사용하여 프로미스가 반환하는 오류들을 처리
+    // async/await도 비슷 - try/catch 구문 사용
+    
+    async function asyncFunc() {
+      try {
+        // 에러 발생 가능한 코드들을 여기에..
+        const response = await fetch('api-url');
+        console.log(response);
+        const flag = 1;
+        if (flag === 1) {
+          throw new Error(`${response.status} (${response.statusText}) `);
+        } else if (flag === 2) {
+          throw new Error(`2`);
+        } else if (flag === 3) {
+          throw new Error(`3`);
+        } else if (flag === 4) {
+          throw new Error(`4`);
+        }
+      } catch (err) { // throw 를 만나자마자 바로 catch로 반환됨
+        console.error(err); 
+      }
+    }
+    asyncFunc();
+
+    // Quiz 19.
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
