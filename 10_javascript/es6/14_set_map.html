@@ -104,7 +104,7 @@
     familyMap.set('Dad', 40);
     familyMap.set('Mom', 40);
     familyMap.set('Dad', 20);
-    familyMap.set('Son', 20);
+    familyMap.set('Son', 20); // 'Dad' 가 key이므로 중복이 안되고 value값인 숫자만 덮어씌워짐!
 
     // forEach() 사용
     familyMap.forEach((value, key) => {
