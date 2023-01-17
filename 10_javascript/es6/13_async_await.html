@@ -141,7 +141,7 @@
     async function asyncFunc() {
       try {
         // 에러 발생 가능한 코드들을 여기에..
-        const response = await fetch('api-url');
+        const response = await fetch('api-url'); // 404는 에러는 아니고 응답이 정상적으로 온 것
         console.log(response);
         const flag = 1;
         if (flag === 1) {
