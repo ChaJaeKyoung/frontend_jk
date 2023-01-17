@@ -208,12 +208,28 @@
     //   });
     
     
-    async function myAsyncFunction(id, password) {
+    // 0. 차차가 하던 것 실패..
+    // async function myAsyncFunction(id, password) {
     
-    }
+    // }
     // prompt에서 id와 password를 입력받은 후
     // loginUser에 넣어놓고 결과값을 받은 후 
     // getRoles 를 호출하고  
+
+
+    // 1. 가장 먼저 해야될 것: async 함수 만들기
+    const loginAndGetRoles = async () => {
+      try {
+        const userId = await loginUser(id, password);
+        const userInfo = await getRoles(userId); // 위의 결과값을 가지고 getRoles 호출
+        alert(`Welcome ${userInfo.name} (${userInfo.role})`);
+      } catch(err) {
+        console.error(err);
+      }
+    };
+    loginAndGetRoles();
+
+
   </script>
 </head>
 <body>
