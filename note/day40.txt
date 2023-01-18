@@ -173,6 +173,7 @@ A. 리액트 사용시 <!-- lang, favicon, font, title정도만 바꿔준다 -->
 
 결과: localhost:3000 접속 되었고, note폴더에 새로운 package-lock.json 파일이 생성되었다 (최상위폴더쪽에도 package-lock.json파일이 생성되었다.)
 처리: 새로 생성된 package-lock.json파일을 두개 다 지웠다.
+회은님솔루션: my-app 폴더 에서 npm install하니 package-lock파일은 생성되지 않았다.
 
 
 
