@@ -22,10 +22,13 @@ import UserInfo from "./UserInfo";
 
 
 // 쌤의 원본과 비교
-function Commnet(props) {
+function Comment(props) {
+  console.log(props);
   return (
     <div className="comment">
-      <UserInfo user={props.author} />
+      {/* index.js에서 객체로 보낸 데이터를 UserInfo 컴포넌트에 객체로 보내고싶음 */}
+      <UserInfo user={props} />
+        {/* {props.author} */}
       <div className="cmment-text">
         {props.text}
       </div>

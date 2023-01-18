@@ -34,12 +34,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // );
 root.render(
   // 데이터는 부모 컴포넌트에서 시작한다.
-  <Comment
-    author="Jenny"
-    text="추출용 예제 데이터 데이터는 부모 컴포넌트에서 시작한다."
-    date="23-01-18"
-  />
-);
+      <Comment
+        name="Jenny"
+        text="추출용 예제 데이터 데이터는 부모 컴포넌트에서 시작한다."
+        date="23-01-18"
+        avatarUrl="https://picsum.photos/50/50 "
+      />
+    );
+  
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
