@@ -6,3 +6,10 @@
 
 function Profile({viewCount, name, introduction}) {
 }
+
+
+
+=============
+크롬에서 React Developer Tools 설치 후 
+개발자모드 들어가면 state 확인 , 성능확인 탭이 생겨있고
+크롬 확장팩 아이콘 중 리엑트 모양이 있는데 리엑트로 만들어진 사이트에 들어가면 색이 바뀐다

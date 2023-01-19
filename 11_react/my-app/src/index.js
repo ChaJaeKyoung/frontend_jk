@@ -9,6 +9,9 @@ import Clock from './chapter4/Clock';
 import PropUse from './chapter5/5.3/PropUse';
 import Comment from './chapter5/5.6_컴포넌트추출/Comment';
 import CommentList from './chapter5/CommentList';
+import NotificationList from './chapter6/NotificationList';
+import Counter from './chapter7/7.2/Counter';
+import CounterEffect from './chapter7/7.3/CounterEffect';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -23,6 +26,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // 4장 예제
 // 1초 마다 Clock 컴포넌트를 root div에 렌더링 하는 코드
+// 실제 setInterval()을 rander에 쓰지 않고 Clock 에 넣어서 실행
+// chapter6의 NotificationList.jsx 참조
 // setInterval(() => {
 //   root.render(
 //     <Clock />
@@ -44,10 +49,22 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //   />
 // );
 // 댓글예제
-root.render(
-  <CommentList />
-);
+// root.render(
+//   <CommentList />
+// );
 
+// 6장 예제
+// root.render(
+//   <NotificationList />
+// );
+
+// 7장 예제
+// root.render(
+//   <Counter />
+// );
+root.render(
+  <CounterEffect />
+);
 
   
 

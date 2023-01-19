@@ -1,4 +1,4 @@
-import Avatar from "./Avatar";
+import Avatar from "./Avatar"; // warning 이유? import했는데 안써서 알려줌
 import UserInfo from "./UserInfo";
 // 원본 
     // <div className="comment">
