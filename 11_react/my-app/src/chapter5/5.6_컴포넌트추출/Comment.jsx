@@ -27,7 +27,8 @@ function Comment(props) {
   return (
     <div className="comment">
       {/* index.js에서 객체로 보낸 데이터를 UserInfo 컴포넌트에 객체로 보내고싶음 */}
-      <UserInfo user={props} />
+      {/* key = value 로 넘어감 */}
+      <UserInfo userInfo = {props} />
         {/* {props.author} */}
       <div className="cmment-text">
         {props.text}

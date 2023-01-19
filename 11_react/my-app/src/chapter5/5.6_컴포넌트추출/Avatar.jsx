@@ -6,8 +6,8 @@ function Avatar(props) {
     // props.author.avatarUrl -> props.user.avatarUrl로 변경
     
     <img className ="avatar" 
-      src={props.user.avatarUrl} 
-      alt={props.user.name} 
+      src={props.userInfo.avatarUrl} 
+      alt={props.userInfo.user} 
     />
     
   );

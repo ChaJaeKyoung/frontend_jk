@@ -1,0 +1,8 @@
+면접은 가상돔의 원리
+순수함수인지?(리엑트 내부적인 원리)는 잘 안물어보지만
+알고 있으면 좋다
+
+구조분해할당으로 props로 받지 않고 key값자체로 받을 수 있다.
+
+function Profile({viewCount, name, introduction}) {
+}

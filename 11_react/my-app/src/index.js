@@ -8,6 +8,7 @@ import Library from './chapter3/Library';
 import Clock from './chapter4/Clock';
 import PropUse from './chapter5/5.3/PropUse';
 import Comment from './chapter5/5.6_컴포넌트추출/Comment';
+import CommentList from './chapter5/CommentList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -32,15 +33,22 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
 //   <PropUse />
 // );
+// 5장 5.6 예제 데이터
+// root.render(
+//   // 데이터는 부모 컴포넌트에서 시작한다.
+//   <Comment
+//     user="Jenny"
+//     text="추출용 예제 데이터: 데이터는 부모 컴포넌트에서 시작한다."
+//     date="23-01-18"
+//     avatarUrl="https://picsum.photos/100/100 "
+//   />
+// );
+// 댓글예제
 root.render(
-  // 데이터는 부모 컴포넌트에서 시작한다.
-      <Comment
-        name="Jenny"
-        text="추출용 예제 데이터 데이터는 부모 컴포넌트에서 시작한다."
-        date="23-01-18"
-        avatarUrl="https://picsum.photos/50/50 "
-      />
-    );
+  <CommentList />
+);
+
+
   
 
 // If you want to start measuring performance in your app, pass a function
