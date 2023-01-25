@@ -1,17 +1,4 @@
-// // 동일한 웹사이트에서 연락처 목록을 제공하는데 이 때 온라인인 사용자의 이름은 초록색으로 표시해주고 싶다고 가정
-// // UserStatus 컴포넌트에서 사용한 로직과 동일한 로직을 넣어야 함
-
-// function UserListItemEx(props) {
-//   return (  
-
-//   );
-// }
-
-// export default UserListItemEx;
-
-// ===============쌤부분=======================
-
-// 동일한 웹사이트에서 연락처 목록을 제공하는데 이때 온라인인 사용자의 이름은 초록색으로 표시해주고 싶다고 가정
+// 동일한 웹사이트에서 연락처 목록을 제공하는데 이 때 온라인인 사용자의 이름은 초록색으로 표시해주고 싶다고 가정
 // UserStatus 컴포넌트에서 사용한 로직과 동일한 로직을 넣어야 함
 function UserListItemEx(props) {
   // const [isOnline, setIsOnline] = useState(null);
