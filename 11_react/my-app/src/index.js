@@ -13,6 +13,14 @@ import NotificationList from './chapter6/NotificationList';
 import Counter from './chapter7/7.2/Counter';
 import CounterEffect from './chapter7/7.3/CounterEffect';
 import SetStateMerge from './chapter7/7.2/SetStateMerge';
+import EffectSummary from './chapter7/7.3/EffectSummary';
+import EffectContainer from './chapter7/7.3/EffectContainer';
+import TimerContainer from './chapter7/7.3/TimerContainer';
+import HeavyCalculator from './chapter7/7.4/HeavyCalculator';
+import ParentComponent from './chapter7/7.5/ParentComponent';
+import TextInputWithFocusButton from './chapter7/7.6/TextInputWithFocusButton';
+import ComponentVariable from './chapter7/7.6/ComponentVariable';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -65,18 +73,36 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //   <Counter />
 // );
 // 7.2-2
-root.render(
-  <SetStateMerge />
-)
+// root.render(
+//   <SetStateMerge />
+// )
 
 // 7.3
 // root.render(
 //   <CounterEffect />
 // );
 
-
-
-  
+// root.render(
+//   <EffectSummary />
+// )
+// root.render(
+//   <EffectContainer />
+// )
+// root.render(
+//   <TimerContainer/>
+// )
+// root.render (
+//   <HeavyCalculator />
+// )
+// root.render (
+//   <ParentComponent />
+// )
+// root.render (
+//   <TextInputWithFocusButton />
+// )
+root.render (
+  <ComponentVariable />
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

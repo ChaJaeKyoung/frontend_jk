@@ -29,6 +29,8 @@ function CounterEffect(props) {
       document.title = 'Init Title';
     };
   }, []);
+  // 뒷정리 함수는 effect효과를 초기화 시켜준다.
+  // 필수적으로 사용하는 것이 아닌 필요할 때만 사용해준다.
 
   return (
     <div>
