@@ -12,6 +12,7 @@ import CommentList from './chapter5/CommentList';
 import NotificationList from './chapter6/NotificationList';
 import Counter from './chapter7/7.2/Counter';
 import CounterEffect from './chapter7/7.3/CounterEffect';
+import SetStateMerge from './chapter7/7.2/SetStateMerge';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -59,12 +60,21 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // );
 
 // 7장 예제
+// 7.2-1
 // root.render(
 //   <Counter />
 // );
+// 7.2-2
 root.render(
-  <CounterEffect />
-);
+  <SetStateMerge />
+)
+
+// 7.3
+// root.render(
+//   <CounterEffect />
+// );
+
+
 
   
 

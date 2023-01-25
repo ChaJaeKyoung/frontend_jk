@@ -3,7 +3,7 @@ cd친 후 한칸 띄고 경로쓰기
 예) cd 11_react 
 tab을 누르면 자동으로 경로 목록이 뜸
 
-
+CRA : create react app 이용해서 react프로젝트 만듦
 npx create-react-app 프로젝트명
 예) npx create-react-app my-app
 
