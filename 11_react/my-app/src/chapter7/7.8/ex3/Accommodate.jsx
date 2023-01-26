@@ -5,7 +5,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import useCounter from "./useCounter";
 
+// 함수와 관련없는 데이터이기 때문에 맨 위로 빼줌 - 완전 독립적인 값 - 전역적인 값 cf) ref는 지역변수
 const MAX_CAPACITY = 10; // 최대 카운트 수 , 관례적으로 상수는 전부 대문자로 작성!
+
 
 function Accommodate() {
   const [isFull, setIsFull] = useState(false);
@@ -30,6 +32,8 @@ function Accommodate() {
   }, [count]);
   return ( 
     // 화면에 보여질 엘리먼트 작성
+    // 자바스크립트는 {}중괄호 안에 작성해야 함!
+    // style은 {} 객체 형식으로 넘겨줘야 함! 
     <div style={{ padding: 16 }}>
       <p>{`총 ${count}명 수용했습니다.`}</p>
       {/* button은 인터렉션 엘리먼트 이므로 disalbed 속성을 사용할 수 있다. true이면 사용불가, false면 사용가능 */}
