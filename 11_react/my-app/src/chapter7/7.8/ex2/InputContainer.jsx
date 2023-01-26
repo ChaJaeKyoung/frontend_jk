@@ -9,12 +9,15 @@ function InputContainer() {
   // };
 
   // 위의 로직을 useInput hook으로 만듦 -> useInput 이용
-  const [inputValue, handleChange] = useInput('');
+  const [inputValue, handleChange, reset] = useInput('');
 
-  // input벨류를 확인버튼을 눌렀을 때 alert창에 띄우기
+  // Q. input벨류를 확인버튼을 눌렀을 때 alert창에 띄우기
+  // 데이터를 서버에 보내기 전 작업은 컴포넌트마다 다를 수 있기 때문에
+  // reset만 공통 hook으로 만들어주고 끌어다 썼다.
   const handleSubmit = () => {
     alert(inputValue);
     // setInputValue('');
+    reset();
   };
 
   return (  

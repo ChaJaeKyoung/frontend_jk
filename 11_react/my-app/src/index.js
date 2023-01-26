@@ -21,6 +21,7 @@ import ParentComponent from './chapter7/7.5/ParentComponent';
 import TextInputWithFocusButton from './chapter7/7.6/TextInputWithFocusButton';
 import ComponentVariable from './chapter7/7.6/ComponentVariable';
 import InputContainer from './chapter7/7.8/ex2/InputContainer';
+import Accommodate from './chapter7/7.8/ex3/Accommodate';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -105,8 +106,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //   <ComponentVariable />
 // )
 
+// root.render (
+//   <InputContainer />
+// )
 root.render (
-  <InputContainer />
+  <Accommodate />
 )
 
 // If you want to start measuring performance in your app, pass a function
