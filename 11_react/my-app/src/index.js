@@ -31,6 +31,12 @@ import Mailbox from './chapter9/9.3/Mailbox';
 import LoginControlRefactoring from './chapter9/9.3/LoginControlRefactoring';
 import MainPage from './chapter9/9.4/MainPage';
 import LandingPage from './chapter9/LandingPage';
+import NumberList from './chapter10/10.1/NumberList';
+import AttendanceBook from './chapter10/AttendanceBook';
+import NameForm from './chapter11/11.2/NameForm';
+import EssayForm from './chapter11/11.3/EssayForm';
+import FlavorForm from './chapter11/11.3/FlavorForm';
+import FileInput from './chapter11/11.3/FileInput';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -129,16 +135,50 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //   // <ConfirmButton />
 // )
 // 9장 예제
-const messages = ['React', 'Re: React', 'Re:Re: React', '', '(Ad) Buy one get one'];
-root.render (
-  // <Greeting isLoggedIn={true} />
-  // <LoginControl/>
-  // <Mailbox unreadMessages={messages}/>
-  // <LoginControlRefactoring />
-  // <MainPage />
-  <LandingPage />
-)
+// const messages = ['React', 'Re: React', 'Re:Re: React', '', '(Ad) Buy one get one'];
+// root.render (
+//   // <Greeting isLoggedIn={true} />
+//   // <LoginControl/>
+//   // <Mailbox unreadMessages={messages}/>
+//   // <LoginControlRefactoring />
+//   // <MainPage />
+//   // <LandingPage />
+  
+// )
+// 10장 예제
+// const numbers = [1, 2, 3, 4, 5];
+// const students = [
+//   {
+//     id: 'a1',
+//     name: '김재현',
+//   },
+//   {
+//     id: 'a2',
+//     name: '유재석',
+//   },
+//   {
+//     id: 'a3',
+//     name: '이이경',
+//   },
+//   {
+//     id: 'a4',
+//     name: '이미주',
+//   },
+// ]
+// root.render (
+//   // <NumberList numbers={numbers} />
+//   // 이렇게만 보내면 key값이 없어서 warning이 뜬다
+//   // Warning: Each child in a list should have a unique "key" prop.
+//   // <AttendanceBook students={students}/>
+// )
 
+// 11장 예제
+root.render (
+  // <NameForm />
+  // <EssayForm />
+  // <FlavorForm />
+  <FileInput />
+)
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
