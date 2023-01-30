@@ -27,6 +27,25 @@ function SignUpRefactoring() {
   
   const [gender, setGender] = useState('men');
   const selectValue = useRef(null);
+  // //return (
+  //   <div className="App">
+  //     <h1>Select in React</h1>
+  //     <div>
+  //       <select onChange={handleSelect} value={Selected}>
+  //         {selectList.map((item) => (
+  //           <option value={item} key={item}>
+  //             {item}
+  //           </option>
+  //         ))}
+  //       </select>
+  //       <hr />
+  //       <p>
+  //         Selected: <b>{Selected}</b>
+  //       </p>
+  //     </div>
+  //   </div>
+  // );
+  // }
   const handleChangeGender = (e) => {
     
     setGender(e.target.value) 
