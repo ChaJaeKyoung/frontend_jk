@@ -39,11 +39,18 @@ function SignUpRefactoring() {
     // } else {
     //   genderFrint='여자'
     // }
-    console.log(selectValue);
-    console.log(selectValue.current[0].textContent);
-    console.log(selectValue.current[1].textContent);
-    alert(`이름: ${name}, 성별: ${selectValue.current.textContent}`);
+    // console.log(selectValue);
+    // console.log(selectValue.current[0].textContent);
+    // console.log(selectValue.current[1].textContent);
+    // alert(`이름: ${name}, 성별: ${selectValue.current.textContent}`);
+
+    var select = document.getElementById("chacha");
+    // var value = select.options[select.selectedIndex].value;
+    var text= select.options[select.selectedIndex].text;
+    alert(`이름: ${name}, 성별: ${text}`);
+    //https://stackoverflow.com/questions/30306486/get-selected-option-text-using-react-js
   };
+
 
   return (  
     <>
@@ -62,7 +69,7 @@ function SignUpRefactoring() {
           onChange={handleChangeGender}
           value={gender}
           ref={selectValue}
-          
+          id='chacha'
         >
           <option value="men">
             남자
