@@ -38,6 +38,9 @@ import EssayForm from './chapter11/11.3/EssayForm';
 import FlavorForm from './chapter11/11.3/FlavorForm';
 import FileInput from './chapter11/11.3/FileInput';
 import Reservation from './chapter11/11.4/Reservation';
+import ReservationRefactoring from './chapter11/11.4/ReservationRefactoring';
+import SignUp from './chapter11/SignUp';
+import SignUpRefactoring from './chapter11/SignUpRefactoring';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -179,7 +182,10 @@ root.render (
   // <EssayForm />
   // <FlavorForm />
   // <FileInput />
-  <Reservation />
+  // <Reservation />
+  // <ReservationRefactoring />
+  // <SignUp />
+  <SignUpRefactoring />
 )
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
