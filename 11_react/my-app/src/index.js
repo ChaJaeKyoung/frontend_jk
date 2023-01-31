@@ -41,6 +41,7 @@ import Reservation from './chapter11/11.4/Reservation';
 import ReservationRefactoring from './chapter11/11.4/ReservationRefactoring';
 import SignUp from './chapter11/SignUp';
 import SignUpRefactoring from './chapter11/SignUpRefactoring';
+import Calculatror from './chapter12/Calculator';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -185,7 +186,8 @@ root.render (
   // <Reservation />
   // <ReservationRefactoring />
   // <SignUp />
-  <SignUpRefactoring />
+  // <SignUpRefactoring />
+  <Calculatror/>
 )
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
