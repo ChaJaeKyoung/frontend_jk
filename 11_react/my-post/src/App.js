@@ -90,11 +90,25 @@ function App() {
                   <span style={{ fontSize: 22 }} 
                     onClick={(e) => {
                       e.stopPropagation();
-                      console.log('44');
-                      const postsClone = [...posts];
-                      
-                      postsClone.splice(index,1);
-                      setPosts(postsClone);
+                      // 방법1. splice() 이용
+                      // const postsClone = [...posts];
+                      // postsClone.splice(index, 1);
+                      // setPosts(postsClone);
+
+                      // 방법2. 배열의 filter() 함수 사용
+                      // 필터함수는 삭제시키고 새로운 배열 만들기 때문에, 배열을 복제하지 않아도 됨.
+                      const filteredPosts = posts.filter((value, idx) => {
+                        return index !== idx;
+                        // true로 리턴된 값들만 새로운 배열로 반환
+                      });
+                      setPosts(filteredPosts);
+
+                      // 삭제 시 해당 좋아요 카운트도 같이 삭제
+                      const likeClone = [...likeCount];
+                      likeClone.splice(index,1);
+                      setLikeCount(likeClone);
+          
+
                   }}>🗑️</span>
                 </div>
               </div>
