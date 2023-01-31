@@ -1,0 +1,26 @@
+event bubbling 현상 : 
+
+div> p > span
+
+span을 눌렀는데 div, p 도같이 눌린다
+부모에div onClick을 달았는데, span Onclick감지 후 
+div onClick이 발생한다..!
+
+=======================
+반대는 캡쳐링 부모를 눌렀는데 자식이 감지된다.
+그런데 default 값은 false라
+버블링만 신경쓰면 됨!!! 
+
+->캡쳐링은 거의 쓰는 일이 없다.
+
+===================
+이벤트 버블링 해결 방법은?
+이벤트 객체 함수를 이용하면 됨.
+e.stopPropagation(); // 상위 요소로 전파되는 이벤트 버블링을 막고 싶을 때
+
+
+CRUD
+create
+R
+Update
+Delete

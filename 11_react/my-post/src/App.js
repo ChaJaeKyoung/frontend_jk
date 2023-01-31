@@ -59,13 +59,21 @@ function App() {
                 >
                 <h4>{post}</h4>
                 <p>2023년 1월 20일</p>
-                <p>by goni.kim</p>
+                <p>by jenny.cha</p>
                 <p>이것은 map함수로 구현된 포스트 입니다.</p>
                 <hr />
 
-                <span onClick={() => {
+                <span onClick={(e) => {
+                  // (버그 수정) 현재는 좋아요 버튼 누를 때 포스트 상세보기까지 같이 클릭됨!
+                  // 부모-자식 관계에 있을 때 이벤트 버블링이 일어남.
+                  // *이벤트 객체 함수 이용해서 해결
+                  e.stopPropagation(); // 상위 요소로 전파되는 이벤트 버블링을 막고 싶을 때
+                  
+
                   // 배열을 조작하는 것이기 때문에 새로운 배열을 만들어 준다.
                   const copyLikeCount = [...likeCount];
+                  // copyLikeCount[index] =  copyLikeCount[index] + 1;
+                  // copyLikeCount[index] += 1;
                   copyLikeCount[index]++;
                   setLikeCount(copyLikeCount);
 
@@ -74,7 +82,34 @@ function App() {
               </div>
           );
         })}
+        {/* event bubbling 현상 : 
 
+          div> p > span
+
+          span을 눌렀는데 div, p 도같이 눌린다
+          부모에div onClick을 달았는데, span Onclick감지 후 
+          div onClick이 발생한다..!
+
+          =======================
+          반대는 캡쳐링 부모를 눌렀는데 자식이 감지된다.
+          그런데 default 값은 false라
+          버블링만 신경쓰면 됨!!! 
+          ======================
+          따라서 좋아요 수를 눌렀는데 부모에 있는 Detail 이벤트가 발생한다.
+          버그 해결방법? => *이벤트 객체 함수를 이용 
+        */}
+
+        {/* 새로운 포스트 등록 : CRUD  */}
+        {/* Quiz. input에 제목 입력 후 등록 버튼 누르면 맨 앞에 새로운 포스트 추가. */}
+        <input type="text" />
+        <button type="button" onClick={() => {
+
+        }}>
+          포스트 등록
+        </button>
+
+        
+        {/* 포스트 상세보기 조건부 렌더링 */}
         {showPostDetail && <PostDetail posts={posts} setPosts={setPosts} currentIndex={currentIndex}/>}
         {/* {showPostDetail ? <PostDetail /> : null} */}
         
