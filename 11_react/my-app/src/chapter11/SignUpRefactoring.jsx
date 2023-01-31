@@ -27,6 +27,8 @@ function SignUpRefactoring() {
   
   const [gender, setGender] = useState('men');
   const selectValue = useRef(null);
+  // useRef 사용법 
+  // https://wazacs.tistory.com/31
   // //return (
   //   <div className="App">
   //     <h1>Select in React</h1>
