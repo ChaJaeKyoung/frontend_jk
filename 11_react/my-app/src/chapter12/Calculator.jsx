@@ -1,8 +1,32 @@
 import BoilingVerdict from "./BoilingVerdict";
 import TemperatureInput from "./TemperatureInput";
+// 화씨를 섭씨로 변환해주는 함수
+function toCelsius(fahrenheit) {
+  return (fahrenheit - 32) * 5 / 9;
+}
+
+// 섭씨를 화씨로 변환해주는 함수
+function toFahrenheit(celsius) {
+  return (celsius * 9 / 5) + 32;
+}
+
+// 문자열과 변환 함수를 인수로 취해서 변환된 온도를 문자열로 반환하는 또 다른 함수
+function tryConvert(temperature, convert) {
+  const input = parseFloat(temperature);
+  if (Number.isNaN(input)) {
+    return '';
+  }
+  const output = convert(input);
+  const rounded = Math.round(output * 1000) / 1000;
+  return rounded.toString();
+}
+
 
 // 입력한 온도에서 물의 끓는 여부를 추정하는 온도 계산기 (부모 - 상위) 
 function Calculatror() {
+  const [temperature, setTemperature] = useState('');
+
+
   return (  
     <div>
       <TemperatureInput scale="c" />
