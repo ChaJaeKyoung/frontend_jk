@@ -1,3 +1,4 @@
+import { useState } from "react";
 import BoilingVerdict from "./BoilingVerdict";
 import TemperatureInput from "./TemperatureInput";
 // 화씨를 섭씨로 변환해주는 함수
@@ -24,7 +25,18 @@ function tryConvert(temperature, convert) {
 
 // 입력한 온도에서 물의 끓는 여부를 추정하는 온도 계산기 (부모 - 상위) 
 function Calculatror() {
+  // 공통된 상위 컴포넌트 (Calculator)로 state를 끌어올림
   const [temperature, setTemperature] = useState('');
+  const [scale, setScale] = useState('c'); // 현재 사용자가 입력한 단위가 어떤 것인지 알려주는 상태
+
+  const handleCelciusChange = (temperature) => {
+    setTemperature(temperature);
+    setScale('c');
+  };
+  const handleFahrenheitChange = (temperature) => {
+    setTemperature(temperature);
+    setScale('f');
+  };
 
   // 입력창에 화씨를 입력하면 섭씨로, 섭씨를 입력하면 화씨로 바꿔주는 코드
   const celsius = scale === 'f' ? tryConvert(temperature, toCelsius) : temperature;
@@ -32,8 +44,16 @@ function Calculatror() {
 
   return (  
     <div>
-      <TemperatureInput scale="c" />
-      <TemperatureInput scale="f" />
+      <TemperatureInput 
+        scale="c"
+        temperature={celsius} 
+        onTemperatureChange={handleCelciusChange}
+      />
+      <TemperatureInput 
+        scale="f" 
+        temperature={fahrenheit} 
+        onTemperatureChange={handleFahrenheitChange}
+      />
       <BoilingVerdict />
     </div>
 
