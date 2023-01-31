@@ -200,9 +200,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // 13장 예제
 root.render (
   // <WelcomeDialog/>
-  // <SplitPaneSection />
+  <SplitPaneSection />
   // <DialogContainer />
-  <SignUpDialog />
+  // <SignUpDialog />
 )
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
