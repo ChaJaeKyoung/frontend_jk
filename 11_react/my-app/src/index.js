@@ -43,6 +43,8 @@ import SignUp from './chapter11/SignUp';
 import SignUpRefactoring from './chapter11/SignUpRefactoring';
 import Calculatror from './chapter12/Calculator';
 import WelcomeDialog from './chapter13/13.1.1.1/WelcomeDialog';
+import SplitPaneSection from './chapter13/13.1.1.2/SplitPaneSection';
+import DialogContainer from './chapter13/13.1.2/DialogContainer';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -196,7 +198,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // )
 // 13장 예제
 root.render (
-  <WelcomeDialog/>
+  // <WelcomeDialog/>
+  // <SplitPaneSection />
+  <DialogContainer />
 )
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
