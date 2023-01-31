@@ -26,6 +26,9 @@ function tryConvert(temperature, convert) {
 function Calculatror() {
   const [temperature, setTemperature] = useState('');
 
+  // 입력창에 화씨를 입력하면 섭씨로, 섭씨를 입력하면 화씨로 바꿔주는 코드
+  const celsius = scale === 'f' ? tryConvert(temperature, toCelsius) : temperature;
+  const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
 
   return (  
     <div>
