@@ -14,8 +14,12 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   // 실제로는 객체안에 다 들어갈 좋아요 수
   const [likeCount, setLikeCount] = useState([0, 0, 0]);
-  
-  
+
+  const [inputText, setInputText] = useState('');
+  const eventHandle = (e) => {
+    setInputText(e.target.value);
+  };
+
   return (
     <>
       {/* 상단 헤더 만들기 */}
@@ -31,6 +35,7 @@ function App() {
         {/* 포스트 목록 */}
         <div className='list'>
           <h4>{posts[0]}</h4>
+          {/* 변수로 선언하지 않고 배열에서 가져오기 때문에 같이 바뀜 */}
           <p>2023년 1월 20일</p>
           <p>by goni.kim</p>
         </div>
@@ -101,12 +106,25 @@ function App() {
 
         {/* 새로운 포스트 등록 : CRUD  */}
         {/* Quiz. input에 제목 입력 후 등록 버튼 누르면 맨 앞에 새로운 포스트 추가. */}
-        <input type="text" />
+        <input type="text" value={inputText} onChange={eventHandle} 
+        // 위에 함수 선언하지 않고 바로 하는 방법
+        // onChange={(e) => {
+        //   setInputText(e.target.value);
+        // }}
+        />
+        <br />
         <button type="button" onClick={() => {
-
+          // posts state에 요소 하나 추가하면 자동으로 렌더링됨
+          // posts배열을하나 복사해라.
+          const postsClone = [inputText,...posts];
+          setPosts(postsClone);
+          const likeClone = [0,...likeCount];
+          setLikeCount(likeClone);
+          
         }}>
           포스트 등록
         </button>
+        
 
         
         {/* 포스트 상세보기 조건부 렌더링 */}
