@@ -42,6 +42,7 @@ import ReservationRefactoring from './chapter11/11.4/ReservationRefactoring';
 import SignUp from './chapter11/SignUp';
 import SignUpRefactoring from './chapter11/SignUpRefactoring';
 import Calculatror from './chapter12/Calculator';
+import WelcomeDialog from './chapter13/13.1.1.1/WelcomeDialog';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -177,17 +178,25 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //   // <AttendanceBook students={students}/>
 // )
 
-// 11장 예제
+// // 11장 예제
+// root.render (
+//   // <NameForm />
+//   // <EssayForm />
+//   // <FlavorForm />
+//   // <FileInput />
+//   // <Reservation />
+//   // <ReservationRefactoring />
+//   // <SignUp />
+//   // <SignUpRefactoring />
+// )
+
+// // 12장 예제
+// root.render (
+//   <Calculatror/>
+// )
+// 13장 예제
 root.render (
-  // <NameForm />
-  // <EssayForm />
-  // <FlavorForm />
-  // <FileInput />
-  // <Reservation />
-  // <ReservationRefactoring />
-  // <SignUp />
-  // <SignUpRefactoring />
-  <Calculatror/>
+  <WelcomeDialog/>
 )
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
