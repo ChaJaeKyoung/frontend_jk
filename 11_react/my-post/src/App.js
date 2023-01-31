@@ -32,10 +32,10 @@ function App() {
       </header>
       
       <div className='inner'>
-        {/* 포스트 목록 */}
+
+        {/*포스트 목록 
         <div className='list'>
-          <h4>{posts[0]}</h4>
-          {/* 변수로 선언하지 않고 배열에서 가져오기 때문에 같이 바뀜 */}
+          <h4>{posts[0]}</h4> {//변수로 선언하지 않고 배열에서 가져오기 때문에 같이 바뀜 }
           <p>2023년 1월 20일</p>
           <p>by goni.kim</p>
         </div>
@@ -49,6 +49,7 @@ function App() {
           <p>2022년 11월 11일</p>
           <p>by yg</p>
         </div>
+        */}
 
       {/* Quiz: map()을 이용하여 포스트 반복 출력하기 */}
       {posts.map((post, index) => {
@@ -117,10 +118,14 @@ function App() {
           // posts state에 요소 하나 추가하면 자동으로 렌더링됨
           // posts배열을하나 복사해라.
           const postsClone = [inputText,...posts];
+          // postsClone.push(inputText); // 배열의 맨 뒤에 추가할때
+          // postsClone.unshift(inputText); //배열의 맨 앞에 추가할 때
           setPosts(postsClone);
+          setInputText(''); // 입력이 끝났으니 input창도 초기화
+
+          // 포스트 하나 추가 시 좋아요 카운트도 같이 추가
           const likeClone = [0,...likeCount];
           setLikeCount(likeClone);
-          
         }}>
           포스트 등록
         </button>

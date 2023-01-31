@@ -21,6 +21,6 @@ e.stopPropagation(); // 상위 요소로 전파되는 이벤트 버블링을 막
 
 CRUD
 create
-R
+Read
 Update
 Delete
