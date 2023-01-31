@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       {/* 상단 헤더 만들기 */}
-      <header className="header--dark">
+      <header className='header--dark'>
         <h4>Goni Post</h4>
         <ul>
           <li>트렌딩</li>
@@ -68,23 +68,35 @@ function App() {
                 <p>by jenny.cha</p>
                 <p>이것은 map함수로 구현된 포스트 입니다.</p>
                 <hr />
+                <div className='toolbar'>
+                  {/* 좋아요 버튼 */}
+                  <span onClick={(e) => {
+                    // (버그 수정) 현재는 좋아요 버튼 누를 때 포스트 상세보기까지 같이 클릭됨!
+                    // 부모-자식 관계에 있을 때 이벤트 버블링이 일어남.
+                    // *이벤트 객체 함수 이용해서 해결
+                    e.stopPropagation(); // 상위 요소로 전파되는 이벤트 버블링을 막고 싶을 때
+                    
 
-                <span onClick={(e) => {
-                  // (버그 수정) 현재는 좋아요 버튼 누를 때 포스트 상세보기까지 같이 클릭됨!
-                  // 부모-자식 관계에 있을 때 이벤트 버블링이 일어남.
-                  // *이벤트 객체 함수 이용해서 해결
-                  e.stopPropagation(); // 상위 요소로 전파되는 이벤트 버블링을 막고 싶을 때
-                  
+                    // 배열을 조작하는 것이기 때문에 새로운 배열을 만들어 준다.
+                    const copyLikeCount = [...likeCount];
+                    // copyLikeCount[index] =  copyLikeCount[index] + 1;
+                    // copyLikeCount[index] += 1;
+                    copyLikeCount[index]++;
+                    setLikeCount(copyLikeCount);
+                  }}
+                  >❤️ {likeCount[index]}</span>
 
-                  // 배열을 조작하는 것이기 때문에 새로운 배열을 만들어 준다.
-                  const copyLikeCount = [...likeCount];
-                  // copyLikeCount[index] =  copyLikeCount[index] + 1;
-                  // copyLikeCount[index] += 1;
-                  copyLikeCount[index]++;
-                  setLikeCount(copyLikeCount);
-
-                }}
-                >❤️ {likeCount[index]}</span>
+                  {/* Quiz: 포스트마다 삭제 버튼 & 기능 만들기 */}
+                  <span style={{ fontSize: 22 }} 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      console.log('44');
+                      const postsClone = [...posts];
+                      
+                      postsClone.splice(index,1);
+                      setPosts(postsClone);
+                  }}>🗑️</span>
+                </div>
               </div>
           );
         })}
