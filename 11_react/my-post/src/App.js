@@ -107,8 +107,6 @@ function App() {
                       const likeClone = [...likeCount];
                       likeClone.splice(index,1);
                       setLikeCount(likeClone);
-          
-
                   }}>🗑️</span>
                 </div>
               </div>
@@ -170,4 +168,16 @@ function App() {
 }
 
 export default App;
-/*  */
+
+// 연습
+// 1. PostlistItem 컴포넌트 추출
+
+// 2. input에 아무것도 입력하지 않고 등록버튼 누르면 
+// - 1) 유효성 검사해서 등록하지 X
+// - 2) 미입력시 비활성화 -> 입력이 생기면 버튼 활성화
+
+// 3. 날짜 및 작성자, 좋아요 수 등 데이터를 문자열이 아닌 객체 형태로 처리해보기.
+
+// 4. 포스트 수정할 때 input으로 입력받은 내용으로 수정해보기
+
+// 5. 글 등록 시, 제목, 오늘 날짜, 작성자, 상세 내용을 입력받아 등록하기
