@@ -54,7 +54,7 @@ function Calculatror() {
         temperature={fahrenheit} 
         onTemperatureChange={handleFahrenheitChange}
       />
-      <BoilingVerdict />
+      <BoilingVerdict celsius={celsius} />
     </div>
 
     // 문제상황:
