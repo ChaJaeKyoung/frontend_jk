@@ -25,6 +25,17 @@ const Title = styled.h1`
   text-align: center;
 `;
 
+// 2. props 사용하기
+// 컴포넌트 형태라 props 사용이 가능
+const Button = styled.button`
+  width: ${props => props.width || '100px'}; // 기본값 설정
+  height: ${props => props.height || '40px'}; // 기본값 설정
+  color: ${props => props.dark? 'white' : 'black'};
+  background: ${props => props.dark? 'black' : 'white'};
+  border: 2px solid black;
+  cursor: pointer;
+`;
+
 function StyledPage() {
   return (  
     <>
@@ -33,6 +44,11 @@ function StyledPage() {
           Hello, React!
         </Title>
       </Wrapper>
+
+      <Button width="200px" height="60px">Normal</Button>
+      {/* ={true} 는 생략 가능 */}
+      {/* <Button dark={true}>Dark</Button> */}
+      <Button dark>Dark</Button>
     </>
   );
 }
