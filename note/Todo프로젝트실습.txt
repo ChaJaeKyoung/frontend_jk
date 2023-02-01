@@ -1,0 +1,14 @@
+Todo 프로젝트 
+
+0. npx create-react-app my-todo
+
+1.패키지 설치
+
+C:\frontend_jk-1>cd 11_react      
+
+C:\frontend_jk-1\11_react>cd my-todo
+
+C:\frontend_jk-1\11_react\my-todo>npm install styled-components styled-reset react-icons
+
+
+2. 글로벌(공통) 스타일 적용
