@@ -3,7 +3,7 @@ import TodoListItem from "./TodoListItem";
 
 const TodoListWrrapper = styled.div`
   min-height: 320px;
-  min-height: 513px;
+  max-height: 513px;
   overflow-y: auto; /* 높이가 최대를 넘어갈 경우 스크롤 생성 */
 `;
 

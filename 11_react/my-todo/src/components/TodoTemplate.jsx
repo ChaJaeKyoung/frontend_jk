@@ -20,7 +20,7 @@ overflow: hidden;
 }
 
 .content {
-
+  background: white;
 }
 `;
 
