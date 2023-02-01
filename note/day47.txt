@@ -26,3 +26,28 @@ BUT 실무에서는 불편해서 사용하지 않는다.
 EXEPT 간단한 앱같은 것  (memo, Todo앱같은 것들 ) 을 구현할 때는 사용  
 리덕스를 들이는게 배보다 배꼽이 더 큰격일 때만 사용
 -> 실무에서는 리덕스 사용
+
+
+================
+
+const SomeContext = React.createContext('기본값');
+
+Provide함수는 반드시 value를 key값으로 넘겨줘야 한다.
+<SomeContext.Provider value={전달값1}>
+ <TheContext.Provider value={전달값2}>
+ </TheContext>
+</SomeContext>
+
+Provider로 방송해 준값을
+Consumer가 받는다
+받을 때는 콜백함수 매개변수를 써서 받아야 함
+
+<SomeContext.Consumer>
+      {theme => (
+        <TheContext.Consumer>
+          {user => (
+            <ProfilePage user={user} theme={theme}/>
+          )}
+        </TheContext.Consumer>
+      )}
+    </SomeContext.Consumer>

@@ -28,3 +28,20 @@ function Layout() {
     </div>
   );
 }
+
+function Content() {
+  return (
+    // Provider로 방송해 준 값을 Consumer가 받는다!
+    // 받을 땐 콜백함수로 받는다
+    <ThemeContext.Consumer>
+      {theme => (
+        <UserContext.Consumer>
+          {user => (
+            <ProfilePage user={user} theme={theme}/>
+          )}
+        </UserContext.Consumer>
+      )}
+    </ThemeContext.Consumer>
+  );
+  
+}
