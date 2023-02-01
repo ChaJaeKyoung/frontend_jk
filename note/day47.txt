@@ -1,0 +1,28 @@
+컨텍스트(Context)란?
+
+컴포넌트 트리를 통해 곧바로 데이터를 전달하는 방식
+not props!
+
+일반적인 react는
+데이터는 부모로부터 자식에게 props를 통해 전달한다.
+
+그러나,
+Locale 정보 (lang)
+UI테마(dark or light)
+로그인 유저 정보
+
+같은 데이터들을 전달 할 경우 너무 많은 자손들을 거쳐 내려가므로
+번거롭다.
+
+*How do you solve this problem? 
+The answer is the very Broadcast! 
+
+
+*When?
+global 데이터를 공유할 수 있도록 고안된 방법이기 때문에
+컴포넌트에서 계속해서 접근이 일어날 수 있는 데이터들이 있는 경우에 사용.
+
+BUT 실무에서는 불편해서 사용하지 않는다.
+EXEPT 간단한 앱같은 것  (memo, Todo앱같은 것들 ) 을 구현할 때는 사용  
+리덕스를 들이는게 배보다 배꼽이 더 큰격일 때만 사용
+-> 실무에서는 리덕스 사용
