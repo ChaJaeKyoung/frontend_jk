@@ -1,4 +1,4 @@
-컨텍스트(Context)란?
+💚컨텍스트(Context)란?
 
 컴포넌트 트리를 통해 곧바로 데이터를 전달하는 방식
 not props!
@@ -58,3 +58,32 @@ Provider로 방송해 준 값을
 const { value1, value2 } =useContext() hook을 통해 받아 올 수 있다.
 
 but클래스 컴포넌트에서는 받아올 수 없다.
+
+
+
+💚styledpage 스타일
+styled-components 라이브러리 설치하기 
+요즘엔 tailwind라는 라이브러리도 핫함
+
+1.
+npm install styled-coomponents 
+
+(package.json에서 버전 확인 가능)
+
+2.
+vscode extention
+vscode-styled-components 설치!
+
+3.
+임포트 해줘야 됨
+import styled from "styled-components";
+
+
+4.
+이렇게 사용
+const Wrapper = styled.div`
+  padding: 1rem;
+  background: gray;
+`;
+
+
