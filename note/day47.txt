@@ -51,3 +51,10 @@ Consumer가 받는다
         </TheContext.Consumer>
       )}
     </SomeContext.Consumer>
+
+=======================
+Provider로 방송해 준 값을
+함수컴포넌트 에서는 
+const { value1, value2 } =useContext() hook을 통해 받아 올 수 있다.
+
+but클래스 컴포넌트에서는 받아올 수 없다.
