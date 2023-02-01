@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 // import { Reset } from "styled-reset"; //첫번째 resetcss방법
 import reset from "styled-reset"; // 이건 컴포넌트가 아니라 css 문자열이 통으로 와서 중괄호가 없다.
 import TodoInsert from "./components/TodoInsert";
+import TodoList from "./components/TodoList";
 import TodoTemplate from "./components/TodoTemplate";
 
 
@@ -30,6 +31,7 @@ function App() {
       <GlobalStyle />
       <TodoTemplate>
         <TodoInsert />
+        <TodoList />
       </TodoTemplate>
     </>
   );
