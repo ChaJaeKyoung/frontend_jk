@@ -3,7 +3,7 @@ import Card from "./Card";
 function ProfileCard() {
   return (  
     <Card
-      title="Goni Kim"
+      title="Jenny Cha"
       backgroundColor="#afdfaf"
     >
       <p>안녕하세요. 제니입니다.</p>
