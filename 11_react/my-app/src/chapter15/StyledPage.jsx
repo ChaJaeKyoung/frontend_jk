@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 // 0. styled-components 설치하기
 // npm install styled-components
 
@@ -27,6 +27,7 @@ const Title = styled.h1`
 
 // 2. props 사용하기
 // 컴포넌트 형태라 props 사용이 가능
+// 여기서의 styled.button의 button은 버튼 요소 (h1, div같은 것 처럼)
 const Button = styled.button`
   width: ${props => props.width || '100px'}; // 기본값 설정
   height: ${props => props.height || '40px'}; // 기본값 설정
@@ -34,7 +35,43 @@ const Button = styled.button`
   background: ${props => props.dark? 'black' : 'white'};
   border: 2px solid black;
   cursor: pointer;
+  
+  /* 3. & 문자를 사용하여 Sass처럼 자기 자신 선택 가능 */
+  &:hover {
+    background: #b3b3b3;
+  }
+
+  /* 4. 여러 줄의 스타일 구문을 조건부로 설정해야 하는 경우 css를 불러와 사용 */
+  ${props => 
+    props.inverted && 
+    // css impot 해줘야 함
+    css`
+      background: white;
+      color: #1f1f1f;
+      border: 2px solid white;
+      &:hover {
+        background: #1f1f1f;
+        color: white;
+      }
+    `
+  }
+  /* 자기자신 선택자 여기서는 Button컴포넌트를 의미함 */
+  /* + 는 형제선택자 : css 연산자 */
+  & + & {
+    margin-left : 1rem;
+  }
+
+  /* 만일 일반요소와의 거리두기를 하고싶다면? */
+  & + button {
+    margin-left : 1rem;
+  }
 `;
+/* 5. 스타일 확장(커스텀) 하기 */
+// 이번엔 만들어진 컴포넌트를 불러와서 추가해준 것
+const RoundedButton = styled(Button)`
+  border-radius: 16px;
+`;
+
 
 function StyledPage() {
   return (  
@@ -49,6 +86,9 @@ function StyledPage() {
       {/* ={true} 는 생략 가능 */}
       {/* <Button dark={true}>Dark</Button> */}
       <Button dark>Dark</Button>
+      <Button inverted>Inverted</Button>
+      <RoundedButton>Rounded</RoundedButton>
+      <button>일반button태그</button>
     </>
   );
 }
