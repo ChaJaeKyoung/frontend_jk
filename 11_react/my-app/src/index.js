@@ -49,6 +49,7 @@ import SignUpDialog from './chapter13/13.1.3/SignUpDialog';
 import ProfileCard from './chapter13/ProfileCard';
 import MainContent from './chapter14/MainContent';
 import DarkOrLight from './chapter14/DarkOrLight';
+import StyledPage from './chapter15/StyledPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -210,9 +211,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //   // <ProfileCard />
 // )
 
-// 14장 예제
+// // 14장 예제
+// root.render (
+//   <DarkOrLight />
+// )
+
+// 15 예제
 root.render (
-  <DarkOrLight />
+  <StyledPage />
 )
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

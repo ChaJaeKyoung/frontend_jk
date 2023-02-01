@@ -38,3 +38,20 @@ function StyledPage() {
 }
 
 export default StyledPage;
+
+// export default로 StyledPage 하나만 내보내기 가능!
+// default로 내보냈기 때문에 라이브러리 받아올 때는
+// import styled from "styled-components";
+// 여기서 styled에 중괄호 없이 받아와야 함.
+
+// import {  } from "module";
+// 이렇게 중괄호를 쳐서 받아와야하는 컴포넌트는
+// default로 내보내진 컴포넌트가 아닌
+// export StyledPage; 이렇게 보내진 컴포넌트 로 해서 가져와야 한다.
+
+
+// 내보내기는 아래로 한줄로 덧붙여 쓰지만
+// 이렇게 함수가 선언된 곳 앞에다가 바로 export를 적어 내보낼 수 있다.
+// export function StyledPage() {
+//   return ()
+// }
