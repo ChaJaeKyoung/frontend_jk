@@ -1,5 +1,5 @@
 // 하위 엘리먼트를 감싸서 카드 형태로 보여주는 컴포넌트
-function Card( title, backgroundColor, Children ) {
+function Card({ title, backgroundColor, children }) {
   // porps 받아 올 때부터 구조분해로 받아오는 방법! 위와 같이 변수를 바로 넣어준다
   // const { title, backgroundColor, Children } = props; 
   return ( 
