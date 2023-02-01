@@ -1,7 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 // import { Reset } from "styled-reset"; //첫번째 resetcss방법
 import reset from "styled-reset"; // 이건 컴포넌트가 아니라 css 문자열이 통으로 와서 중괄호가 없다.
-console.log(reset);
+
+
 // 글로벌(공통) 스타일 적용 index.css에서 해도 무방하지만
 // styled-components를 사용해서 적용하고 싶다면..?
 // createGlobalStyle을 사용하면 컴포넌트가 만들어지고 이를 렌더링 하면 됨
@@ -17,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
+  console.log(reset);
   return (
     <>  
     {/* 1. reset css적용방법 첫번째
