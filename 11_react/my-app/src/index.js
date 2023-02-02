@@ -50,6 +50,7 @@ import ProfileCard from './chapter13/ProfileCard';
 import MainContent from './chapter14/MainContent';
 import DarkOrLight from './chapter14/DarkOrLight';
 import StyledPage from './chapter15/StyledPage';
+import SimpleRouter from './chapter16/SimpleRouter';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -216,9 +217,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //   <DarkOrLight />
 // )
 
-// 15 예제
+// // 15 예제
+// root.render (
+//   <StyledPage />
+// )
+
+// 16 예제
 root.render (
-  <StyledPage />
+  <SimpleRouter />
 )
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

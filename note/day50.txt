@@ -4,7 +4,7 @@ cd ..
 =======================
 엔터키를 감지하는 키보드 이벤트
 keydown : 키보드를 눌렀을 때 딱 한번
-keypress : 계속 누르고 있을 때 (디프리케이티드됨 사라져버림)
+[X]keypress : 계속 누르고 있을 때 (디프리케이티드됨 사라져버림)
 key up : 키보드를 땠을 때
 
 ===============
@@ -30,3 +30,15 @@ C:\frontend_jk-1\11_react\my-app>npm install react-router-dom
 ================
 라우팅이란?
 경로에 맞는 페이지를 보여주는 것을 말한다.
+
+
+===============
+useNavigate hook 사용
+navigate('/경로');
+navigate(1); 또는 navigate(-1); => 앞으로 가기, 뒤로 가기 기능
+
+import { useNavigate } from 'react-router-dom';
+
+const navigate = useNavigate();
+
+<li onClick={() => { navigate('/places'); }}>장소</li>
