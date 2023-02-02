@@ -61,12 +61,12 @@ function App() {
       checked: false
     };
 
-    // 방법1 - 이전 방법 
+    // 방법1) - 이전 방법 
     // const copyTodos = [...todos];
     // copyTodos.push(todo);
     // setTodos(copyTodos);
 
-    // 방법2 - 배열의 내장 함수 이용 -> concat(): 배열을 이어붙이는 함수
+    // 방법2) - 배열의 내장 함수 이용 -> concat(): 배열을 이어붙이는 함수
     setTodos(todos.concat(todo)); // 새로운 배열 반환함
 
     nextId.current += 1; // nextId에 1씩 더하기
@@ -75,14 +75,43 @@ function App() {
   // todos 배열에서 id로 항목을 지우기 위한 handleRemove() 함수 정의
   // 불변성을 지키면서 배열의 요소를 제거해야 할 때 filter()활용
   const handleRemove = useCallback((id) => {
-    // 방법1 - 이전 방법
-    const copyTodos = [...todos];
-    const targetIndex = todos.findIndex((todo) => {
-      return todo.id === id;
-    });
-    copyTodos.splice(targetIndex, 1); 
-    setTodos(copyTodos);
+    // 방법1. - 이전 방법
+    // const copyTodos = [...todos];
+    // const targetIndex = todos.findIndex((todo) => {
+    //   return todo.id === id;
+    // });
+    // copyTodos.splice(targetIndex, 1); 
+    // setTodos(copyTodos);
+
+    // 방법2. - 배열의 내장 함수 이용
+    // filter('테스트 함수'): 기존의 배열은 변경하지 않고 특정 조건을 만족하는 요소들만 따로 추출하여 새로운 배열을 만듦
+    // 테스트 함수에서는 true 또는 false를 반환해야 하며, 여기서 true를 반환하는 경우만 새로운 배열에 포함됨
+    setTodos(todos.filter((todo) => todo.id !== id ));
   }, [todos]);
+
+  // todos 배열의 특정 요소를 수정하기 위한 handleToggle() 함수 정의
+  // 불변성을 유지하면서 배열의 특정 요소를 업데이트 해야할 때 map() 활용
+  
+  const handleToggle = useCallback((id) => {
+    // <방법1> - 이전방법
+    // const copyTodos = [...todos];
+    // const target = todos.find((todo) => todo.id === id);
+    // target.checked = !target.checked; // 기존 target의 checked값을 반전시켜줌
+    // const targetIndex = todos.findIndex((todo) => {
+    //     return todo.id === id;
+    // });
+    // copyTodos[targetIndex] = target; 
+    // setTodos(copyTodos);
+
+    // <방법2> = 배열의 내장 함수 사용 -> map(): 배열을 하나하나 돌면서 특정 배열당 하나하나 변화를 즘
+    setTodos(
+      // true: todo객체 그대로 가져와서, id값이 같은 것의 checked속성만 반전시켜서 다시 넣어줌 
+      // false: todo객체 그대로 다시 넣어 줌
+      todos.map((todo) => todo.id === id ? { ...todo, checked: !todo.checked } : todo )
+    );  
+
+  }, [todos]);
+  
   return (
     <>  
     {/* 1. reset css적용방법 첫번째
@@ -92,7 +121,7 @@ function App() {
       <GlobalStyle />
       <TodoTemplate>
         <TodoInsert onInsert={handleInsert} />
-        <TodoList todos={todos} onRemove={handleRemove} />
+        <TodoList todos={todos} onRemove={handleRemove} onToggle={handleToggle} />
       </TodoTemplate>
     </>
   );
