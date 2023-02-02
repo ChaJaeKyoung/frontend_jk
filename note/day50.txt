@@ -26,3 +26,7 @@ rsf하면 자동적으로 함수가 다 만들어지면서 -이름까지- 시작
 💚react-router-dom 라이브러리 설치하기
 
 C:\frontend_jk-1\11_react\my-app>npm install react-router-dom
+
+================
+라우팅이란?
+경로에 맞는 페이지를 보여주는 것을 말한다.
