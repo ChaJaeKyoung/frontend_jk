@@ -20,9 +20,7 @@ function GamePage(props) {
         </li>
       </ul>
       {/* Nested route의 자식 엘리먼트를 보여주는 역할 */}
-      <Outlet>
-        <Outlet/>
-      </Outlet>
+        <Outlet />
       <button type="button" onClick={() => {navigate('/');}}>메인으로</button>
     </div>
   );
