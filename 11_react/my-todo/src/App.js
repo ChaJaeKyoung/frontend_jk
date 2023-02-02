@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { createGlobalStyle } from "styled-components";
 // import { Reset } from "styled-reset"; //첫번째 resetcss방법
 import reset from "styled-reset"; // 이건 컴포넌트가 아니라 css 문자열이 통으로 와서 중괄호가 없다.
@@ -49,9 +49,40 @@ function App() {
 
   // props로 전달해야 할 함수를 만들 때는 useCallback()을 사용해본다!
   // 함수를 만들었는데 자식에게 계속 props로 전달해야 될 때에는 useCallback()을 사용하는 것이 좋다.
-  // 메모리가 계속 새롭게 할당되기 때문
-  const handleInsert = () => {};
+  // 메모리가 계속 새롭게 할당되기 때문 
+  // useCallback() 미사용 시 컴포넌트가 재렌더링 될 때마다 새롭게 정의됨
+  // => props로 넘겨지는 값이 바뀌므로 자식 컴포넌트가 재렌더링
 
+  // 사용 방법: 우리가 넘겨주는 콜백함수를 useCallback으로 감싸준다고 생각하면 편함
+  const handleInsert = useCallback((text) => {
+    const todo = {
+      id: nextId.current,
+      text, // key이름 : key이름 일때 key값만 보내줘도 value로 들어감
+      checked: false
+    };
+
+    // 방법1 - 이전 방법 
+    // const copyTodos = [...todos];
+    // copyTodos.push(todo);
+    // setTodos(copyTodos);
+
+    // 방법2 - 배열의 내장 함수 이용 -> concat(): 배열을 이어붙이는 함수
+    setTodos(todos.concat(todo)); // 새로운 배열 반환함
+
+    nextId.current += 1; // nextId에 1씩 더하기
+  }, [todos]);
+
+  // todos 배열에서 id로 항목을 지우기 위한 handleRemove() 함수 정의
+  // 불변성을 지키면서 배열의 요소를 제거해야 할 때 filter()활용
+  const handleRemove = useCallback((id) => {
+    // 방법1 - 이전 방법
+    const copyTodos = [...todos];
+    const targetIndex = todos.findIndex((todo) => {
+      return todo.id === id;
+    });
+    copyTodos.splice(targetIndex, 1); 
+    setTodos(copyTodos);
+  }, [todos]);
   return (
     <>  
     {/* 1. reset css적용방법 첫번째
@@ -60,8 +91,8 @@ function App() {
       {/* <Reset /> */}
       <GlobalStyle />
       <TodoTemplate>
-        <TodoInsert onInsert={handleInsert}/>
-        <TodoList todos={todos}/>
+        <TodoInsert onInsert={handleInsert} />
+        <TodoList todos={todos} onRemove={handleRemove} />
       </TodoTemplate>
     </>
   );
