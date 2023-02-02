@@ -2,6 +2,9 @@ import { useCallback, useRef, useState } from "react";
 import { createGlobalStyle } from "styled-components";
 // import { Reset } from "styled-reset"; //첫번째 resetcss방법
 import reset from "styled-reset"; // 이건 컴포넌트가 아니라 css 문자열이 통으로 와서 중괄호가 없다.
+import { v4 as uuidv4 } from "uuid"; // (❁´◡`❁) uuid inport
+
+
 import TodoInsert from "./components/TodoInsert";
 import TodoList from "./components/TodoList";
 import TodoTemplate from "./components/TodoTemplate";
@@ -56,7 +59,10 @@ function App() {
   // 사용 방법: 우리가 넘겨주는 콜백함수를 useCallback으로 감싸준다고 생각하면 편함
   const handleInsert = useCallback((text) => {
     const todo = {
-      id: nextId.current,
+      // (●'◡'●) 기존 id를 props로 받아오는 방법
+      // id: nextId.current,
+      // (❁´◡`❁) uuid를 사용해서 id를 받아오는 방법
+      id: uuidv4(), 
       text, // key이름 : key이름 일때 key값만 보내줘도 value로 들어감
       checked: false
     };
@@ -70,7 +76,15 @@ function App() {
     setTodos(todos.concat(todo)); // 새로운 배열 반환함
 
     nextId.current += 1; // nextId에 1씩 더하기
+
+    // (❁´◡`❁) uuid 로컬 스토리지에 저장
+    // set.Item, get.Item
+    // setItem('이름', 들어갈 값)
+    // 배열을 JSON으로 
+    localStorage.setItem('todos', JSON.stringify(todos.concat(todo)));
+
   }, [todos]);
+
 
   // todos 배열에서 id로 항목을 지우기 위한 handleRemove() 함수 정의
   // 불변성을 지키면서 배열의 요소를 제거해야 할 때 filter()활용
@@ -87,6 +101,8 @@ function App() {
     // filter('테스트 함수'): 기존의 배열은 변경하지 않고 특정 조건을 만족하는 요소들만 따로 추출하여 새로운 배열을 만듦
     // 테스트 함수에서는 true 또는 false를 반환해야 하며, 여기서 true를 반환하는 경우만 새로운 배열에 포함됨
     setTodos(todos.filter((todo) => todo.id !== id ));
+    // (❁´◡`❁)
+    localStorage.setItem('todos', JSON.stringify(todos.filter((todo) => todo.id !== id )));
   }, [todos]);
 
   // todos 배열의 특정 요소를 수정하기 위한 handleToggle() 함수 정의
@@ -109,7 +125,8 @@ function App() {
       // false: todo객체 그대로 다시 넣어 줌
       todos.map((todo) => todo.id === id ? { ...todo, checked: !todo.checked } : todo )
     );  
-
+    // (❁´◡`❁)
+    localStorage.setItem('todos', JSON.stringify(todos.map((todo) => todo.id === id ? { ...todo, checked: !todo.checked } : todo )));
   }, [todos]);
   
   return (
@@ -137,3 +154,15 @@ export default App;
 // 커스텀은 props 또는 CSS 스타일로 변경 가능
 // package에 들어가서 깃헙에 들어가서 라이브러리 사용방법을 확인해서 사용
 // https://react-icons.github.io/react-icons
+
+
+// 2.
+// HTML 웹 스토리지란?
+// 웹 스토리지를 사용하면 웹 앱이 사용자의 브라우저 내에 로컬로 데이터를 저장할 수 있음 -> 크롬을 이용했으면 크롬에, edge는 edge에 저장
+// 웹 스토리지는 도메인 당 사용 가능
+// 같은 도메인의 모든 페이지는 동일한 데이터를 저장하고 엑세스함
+
+// 웹 스토리지 객체
+// 웹 스토리지는 데이터를 저장하기 위한 두 가지 객체를 제공
+// window.localStorage - 만료 날짜 없이 데이터를 저장 
+// window.sessionStorage - 한 세션에 대한 데이터 저장(브라우저 탭을 닫으면 데이터가 손실됨(=초기화))
