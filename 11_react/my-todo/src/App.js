@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { createGlobalStyle } from "styled-components";
 // import { Reset } from "styled-reset"; //첫번째 resetcss방법
 import reset from "styled-reset"; // 이건 컴포넌트가 아니라 css 문자열이 통으로 와서 중괄호가 없다.
@@ -22,6 +23,35 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   console.log(reset);
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
+      text: '수업 교안 작성하기',
+      checked: true
+    },
+    {
+      id: 2,
+      text: '시험 채점하기',
+      checked: true
+    },
+    {
+      id: 3,
+      text: '단계별 실습 예제 만들기',
+      checked: false
+    }
+  ]);
+
+  // todos 배열에 새 객체를 추가하기 위한 handleInsert() 함수 정의
+  // 새 객체를 만들 때마다 id값에 1씩 더해 주어야 하는데, useRef()를 사용하여 변수 생성
+  // id값은 렌더링되는 정보가 아니기 때문에 ref사용
+  // 단순히 새로운 항목을 만들 때 참조되는 값임
+  const nextId = useRef(4);
+
+  // props로 전달해야 할 함수를 만들 때는 useCallback()을 사용해본다!
+  // 함수를 만들었는데 자식에게 계속 props로 전달해야 될 때에는 useCallback()을 사용하는 것이 좋다.
+  // 메모리가 계속 새롭게 할당되기 때문
+  const handleInsert = () => {};
+
   return (
     <>  
     {/* 1. reset css적용방법 첫번째
@@ -30,8 +60,8 @@ function App() {
       {/* <Reset /> */}
       <GlobalStyle />
       <TodoTemplate>
-        <TodoInsert />
-        <TodoList />
+        <TodoInsert onInsert={handleInsert}/>
+        <TodoList todos={todos}/>
       </TodoTemplate>
     </>
   );

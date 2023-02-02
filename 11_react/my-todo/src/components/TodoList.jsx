@@ -8,12 +8,16 @@ const TodoListWrrapper = styled.div`
 `;
 
 // todos 배열을 props로 받아와서 map() 함수를 사용해 여러 개의 TodoListItem컴포넌트로 변환해 보여줌
-function TodoList() {
+function TodoList({ todos }) { // 구조 분해 할당: 어떤 형식으로 쓰든 개발자 취향, 회사의 룰에 따른다. 
   return (  
     <TodoListWrrapper>
+      {/* <TodoListItem />
       <TodoListItem />
-      <TodoListItem />
-      <TodoListItem />
+      <TodoListItem /> */}
+      {todos.map((todo) => {
+        {console.log(todo.id)}
+        return <TodoListItem key={todo.id} todo={todo} />;
+      })}
     </TodoListWrrapper>
   );
 }
