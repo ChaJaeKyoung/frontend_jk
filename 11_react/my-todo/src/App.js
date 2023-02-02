@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createGlobalStyle } from "styled-components";
 // import { Reset } from "styled-reset"; //첫번째 resetcss방법
 import reset from "styled-reset"; // 이건 컴포넌트가 아니라 css 문자열이 통으로 와서 중괄호가 없다.
@@ -25,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
-  console.log(reset);
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -43,6 +42,14 @@ function App() {
       checked: false
     }
   ]);
+
+  // (❁´◡`❁)
+  // 로컬 스토리지에서 남아있는 객체데이터 가져오기
+  // 활용 예: 장바구니, 아이디 기억하기 등
+  useEffect(() => {
+    const dbTodos = JSON.parse(localStorage.getItem('todos')) || [...todos];
+    setTodos(dbTodos);
+  }, []);
 
   // todos 배열에 새 객체를 추가하기 위한 handleInsert() 함수 정의
   // 새 객체를 만들 때마다 id값에 1씩 더해 주어야 하는데, useRef()를 사용하여 변수 생성
