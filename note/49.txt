@@ -1,0 +1,29 @@
+useNavigate
+
+==================
+useParams 사용 방법
+
+Route path="/post/:postId" element={<PostViewPage />}/>
+경로에서 postId 변수를 선언하여 가져온다.
+
+const{ postId } = useParams();
+
+==========
+
+To-do 첼린지 개인과제
+memo나 todo를 만들기!
+
+할일 갯수, 
+todo 한 것을
+영역 분리
+
+--------
+react-beautiful dnd (drag and drop)
+
+
+라이브러리 참조
+
+===============
+
+axios => api 요청 라이브러리
+redux => 전역 상태 관리 라이브러리

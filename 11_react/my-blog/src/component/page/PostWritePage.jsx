@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import TextInput from '../ui/TextInput';
+import Button from '../ui/Button';
 
 const Wrapper = styled.div`
 	padding: 16px;
@@ -21,11 +24,45 @@ const Container = styled.div`
 	}
 `;
 
+
+// 글 작성을 위한 페이지
 function PostWritePage(props) {
+  const navigate = useNavigate();
+
+  // 글의 제목과 내용을 위한 state
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+
   return (
-    <div>
-      
-    </div>
+    <Wrapper>
+      <Container>
+        {/* 글 제목 입력 */}
+        <TextInput 
+          height={20}
+          value={title}
+          onChange={(e) => {
+            setTitle(e.target.value);
+          }}
+        />
+
+        {/* 글 내용 입력 */}
+        <TextInput 
+          height={480}
+          value={content}
+          onChange={(e) => {
+            setContent(e.target.value)
+          }}
+        />
+
+        {/* 글 작성 버튼 */}
+        <Button 
+          title="글 작성하기"
+          onClick={() => {
+            navigate('/');
+          }}
+        />
+      </Container>
+    </Wrapper>
   );
 }
 

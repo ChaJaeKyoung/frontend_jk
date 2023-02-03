@@ -1,0 +1,7 @@
+useNavigate
+
+
+useParams 사용 방법
+
+Route path="/post/:postId" element={<PostViewPage />}/>
+useParams
