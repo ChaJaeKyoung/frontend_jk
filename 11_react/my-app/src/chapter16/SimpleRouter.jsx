@@ -5,6 +5,7 @@ import GamePage from './GamePage';
 import HotGamePage from './HotGamePage';
 import MainPage from './MainPage';
 import NewGamePage from './NewGamePage';
+import NoMatchPage from './NoMatchPage';
 import PlacePage from './PlacePage';
 
 // 설치하기
@@ -58,6 +59,10 @@ function SimpleRouter(props) {
             </Route>
             <Route path="new" element={<NewGamePage />}/>
           </Route>
+
+          {/* *의 의미는 match anything */}
+          {/* 위에 설정한 라우팅 경로 이외의 경우 */}
+          <Route path="*" element={<NoMatchPage />} />
         </Routes>
       </BrowserRouter>
     </div>
