@@ -2,6 +2,18 @@ import { useState } from "react";
 import MainContent from "./MainContent";
 import ThemeContext from "./ThemeContext";
 
+// 쌤코드
+// const themes = {
+//   light: {
+//     foreground: "#000"
+//     background: "#eee" 
+//   },
+//   dark: {
+//     foreground: "#fff",
+//     background: "#222"
+//   }
+// };
+
 function DarkOrLight() {
   const [theme, setTheme] = useState('light');
 
