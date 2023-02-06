@@ -1,4 +1,4 @@
 [O]ch14 > DarkOrLight 교재 코드를 바꾼것 살펴보기
 [O]ch15 > Blocks.jsx 코드 살펴보기
-react-responsive 한번 써보기
+[O]react-responsive 한번 써보기
 [O]styled-components 공식 문서에 가이드 읽어보기 ->theme
