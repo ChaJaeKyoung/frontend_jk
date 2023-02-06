@@ -50,6 +50,7 @@ import ProfileCard from './chapter13/ProfileCard';
 import MainContent from './chapter14/MainContent';
 import DarkOrLight from './chapter14/DarkOrLight';
 import StyledPage from './chapter15/StyledPage';
+import Blocks from './chapter15/Blocks';
 import SimpleRouter from './chapter16/SimpleRouter';
 
 
@@ -213,13 +214,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // )
 
 // // 14장 예제
-root.render (
-  <DarkOrLight />
-)
+// root.render (
+//   <DarkOrLight />
+// )
 
 // // 15 예제
 // root.render (
-//   <StyledPage />
+//   // <StyledPage />
+//   // <Blocks /> // flex 속성 배우기
 // )
 
 // 16 예제
