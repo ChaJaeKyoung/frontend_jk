@@ -213,9 +213,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // )
 
 // // 14장 예제
-// root.render (
-//   <DarkOrLight />
-// )
+root.render (
+  <DarkOrLight />
+)
 
 // // 15 예제
 // root.render (
@@ -223,9 +223,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // )
 
 // 16 예제
-root.render (
-  <SimpleRouter />
-)
+// root.render (
+//   // <SimpleRouter />
+// )
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
