@@ -1,6 +1,6 @@
 import { MdCheckBox, MdCheckBoxOutlineBlank, MdRemoveCircleOutline } from "react-icons/md";
 import styled, { css } from "styled-components";
-// 
+// chapter15 styled-components에서 이유가 설명되어 있음
 const TodoListItemWrapper = styled.div`
   padding: 1rem;
   display: flex;
