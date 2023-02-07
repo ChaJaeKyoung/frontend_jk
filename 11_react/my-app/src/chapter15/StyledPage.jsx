@@ -56,6 +56,11 @@ const Button = styled.button`
   }
 
   /* 4. 여러 줄의 스타일 구문을 조건부로 설정해야 하는 경우 css를 불러와 사용 */
+  /* import { css } from "styled-components" */
+  /* 
+    아래 줄에서 css`` 앞에붙은 css를 없애도 괜찮지만, 그렇게 된다면 모든 css가 문자열로 인식이 되어, css 내에서 props를 불러오지 못하게 됨!
+    -> theme로 provide해준 것을 props로 받아야 되는데 그렇게 되면 컬러테마를 사용할 수 없게 됨
+  */
   ${props => 
     props.inverted && 
     // css impot 해줘야 함
