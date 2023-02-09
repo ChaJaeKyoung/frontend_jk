@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-function App() {
+function App_useEffectRefactoring() {
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -166,7 +166,8 @@ function App() {
   );
 }
 
-export default App;
+export default App_useEffectRefactoring ;
+// 함수이름정할 때 특수문자는 언더바와 달러표시만 가능('_', '$') 
 
 // 1. 패키지 설치
 // npm install styled-components styled-reset react-icons
