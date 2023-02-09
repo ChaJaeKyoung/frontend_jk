@@ -121,6 +121,10 @@ function App() {
     // localStorage.setItem('todos', JSON.stringify(todos)); //불가능
     // (❁´◡`❁)
     // localStorage.setItem('todos', JSON.stringify(todos.filter((todo) => todo.id !== id )));
+    // 로컬스토리지에서 배열 속 아이템 하나씩 지울 때에도 filter를 사용했던 이유는 
+    // JSON이 string으로 된 하나의 문자열로 이루어진 파일이기 때문이다.
+    // 만약 localStorage.removeitem()을 쓴다면 보내진 배열안에 string으로 되어있는 배열문이 전부 사라짐!!
+    // cf) localStorage.clear()은 로컬스토리지 전체를 다 비우는 것
   }, [todos]);
 
   // todos 배열의 특정 요소를 수정하기 위한 handleToggle() 함수 정의
