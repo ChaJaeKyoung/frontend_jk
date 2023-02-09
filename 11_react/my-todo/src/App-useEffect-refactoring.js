@@ -54,8 +54,8 @@ function App() {
   // 기존 로컬스토리지 set함수 대신 useEffect로 빼주기
   // 로컬스토리지에 저장하기
   useEffect(() => {
-    
-  },[]);
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   // todos 배열에 새 객체를 추가하기 위한 handleInsert() 함수 정의
   // 새 객체를 만들 때마다 id값에 1씩 더해 주어야 하는데, useRef()를 사용하여 변수 생성
@@ -94,7 +94,7 @@ function App() {
     // set.Item, get.Item
     // setItem('이름', 들어갈 값)
     // 배열을 JSON으로 
-    localStorage.setItem('todos', JSON.stringify(todos.concat(todo)));
+    // localStorage.setItem('todos', JSON.stringify(todos.concat(todo)));
 
   }, [todos]);
 
@@ -114,8 +114,13 @@ function App() {
     // filter('테스트 함수'): 기존의 배열은 변경하지 않고 특정 조건을 만족하는 요소들만 따로 추출하여 새로운 배열을 만듦
     // 테스트 함수에서는 true 또는 false를 반환해야 하며, 여기서 true를 반환하는 경우만 새로운 배열에 포함됨
     setTodos(todos.filter((todo) => todo.id !== id ));
+
+    console.log(todos);
+    // todos가 변경되어있지 않음.
+    // set함수는 비동기 함수이기 때문에 localStorage에 todos를 바로 입력 할 수 없다.
+    // localStorage.setItem('todos', JSON.stringify(todos)); //불가능
     // (❁´◡`❁)
-    localStorage.setItem('todos', JSON.stringify(todos.filter((todo) => todo.id !== id )));
+    // localStorage.setItem('todos', JSON.stringify(todos.filter((todo) => todo.id !== id )));
   }, [todos]);
 
   // todos 배열의 특정 요소를 수정하기 위한 handleToggle() 함수 정의
@@ -139,7 +144,7 @@ function App() {
       todos.map((todo) => todo.id === id ? { ...todo, checked: !todo.checked } : todo )
     );  
     // (❁´◡`❁)
-    localStorage.setItem('todos', JSON.stringify(todos.map((todo) => todo.id === id ? { ...todo, checked: !todo.checked } : todo )));
+    // localStorage.setItem('todos', JSON.stringify(todos.map((todo) => todo.id === id ? { ...todo, checked: !todo.checked } : todo )));
   }, [todos]);
   
   return (
