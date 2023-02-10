@@ -62,6 +62,7 @@ const Category = styled.div`
   }
 
   /* 현재 선택된 카테고리 값에 따라 다른 스타일 적용 */
+  /* props.active 값이 있을때 true */
   ${props => props.active &&
     css`
       font-weight: 600;
@@ -73,10 +74,20 @@ const Category = styled.div`
     `}
 `;
 
-function Categories() {
+function Categories({ category, onSelect }) {
   return (
     <CategoriesBlock>
-      
+      {categories.map(c => (
+        <Category
+          key={c.name}
+          active={c.name === category}
+          onClick={() => {
+            onSelect(c.name);
+          }}
+        >
+          {c.text}
+        </Category>
+      ))}
     </CategoriesBlock>
   );
 };
