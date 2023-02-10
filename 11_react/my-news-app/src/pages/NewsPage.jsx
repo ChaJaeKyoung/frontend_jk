@@ -1,11 +1,11 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
-
 import Categories from '../components/Categories';
-import NewsList from '../../../my-news-app/src/components/NewsList';
+import NewsList from '../components/NewsList';
 
 function NewsPage(props) {
   const { category } = useParams();
+
   return (
     <>
       <Categories />
@@ -13,6 +13,5 @@ function NewsPage(props) {
     </>
   );
 }
-
 
 export default NewsPage;

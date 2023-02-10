@@ -4,7 +4,6 @@ import axios from "axios";
 
 import NewsItem from "./NewsItem";
 
-
 const NewsListBlock = styled.div`
   box-sizing: border-box;
   padding-bottom: 3rem;
@@ -27,8 +26,7 @@ const sampleArticle = {
   urlToImage: 'https://via.placeholder.com/160'
 };
 
-// API를 요청하고 뉴스 데이터가 들어 있는 배열을 컴포넌트 배열로 변환하여 렌더링 해주는 컴포넌트
-
+// API를 요청하고 뉴스 데이터가 들어 있는 배열을 컴포넌트 배열로 변환하여 렌더링해 주는 컴포넌트
 function NewsList({ category }) {
   const [articles, setArticles] = useState(null);
 
@@ -48,25 +46,25 @@ function NewsList({ category }) {
         console.error(error);
       }
     };
-    // 함수 호출
     fetchData();
   }, [category]);
 
-  // 아직 articles 상태가 값이 없을 때
+  // 아직 articles 값이 없을 때
   if (!articles) {
     return null;
   }
 
   return (
     <NewsListBlock>
-      {/* <NewsItem article={sampleArticle}/>
-      <NewsItem article={sampleArticle}/>
-      <NewsItem article={sampleArticle}/>
-      <NewsItem article={sampleArticle}/>
-      <NewsItem article={sampleArticle}/>
-      <NewsItem article={sampleArticle}/> */}
+      {/* sampleArticle 렌더링 해보기 */}
+      {/* <NewsItem article={sampleArticle} />
+      <NewsItem article={sampleArticle} />
+      <NewsItem article={sampleArticle} />
+      <NewsItem article={sampleArticle} />
+      <NewsItem article={sampleArticle} />
+      <NewsItem article={sampleArticle} /> */}
 
-      {/* map()함수로 실제뉴스 반복렌더링 */}
+      {/* map()함수로 반복 렌더링 */}
       {articles.map((article) => 
         <NewsItem key={article.url} article={article} />)}
     </NewsListBlock>

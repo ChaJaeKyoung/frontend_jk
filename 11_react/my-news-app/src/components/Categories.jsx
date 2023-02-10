@@ -61,8 +61,8 @@ const Category = styled.div`
     margin-left: 1rem;
   }
 
-/* 현재 선택된 카테고리 값에 따라 다른 스타일 적용 */
-/* props.active 값이 있을때 true */
+  /* 현재 선택된 카테고리 값에 따라 다른 스타일 적용 */
+  /* router을 쓰지 않을 때 사용 */
   ${props => props.active &&
     css`
       font-weight: 600;
@@ -74,7 +74,7 @@ const Category = styled.div`
     `}
 `;
 
-// NavLink : react-router-dom 에서 관리 Link랑 다름
+// NavLink
 const CategoryLink = styled(NavLink)`
   font-size: 1.125rem;
   white-space: pre;
@@ -90,6 +90,7 @@ const CategoryLink = styled(NavLink)`
   & + & {
     margin-left: 1rem;
   }
+
 
   /* active라는 클래스 값이 있으면 적용 */
   /* react-router-dom 라이브러리에서 자동적으로 클릭하는 엘리먼츠에 active클래스를 붙여줌 */
