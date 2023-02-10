@@ -6,22 +6,33 @@ function ApiRequest(props) {
   // 서버에서 가져온 데이터를 담을 state
   const [data, setData] = useState(null);
 
-  // 1. Promise/then
-  const handleRequestById = (id) => {
-    // JSON placeholder에서 제공하는 테스트용 API 호출
-    // photos 5000개, 따라서 id값도 1부터 5000까지로 추정
-    axios.get(`https://jsonplaceholder.typicode.com/photos/${id}`)
-      .then((response) => {
-        console.log(response);
-        setData(response.data); // axios 라이브러리가 JSON 스트링을 자동으로 JS의 object와 array형식으로 변환해서 들여와줌
-      }) 
-      .catch((error) => { // 요청 실패한 경우 에러 핸들링
-        console.error(error);
-      }); 
+  // // 1. Promise/then
+  // const handleRequestById = (id) => {
+  //   // JSON placeholder에서 제공하는 테스트용 API 호출
+  //   // photos 5000개, 따라서 id값도 1부터 5000까지로 추정
+  //   axios.get(`https://jsonplaceholder.typicode.com/photos/${id}`)
+  //     .then((response) => {
+  //       console.log(response);
+  //       setData(response.data); // axios 라이브러리가 JSON 스트링을 자동으로 JS의 object와 array형식으로 변환해서 들여와줌
+  //     }) 
+  //     .catch((error) => { // 요청 실패한 경우 에러 핸들링
+  //       console.error(error);
+  //     }); 
       
-
     // (참조)
     // axios.post(`https://jsonplaceholder.typicode.com/photos/${id}`, { id: id }) //post는 이런식으로 뒤에 객체로 부가적인 정보도 보내기 가능!
+
+    // 2. async/await 위와 완전 동일한 코드 -> 깔끔하게 리펙토링
+    // 비동기 함수에서만 await는 사용 가능 , 아래처럼 무명함수에 async를 붙여주면 됨
+    const handleRequestById = async (id) => {
+      try{
+        // JSON placeholder 에서 제공하는 테스트용 API 호출
+        const response =await axios.get(`https://jsonplaceholder.typicode.com/photos/${id}`);
+        console.log(response);
+        setData(response.data); // axios 라이브러리가 JSON 스트링을 자동으로 JS의 object와 array형식으로 변환해서 들여와줌
+      } catch (error) {
+        console.error(error);
+      }
   };
 
   return (
@@ -31,7 +42,8 @@ function ApiRequest(props) {
         <button type="button" onClick={() => {handleRequestById(100); }}>불러오기</button>
       </div>
       {data &&
-        <>
+        <>  
+        {/* stringify(JSONdata,함수값: 데이터를 가공해서 보여주고 싶을 때 사용, 없으면 null로 자리를 지켜줘야함. 참고) 정답은 아니지만 대충 이런 느낌으로 콜백함수 사용 (key,value) => {return value +'수정'}, line-height같은 느낌 2) */}
           <textarea cols={70} rows={8} value={JSON.stringify(data, null, 2)} readOnly />
           <p>{data.title}</p>
           <img src={data.thumbnailUrl} alt="thumbnail" />
