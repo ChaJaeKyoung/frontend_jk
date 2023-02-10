@@ -45,7 +45,24 @@ const CategoriesBlock = styled.div`
   }
 `;
 
-const Category = styled.div`
+// const Category = styled.div`
+//   font-size: 1.125rem;
+//   white-space: pre;
+//   text-decoration: none;
+//   color: inherit;
+//   padding-bottom: 0.25rem;
+//   cursor: pointer;
+
+//   &:hover {
+//     color: #495057;
+//   }
+
+//   & + & {
+//     margin-left: 1rem;
+//   }
+
+// NavLink : react-router-dom 에서 관리 Link랑 다름
+const CategoryLink = styled(NavLink)`
   font-size: 1.125rem;
   white-space: pre;
   text-decoration: none;
@@ -78,15 +95,12 @@ function Categories({ category, onSelect }) {
   return (
     <CategoriesBlock>
       {categories.map(c => (
-        <Category
+        <CategoryLink
           key={c.name}
-          active={c.name === category}
-          onClick={() => {
-            onSelect(c.name);
-          }}
+          to={c.name === 'all' ? '/' : `${c.name}`}
         >
           {c.text}
-        </Category>
+        </CategoryLink>
       ))}
     </CategoriesBlock>
   );
