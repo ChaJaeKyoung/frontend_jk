@@ -52,6 +52,7 @@ import DarkOrLight from './chapter14/DarkOrLight';
 import StyledPage from './chapter15/StyledPage';
 import Blocks from './chapter15/Blocks';
 import SimpleRouter from './chapter16/SimpleRouter';
+import ApiRequest from './chapter17/ApiRequest';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -231,4 +232,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
+// 17 예제
+root.render (
+  <ApiRequest />
+)
+
 reportWebVitals();
