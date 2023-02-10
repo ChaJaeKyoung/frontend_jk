@@ -34,10 +34,29 @@ const NewsItemBlock = styled.div`
   }
 `;
 
-function NewsItem() {
+// 각 뉴스 정보를 보여주는 컴포넌트
+// 이미지랑 해당 기사 글 클릭하면 해당 뉴스페이지로 이동!
+function NewsItem({ article }) {
+  const { title, description, url, urlToImage } = article;
   return (
     <NewsItemBlock>
-      
+      {/* 이미지가 있을 때만 렌더링 되도록 조건부랜더링 */}
+      {urlToImage && (
+        <div className="thumnail">
+          <a href={url} target="_blank">
+            <img src={urlToImage} alt="thumbnail" />
+          </a>
+        </div>
+      )}
+
+      <div className="contents">
+        <h2>
+          <a href={url} target="_blank">
+            {title}
+          </a>
+        </h2>
+        <p>{description}</p>
+      </div>
     </NewsItemBlock>
   );
 };

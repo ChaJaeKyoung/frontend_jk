@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import NewsItem from "./NewsItem";
+
 
 const NewsListBlock = styled.div`
   box-sizing: border-box;
@@ -26,7 +28,12 @@ const sampleArticle = {
 function NewsList() {
   return (
     <NewsListBlock>
-      {/* sampleArticle 렌더링 해보기 */}
+      <NewsItem article={sampleArticle}/>
+      <NewsItem article={sampleArticle}/>
+      <NewsItem article={sampleArticle}/>
+      <NewsItem article={sampleArticle}/>
+      <NewsItem article={sampleArticle}/>
+      <NewsItem article={sampleArticle}/>
     </NewsListBlock>
   );
 };
