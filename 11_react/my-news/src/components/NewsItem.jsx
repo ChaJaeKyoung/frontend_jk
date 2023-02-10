@@ -42,7 +42,7 @@ function NewsItem({ article }) {
     <NewsItemBlock>
       {/* 이미지가 있을 때만 렌더링 되도록 조건부랜더링 */}
       {urlToImage && (
-        <div className="thumnail">
+        <div className="thumbnail">
           <a href={url} target="_blank">
             <img src={urlToImage} alt="thumbnail" />
           </a>
