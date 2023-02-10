@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
+
 import NewsItem from "./NewsItem";
 
 
@@ -25,15 +27,47 @@ const sampleArticle = {
   urlToImage: 'https://via.placeholder.com/160'
 };
 
-function NewsList() {
+// API를 요청하고 뉴스 데이터가 들어 있는 배열을 컴포넌트 배열로 변환하여 렌더링 해주는 컴포넌트
+
+function NewsList({ category }) {
+  const [articles, setArticles] = useState(null);
+
+  // 데이터 연동하기
+  // 컴포넌트가 화면에 보이는 시점에 API 요청
+  // useEffect()를 사용하여 컴포넌트가 처음 렌더링 됐을때 요청
+  useEffect(() => {
+    // async 함수 선언
+    const fetchData = async () => {
+      try {
+        const query = category === 'all' ? '' : `&category=${category}`;
+        const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=51bd9087a42c4fd8974a7f4715492a23`);
+
+        console.log(response);
+        setArticles(response.data.articles);
+      } catch (error) {
+        console.error(error)
+      }
+    };
+    // 함수 호출
+    fetchData();
+  }, [category]);
+
+  // 아직 articles 상태가 값이 없을 때
+  if (!articles) {
+    return null;
+  }
+
   return (
     <NewsListBlock>
+      {/* <NewsItem article={sampleArticle}/>
       <NewsItem article={sampleArticle}/>
       <NewsItem article={sampleArticle}/>
       <NewsItem article={sampleArticle}/>
       <NewsItem article={sampleArticle}/>
-      <NewsItem article={sampleArticle}/>
-      <NewsItem article={sampleArticle}/>
+      <NewsItem article={sampleArticle}/> */}
+
+      {/* map()함수로 실제뉴스 반복렌더링 */}
+      {articles.map((article) => <NewsItem key={article.url} article={article} />)}
     </NewsListBlock>
   );
 };
