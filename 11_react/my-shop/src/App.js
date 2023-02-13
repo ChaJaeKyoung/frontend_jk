@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  /* 리액트 부분 */
   #root {
     text-align: center;
   }
