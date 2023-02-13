@@ -1,6 +1,7 @@
 import React from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement } from './counterSlice';
+import { increment, decrement, incrementByAmount } from './counterSlice';
 
 // 5. 리액트 컴포넌트에서 Redux State와 Actions 사용하기
 function Counter(props) {
@@ -9,6 +10,9 @@ function Counter(props) {
 
   // Redux Store에 요청을 보내주는 함수
   const dispatch = useDispatch();
+
+  const [incrementAmount, setIncrementAmount] = useState('2');
+  const incrementValue = Number(incrementAmount) || 0; // 유효성검사까지
 
   return (
     <div>
@@ -26,6 +30,19 @@ function Counter(props) {
           onClick={() => dispatch(increment())}
         >
           +1 증가
+        </button>
+      </div>
+      <div>
+        <input 
+          type='text'
+          value={incrementAmount}
+          onChange={(e) => setIncrementAmount(e.target.value)}
+        />
+        <button type='button'
+          // 액션 생성자, 액션생성 함수 라고 불리운다     ⬇️
+          onClick={() => dispatch(incrementByAmount(incrementValue))}
+        >
+          Add Amount
         </button>
       </div>
     </div>
