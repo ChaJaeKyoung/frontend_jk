@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,7 +25,7 @@ function Main(props) {
   useEffect(() => {
     // 서버에 데이터를 요청했다고 가정
     // ...api call ...
-    // 0213숙제
+    // 0213숙제 data를 redux store에 저장
     dispatch(getAllProducts(data));
   }, []);
   
