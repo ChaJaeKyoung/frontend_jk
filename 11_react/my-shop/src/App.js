@@ -5,6 +5,7 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./pages/Header";
+import Main from "./pages/Main";
 // import Cart from "./pages/Cart";
 
 
@@ -40,7 +41,10 @@ function App() {
           
           <Routes>
             <Route path="/" element={<Header />}>
+              {/* index: index route(여기서는 default child route) */}
+              <Route index element={<Main />} />
               {/* <Route path="/cart" element={<Cart />} /> */}
+              
             </Route>
           </Routes>
         </BrowserRouter>
