@@ -44,6 +44,10 @@ console.log(counterSlice);
 // 각 reducer에 대한 액션 생성 함수들이 객체 형태로 들어있음
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 
+// 선택자 함수
+// export const selectAll = (state) => state.counter;
+export const selectCount = (state) => state.counter.value;
+
 // 위에서 정의한 reducer 함수들
 export default counterSlice.reducer;
 
