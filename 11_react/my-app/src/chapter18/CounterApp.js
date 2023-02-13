@@ -3,10 +3,7 @@ import React from 'react';
 function CounterApp(props) {
   return (
     <div>
-      <Counter />
-      <Counter />
-      <Counter />
-      <OtherCom />
+      
     </div>
   );
 }

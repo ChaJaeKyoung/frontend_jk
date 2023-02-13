@@ -11,11 +11,12 @@ const initialState = {
   // anotherKey: 12, state를 계속 추가하기 편함
 };
 
+
 // 전역 state 만드는 방법 
 // useState()랑 비슷한 역할을 하는데 Redux에서는 state를 하나를 slice라고 부름
 // createSlice() 함수: state이름, 초기값 설정, 액션 및 리듀서 함수를 만드는 것을 도와줌
 // 인자값으로 name, initialState, reducers 속성을 갖는 객체를 넣음
-createSlice({
+const counterSlice = createSlice({
   name: 'counter', // state 이름: -나중에 action 이름을 만드는데도 쓰임-
   // initialState: '', 위에 const initialState 선언해줌으로서 :''  생략
   initialState,
@@ -27,5 +28,23 @@ createSlice({
       // How? Immer 라이브러리가 내장되어 있음 : Immer 불변성 관리를 해줌
       // 실제로 상태를 직접 변경하지 않고 내부적으로 state 복사본을 만들어서 그 복사본을 변경하고 새로운 상태를 반환함
     },
+    decrement: (state) => {
+      state.value -= 1;
+    },
   }
 });
+
+console.log(counterSlice);
+
+
+// 각 reducer에 대한 액션 생성 함수들이 객체 형태로 들어있음
+export const { increment, decrement } = counterSlice.actions;
+
+// 위에서 정의한 reducer 함수들
+export default counterSlice.reducer;
+
+// 그래서 앞으로 Redux의 state를 변경하려면..?
+// 1) state 변경 함수(reducer) 만들기
+// 2) 다른데서 사용할 수 있게 export
+// 3) 수정을 원할 때 그 함수(reducer함수를)를 실행해 다라고 store에 요청을 해야됨
+// => dispatch() 함수를 사용하여 store에 액션을 보냄
