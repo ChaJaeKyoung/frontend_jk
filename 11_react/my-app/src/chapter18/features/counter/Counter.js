@@ -15,7 +15,7 @@ function Counter(props) {
         <button type='button'>
           -1 감소
         </button>
-        <span>{counter}</span>
+        <span>{count}</span>
         <button type='button'>
           +1 증가
         </button>
