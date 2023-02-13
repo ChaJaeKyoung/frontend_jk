@@ -1,10 +1,9 @@
 import React from 'react';
+import Counter from './features/counter/Counter';
 
 function CounterApp(props) {
   return (
-    <div>
-      
-    </div>
+    <Counter />
   );
 }
 
