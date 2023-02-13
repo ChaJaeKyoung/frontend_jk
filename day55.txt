@@ -1,0 +1,5 @@
+상태관리 라이브러리
+
+Redux, MobX, Recoil
+
+Jotai, <Zustand: 요즘 잘 나가는> 

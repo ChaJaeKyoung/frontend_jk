@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// 18장 Redux 사용
+import { Provider } from "react-redux";
+import { store } from "./chapter18/app/store";
+// 여기까지 Redux
+
 import JsxUse from './chapter3/3.4/JsxUse';
 import Library from './chapter3/Library';
 import Clock from './chapter4/Clock';
@@ -53,6 +58,8 @@ import StyledPage from './chapter15/StyledPage';
 import Blocks from './chapter15/Blocks';
 import SimpleRouter from './chapter16/SimpleRouter';
 import ApiRequest from './chapter17/ApiRequest';
+import CounterApp from './chapter18/CounterApp';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -223,19 +230,34 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render (
 //   // <StyledPage />
 //   // <Blocks /> // flex 속성 배우기
-// )
+// );
 
 // 16 예제
 // root.render (
 //   // <SimpleRouter />
-// )
+// );
+
+
+// 17 예제
+// root.render (
+//   <ApiRequest />
+// );
+
+// 18 예제
+root.render (
+  // 2. 리액트에 Redux Store 제공하기
+  // 1)provider로 감싸기
+  // 2)store라는 props가 정해져 있음
+  // CounterApp 컴포넌트와 그 하위 자식들은 Redux Store에 접근 가능
+  // context 사용했던것과 마찬가지로 <Provider></Provider>로 감싸준다.
+  <Provider store={store}>
+    <CounterApp />
+  </Provider>
+);
+
+
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-
-// 17 예제
-root.render (
-  <ApiRequest />
-)
-
 reportWebVitals();
