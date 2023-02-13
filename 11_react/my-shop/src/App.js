@@ -1,8 +1,11 @@
 import { createGlobalStyle } from "styled-components";
-
 // bootstrap: 레이아웃을 복사, 붙여넣기 식으로 편하게 개발 가능한 css, js라이브러리
 import 'bootstrap/dist/css/bootstrap.min.css'; // bootstrap CSS 추가
-import { Button } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Header from "./pages/Header";
+// import Cart from "./pages/Cart";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -28,11 +31,19 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <div className="App">
-      <>
-        <GlobalStyle />
-        {/* 부트스트랩 연습 */}
-        <Button variant="primary">Primary</Button>{' '}
-      </>
+        <BrowserRouter>
+          <GlobalStyle />
+          {/* 리액트 부트스트랩 연습 */}
+          {/* <Button variant="primary">Primary</Button>{' '} */}
+          {/* 일반 부트스트랩 연습 */}
+          {/* <button type="button" className="btn btn-primary">Primary</button> */}
+          
+          <Routes>
+            <Route path="/" element={<Header />}>
+              {/* <Route path="/cart" element={<Cart />} /> */}
+            </Route>
+          </Routes>
+        </BrowserRouter>
     </div>
   );
 }
