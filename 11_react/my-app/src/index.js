@@ -246,6 +246,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // 18 예제
 root.render (
   // 2. 리액트에 Redux Store 제공하기
+  // import { Provider } from "react-redux";
+  // import { store } from "./chapter18/app/store";
   // 1)provider로 감싸기
   // 2)store라는 props가 정해져 있음
   // CounterApp 컴포넌트와 그 하위 자식들은 Redux Store에 접근 가능
