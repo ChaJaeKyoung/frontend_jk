@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { increment, decrement } from './counterSlice';
 
 // 5. 리액트 컴포넌트에서 Redux State와 Actions 사용하기
 function Counter(props) {
@@ -12,11 +13,18 @@ function Counter(props) {
   return (
     <div>
       <div>
-        <button type='button'>
+        <button type='button'
+          // dispatch() 함수: 액션을 발생시켜 스토어에 보냄
+          // -> 스토어는 해당 액션에 매칭되는 리듀서 함수를 실행시켜서 새로운 상태를 만들어 줌
+          // decrement() 함수: 액션 (객체) 생성 함수
+          onClick={() => dispatch(decrement())}
+        >
           -1 감소
         </button>
         <span>{count}</span>
-        <button type='button'>
+        <button type='button'
+          onClick={() => dispatch(increment())}
+        >
           +1 증가
         </button>
       </div>
