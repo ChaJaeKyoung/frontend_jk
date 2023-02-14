@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -73,6 +73,11 @@ function Main(props) {
             {/* Quiz3: 상품 정보를 props로 넘겨서 데이터 바인딩 */}
           </Row>
         </Container>
+
+        {/* 상품 더보기 */}
+        <Button variant="secondary">
+          더보기
+        </Button>
       </section>
     </>
   );

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   productList: [],
-  selectedProduct: null
+  selectedProduct: {}
 };
 
 // 상품 정보를 담을 slice를 만듦
@@ -26,6 +26,11 @@ const productSlice = createSlice({
 
 // 액션 생성 함수 
 export const { getAllProducts, getProductById } = productSlice.actions;
+
+// +)useSelector() 쓸 때마다 state 콜백함수 반복 귀찮-> 여기에 선언해줘서 그냥 쓴다.
+export const getProductList = state => state.product.productList;
+export const getSelectedProduct = state => state.product.selectedProduct;
+
 
 // 이 reducer 함수를 store에 등록해줘야 함
 export default productSlice.reducer;

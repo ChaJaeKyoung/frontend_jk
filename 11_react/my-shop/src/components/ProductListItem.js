@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 // 방법1: styled-components로 기존에 있는 스타일+ 스타일 확장하는 방법!!
 // styled(컴포넌트이름) 이렇게 사용한다.
@@ -14,7 +15,8 @@ const StyledCol = styled(Col)`
 
 function ProductListItem(props) {
   console.log(props);
-  const { imagePath, content, title, price } = props.productInfo;
+  const { imagePath, content, title, price, id } = props.productInfo;
+  const navigate = useNavigate();
   return (
     <>
       {/* 방법1 */}
@@ -26,7 +28,11 @@ function ProductListItem(props) {
       
       {/* 방법2 */}
       <Col md={4} sm={6} className="cursor-pointer">
-        <img src={imagePath} alt={content} width="80%" />
+        <img src={imagePath} alt={content} width="80%" 
+        // 이동 경로 설정하기
+        onClick={() => {
+          navigate(`/detail/${id}`);
+        }}/>
         <h4>{title}</h4>
         <p>{price}원</p>
       </Col>
