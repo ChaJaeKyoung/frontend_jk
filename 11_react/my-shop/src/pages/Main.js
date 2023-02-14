@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 import { getAllProducts } from '../features/product/productSlice';
 
@@ -75,7 +76,17 @@ function Main(props) {
         </Container>
 
         {/* 상품 더보기 */}
-        <Button variant="secondary">
+        <Button variant="secondary" className='mb-4'
+          onClick={() => {
+            axios.get('http://localhost:4000/products')
+              .then((response) => {
+                console.log(response.data);
+              })
+              .catch((error) => {
+                console.error(error);
+              });
+          }}
+        >
           더보기
         </Button>
       </section>
@@ -84,3 +95,8 @@ function Main(props) {
 }
 
 export default Main;
+
+// json-server
+// 실무와 비슷한 느낌으로 하기 위해 가짜 API 서버를 만듦
+// json 파일 하나만 있으면 연습용 서버를 쉽게 구성 가능
+// npx json-server ./src/data2.json --port 4000

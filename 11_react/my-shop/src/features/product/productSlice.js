@@ -21,6 +21,9 @@ const productSlice = createSlice({
     getProductById: (state, action) => {
       state.selectedProduct = action.payload;
     },
+    getMoreProduct: (state, action) => {
+      state.productList.push()
+    },
   }
 });
 
