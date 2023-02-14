@@ -21,7 +21,7 @@ const productSlice = createSlice({
     getProductById: (state, action) => {
       state.selectedProduct = action.payload;
     },
-    getMoreProduct: (state, action) => {
+    getMoreProducts: (state, action) => {
       // 숙제 더보기 기능 구현해보기!
       state.productList.push()
     },
