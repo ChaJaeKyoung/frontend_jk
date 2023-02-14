@@ -22,6 +22,7 @@ const productSlice = createSlice({
       state.selectedProduct = action.payload;
     },
     getMoreProduct: (state, action) => {
+      // 숙제 더보기 기능 구현해보기!
       state.productList.push()
     },
   }
