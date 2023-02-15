@@ -13,6 +13,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./pages/Header";
 import Main from "./pages/Main";
 import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
 // import Cart from "./pages/Cart";
 
 
@@ -34,6 +35,12 @@ const GlobalStyle = createGlobalStyle`
   .cursor-pointer {
     cursor: pointer;
   }
+
+  .odd-color {
+    &:nth-child(odd) {
+    background: #ffddcc;
+  }
+  }
 `;
 
 function App() {
@@ -52,7 +59,8 @@ function App() {
               <Route index element={<Main />} />
               {/* /detail/1로 접속하면 productId에 1이 담김 */}
               <Route path="/detail/:productId" element={<ProductDetail />} />
-              {/* <Route path="/cart" element={<Cart />} /> */}
+              <Route path="/cart" element={<Cart />} />
+              <Route path="*" element={<div>페이지가 존재하지 않습니다.</div>} />
             </Route>
           </Routes>
 
