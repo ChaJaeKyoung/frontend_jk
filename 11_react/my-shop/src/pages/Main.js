@@ -4,7 +4,14 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
-import { getAllProducts, getMoreProducts, getMoreProductsAsync } from '../features/product/productSlice';
+import { 
+  getAllProducts, 
+  getMoreProducts, 
+  getMoreProductsAsync,
+  getProductList,
+  selectStatus,
+  
+} from '../features/product/productSlice';
 
 // 리액트(JS)에서 이미지 파일 import 하는법
 import yonexImg from "../images/yonex.jpg";
@@ -24,8 +31,12 @@ const MainBackground = styled.div`
 
 function Main(props) {
   const dispatch = useDispatch();
-  const productList = useSelector((state) => state.product.productList);
+  // const productList = useSelector((state) => state.product.productList);
+  const productList = useSelector(getProductList);
 
+  // API 요청 상태 가져오기(로딩상태)
+  // 로딩 만들기 추천: react-spinner
+  const status = useSelector(selectStatus);
   console.log(productList);
 
   // 처음 마운트 됐을 때 서버에 상품 목록 데이터를 요청하고
@@ -115,7 +126,7 @@ function Main(props) {
           onClick={() => {
             dispatch(getMoreProductsAsync())
           }}>
-          더보기3
+          더보기3{status}
         </Button>
       </section>
     </>
