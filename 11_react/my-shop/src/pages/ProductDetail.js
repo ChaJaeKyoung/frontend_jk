@@ -11,6 +11,7 @@ import { getProductById, getSelectedProduct } from '../features/product/productS
 import data from "../data.json";
 import styled, { keyframes } from 'styled-components';
 import TabContents from '../components/TabContents';
+import { addItemToCart } from '../features/cart/cartSlice';
 
 // 스타일드 컴포넌트를 이용한 애니메이션 속성 적용
 // 깜빡깜빡 효과주기
@@ -112,6 +113,17 @@ function ProductDetail(props) {
               />
             </Col>
             <Button variant="primary" className="mb-3">주문하기</Button>
+            <Button variant="warning" className="mb-3" 
+              onClick={() => {
+                dispatch(addItemToCart({
+                  // product: selectedProduct 
+                  id: selectedProduct.id, 
+                  title: selectedProduct.title, 
+                  price: selectedProduct.price, 
+                  count: orderCount 
+                }));
+              }}
+            >장바구니</Button>
           </Col>
         </Row>
 

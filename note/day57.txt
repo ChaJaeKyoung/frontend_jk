@@ -113,3 +113,9 @@ export const { increaseCount, decreaseCount } = cartSlice.actions;
 const dispatch = useDispatch();
 4)요청 보낼 때 id값을 payload에 담아 보내기
 <button type="button" onClick={() => {dispatch(increaseCount(cart.id))}}> + </button>
+
+
+====================
+
+상세페이지에서 
+수량만큼 장바구니에 넣기 QUIZ
