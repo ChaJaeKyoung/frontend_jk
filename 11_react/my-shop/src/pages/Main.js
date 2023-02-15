@@ -98,7 +98,7 @@ function Main(props) {
               });
           }}
         >
-          더보기
+          더보기1
         </Button>
 
         {/* 
@@ -107,7 +107,7 @@ function Main(props) {
           -> 따로 함수호출
         */}
         <Button variant="secondary" className="mb-4" onClick={handleGetMoreProducts}>
-          더보기
+          더보기2
         </Button>
 
         {/* thunk를 이용한 비동기 작업 처리하기 */}
@@ -115,7 +115,7 @@ function Main(props) {
           onClick={() => {
             dispatch(getMoreProductsAsync())
           }}>
-          더보기
+          더보기3
         </Button>
       </section>
     </>
