@@ -41,9 +41,9 @@ function ProductDetail(props) {
   const [showInfo, setShowInfo] = useState(true); 
   // input 주문값 상태
   const [orderCount, setOrderCount] = useState(1); // 주문 수량 상태
-  // 탭 index 상태
+  // 탭 index 상태 -> 방법3. 배열에서 사용
   const [showTabIndex, setShowTabIndex] = useState(0); 
-  // 탭 상태
+  // 탭 상태 -> 방법3. 객체에서 사용
   const [showTab, setshowTab] = useState('detail');
 
   const handleChangeOrderCount = useCallback((e) => {
