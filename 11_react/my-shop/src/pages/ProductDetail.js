@@ -10,6 +10,7 @@ import { getProductById, getSelectedProduct } from '../features/product/productS
 // axios 대체...
 import data from "../data.json";
 import styled, { keyframes } from 'styled-components';
+import TabContents from '../components/TabContents';
 
 // 스타일드 컴포넌트를 이용한 애니메이션 속성 적용
 // 깜빡깜빡 효과주기
@@ -42,6 +43,8 @@ function ProductDetail(props) {
   const [orderCount, setOrderCount] = useState(1); // 주문 수량 상태
   // 탭 index 상태
   const [showTabIndex, setShowTabIndex] = useState(0); 
+  // 탭 상태
+  const [showTab, setshowTab] = useState('detail');
 
   const handleChangeOrderCount = useCallback((e) => {
     // 유효성 검사
@@ -115,17 +118,17 @@ function ProductDetail(props) {
         {/* 탭 버튼 UI */}
         {/* defaultActiveKey: 기본으로 active할 탭, active 클래스가 들어가있음 */}
         <Nav variant="tabs" defaultActiveKey="link-0" className="my-3">
-          <Nav.Item>
-            <Nav.Link eventKye="link-0" onClick={() => { setShowTabIndex(0); }}>상세정보</Nav.Link>
+          <Nav.Item> 
+            <Nav.Link eventKey="link-0" onClick={() => { setShowTabIndex(0) || setshowTab('detail'); }}>상세정보</Nav.Link> 
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKye="link-1" onClick={() => { setShowTabIndex(1); }}>리뷰</Nav.Link>
+            <Nav.Link eventKey="link-1" onClick={() => { setShowTabIndex(1) || setshowTab('review'); }}>리뷰</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKye="link-2" onClick={() => { setShowTabIndex(2); }}>Q&amp;A</Nav.Link>
+            <Nav.Link eventKey="link-2" onClick={() => { setShowTabIndex(2)  || setshowTab('qa'); }}>Q&amp;A</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKye="link-3" onClick={() => { setShowTabIndex(3); }}>판품/교환정보</Nav.Link>
+            <Nav.Link eventKey="link-3" onClick={() => { setShowTabIndex(3)  || setshowTab('exchange'); }}>판품/교환정보</Nav.Link>
           </Nav.Item>
         </Nav>
         
@@ -144,8 +147,28 @@ function ProductDetail(props) {
         } */}
 
         {/* 방법2. 컴포넌트로 추출 */}
-        
+        {/* props로 상태를 넘겨주면 된다. */}
+        {/* <TabContents showTabIndex={showTabIndex}/> */}
 
+        {/* 방법3. 배열이나 객체 형태로 만들어서 조건부 렌더링 */}
+        {/* 배열 형태 */}
+        {/* {
+          [
+            <div>탭 내용1</div>, // 위에서 setShowTabIndex(0)
+            <div>탭 내용2</div>, // 위에서 setShowTabIndex(1)
+            <div>탭 내용3</div>, // 위에서 setShowTabIndex(2)
+            <div>탭 내용4</div> // 위에서 setShowTabIndex(3)
+          ][showTabIndex]  
+        } */}
+        {/* 객체 형태 */}
+        {
+          {
+            'detail': <div>탭 내용1</div>, // 위에서 setShowTab('detail')
+            'review': <div>탭 내용2</div>, // 위에서 setShowTab('review')
+            'qa': <div>탭 내용3</div>, // 위에서 setShowTab('qa')
+            'exchange': <div>탭 내용4</div> // 위에서 setShowTab('exchange')
+          }[showTab]
+        }
       </Container>
     </>
   );
