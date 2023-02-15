@@ -115,7 +115,7 @@ function ProductDetail(props) {
           </Col>
         </Row>
 
-        {/* 탭 버튼 UI */}
+        {/* 탭 버튼 UI - 부트스트랩 */}
         {/* defaultActiveKey: 기본으로 active할 탭, active 클래스가 들어가있음 */}
         <Nav variant="tabs" defaultActiveKey="link-0" className="my-3">
           <Nav.Item> 
