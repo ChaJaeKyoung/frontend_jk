@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
-import { getAllProducts, getMoreProducts } from '../features/product/productSlice';
+import { getAllProducts, getMoreProducts, getMoreProductsAsync } from '../features/product/productSlice';
 
 // 리액트(JS)에서 이미지 파일 import 하는법
 import yonexImg from "../images/yonex.jpg";
@@ -85,7 +85,7 @@ function Main(props) {
         </Container>
 
         {/* 상품 더보기 */}
-        {/* <Button variant="secondary" className='mb-4'
+        <Button variant="secondary" className='mb-4'
           onClick={() => {
             axios.get('http://localhost:4000/products')
               .then((response) => {
@@ -99,7 +99,7 @@ function Main(props) {
           }}
         >
           더보기
-        </Button> */}
+        </Button>
 
         {/* 
           위 HTTP 요청 코드를 함수로 만들어서 api 폴더로 추출하고 async/await로 바꾸기 
@@ -107,6 +107,14 @@ function Main(props) {
           -> 따로 함수호출
         */}
         <Button variant="secondary" className="mb-4" onClick={handleGetMoreProducts}>
+          더보기
+        </Button>
+
+        {/* thunk를 이용한 비동기 작업 처리하기 */}
+        <Button variant="secondary" className="mb-4" 
+          onClick={() => {
+            dispatch(getMoreProductsAsync())
+          }}>
           더보기
         </Button>
       </section>
