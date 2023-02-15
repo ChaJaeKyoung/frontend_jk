@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Alert, Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Alert, Button, Col, Container, Form, Nav, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
 import { toast } from 'react-toastify';
@@ -38,9 +38,11 @@ function ProductDetail(props) {
 
   // Info창 상태
   const [showInfo, setShowInfo] = useState(true); 
-
   // input 주문값 상태
   const [orderCount, setOrderCount] = useState(1); // 주문 수량 상태
+  // 탭 index 상태
+  const [showTabIndex, setShowTabIndex] = useState(0); 
+
   const handleChangeOrderCount = useCallback((e) => {
     // 유효성 검사
     if (isNaN(e.target.value)) {
@@ -109,6 +111,41 @@ function ProductDetail(props) {
             <Button variant="primary" className="mb-3">주문하기</Button>
           </Col>
         </Row>
+
+        {/* 탭 버튼 UI */}
+        {/* defaultActiveKey: 기본으로 active할 탭, active 클래스가 들어가있음 */}
+        <Nav variant="tabs" defaultActiveKey="link-0" className="my-3">
+          <Nav.Item>
+            <Nav.Link eventKye="link-0" onClick={() => { setShowTabIndex(0); }}>상세정보</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKye="link-1" onClick={() => { setShowTabIndex(1); }}>리뷰</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKye="link-2" onClick={() => { setShowTabIndex(2); }}>Q&amp;A</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKye="link-3" onClick={() => { setShowTabIndex(3); }}>판품/교환정보</Nav.Link>
+          </Nav.Item>
+        </Nav>
+        
+        {/* 탭의 내용을 다 만들어 놓고 조건부 렌더링하면 됨 */}
+        {/* state && <나타내고싶은것> */}
+        {/* 방법1. 삼항 연산자 */}
+        {/* {showTabIndex === 0 
+          ? <div>탭 내용1</div>
+          : showTabIndex === 1
+            ? <div>탭 내용2</div>
+            : showTabIndex ===2 
+              ? <div>탭 내용3</div>
+              : showTabIndex ===3
+                ? <div>탭 내용4</div>
+                : null
+        } */}
+
+        {/* 방법2. 컴포넌트로 추출 */}
+        
+
       </Container>
     </>
   );
