@@ -35,7 +35,7 @@ function Main(props) {
   const productList = useSelector(getProductList);
 
   // API 요청 상태 가져오기(로딩상태)
-  // 로딩 만들기 추천: react-spinner
+  // 로딩 화면 만들기 추천: react-spinners, lotti files
   const status = useSelector(selectStatus);
   console.log(productList);
 
