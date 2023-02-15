@@ -21,15 +21,16 @@ const productSlice = createSlice({
     getProductById: (state, action) => {
       state.selectedProduct = action.payload;
     },
+    // 더보기 버튼 클릭 시 전역상태에 상품 목록 추가하는 리듀서
     getMoreProducts: (state, action) => {
-      // 숙제 더보기 기능 구현해보기!
-      state.productList.push()
+      console.log(action.payload);
+      state.productList.push(...action.payload);
     },
   }
 });
 
 // 액션 생성 함수 
-export const { getAllProducts, getProductById } = productSlice.actions;
+export const { getAllProducts, getProductById, getMoreProducts } = productSlice.actions;
 
 // +)useSelector() 쓸 때마다 state 콜백함수 반복 귀찮-> 여기에 선언해줘서 그냥 쓴다.
 export const getProductList = state => state.product.productList;

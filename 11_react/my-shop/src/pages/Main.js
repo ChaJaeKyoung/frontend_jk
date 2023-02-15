@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
-import { getAllProducts } from '../features/product/productSlice';
+import { getAllProducts, getMoreProducts } from '../features/product/productSlice';
 
 // 리액트(JS)에서 이미지 파일 import 하는법
 import yonexImg from "../images/yonex.jpg";
@@ -12,6 +12,7 @@ import yonexImg from "../images/yonex.jpg";
 // 서버에서 받아온 데이터라고 가정
 import data from "../data.json";
 import ProductListItem from '../components/ProductListItem';
+import { getProducts } from '../api/productAPI';
 
 const MainBackground = styled.div`
   height: 500px;
@@ -37,6 +38,14 @@ function Main(props) {
     dispatch(getAllProducts(data));
   }, []);
   
+  const handleGetMoreProducts = async () => {
+    // 비동기함수 이기 때문에 동기적으로 바꿔줌
+    // result에는 데이터가 담김
+    const result = await getProducts();
+    if(!result) return;
+
+    dispatch(getMoreProducts(result));
+  };
 
   return (
     <>
@@ -76,17 +85,28 @@ function Main(props) {
         </Container>
 
         {/* 상품 더보기 */}
-        <Button variant="secondary" className='mb-4'
+        {/* <Button variant="secondary" className='mb-4'
           onClick={() => {
             axios.get('http://localhost:4000/products')
               .then((response) => {
                 console.log(response.data);
+                // 스토어에 dispatch로 요청 보내기
+                dispatch(getMoreProducts(response.data));
               })
               .catch((error) => {
                 console.error(error);
               });
           }}
         >
+          더보기
+        </Button> */}
+
+        {/* 
+          위 HTTP 요청 코드를 함수로 만들어서 api 폴더로 추출하고 async/await로 바꾸기 
+          -> why? onclick안에다가 코드를 저렇게 쓰지 않는다! 가독성때문에 (나중에 컴포넌트 보기가 어려워진다.)
+          -> 따로 함수호출
+        */}
+        <Button variant="secondary" className="mb-4" onClick={handleGetMoreProducts}>
           더보기
         </Button>
       </section>
