@@ -77,7 +77,15 @@ function ProductDetail(props) {
 
     // 상세 페이지에 들어오면 해당 상품의 id를 localStorage에 추가
     let latestViewed = JSON.parse(localStorage.getItem('latestViewed')) || []; //local storage에 아무것도 없으면 null이 반환되므로, 뒤에 빈배열이 반환됨
+    // localstorage에 id가 중복적으로 들어감 -> 해결하기위해서
+    // id를 넣기전에 기존 배열에 존재하는 검사하거나
+    // 또는 일단 넣고 Set 자료형을 이용하여 중복 제거
     latestViewed.push(productId);
+    latestViewed = new Set(latestViewed); // Set에 들어가는 순간 중복이 제거가 되지만,,, 배열이 아니게 됨-> Set은 객체임!!
+    // 배열화 방법1.
+    // Array.from(latestViewed); // Array : 반복 가능한 객체들을 유사배열등등을 배열로 만들어주는 객체
+    // 배열화 방법2. spread 연산자
+    latestViewed = [...latestViewed ];
     localStorage.setItem('latestViewed', JSON.stringify(latestViewed));
 
     // 3초 뒤에 info창 사라지게 만들기
