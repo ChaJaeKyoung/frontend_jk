@@ -1,0 +1,23 @@
+Action 함수 만들기
+
+(state, action)
+
+Action 객체
+{
+type:
+payload:
+}
+
+그 중에
+
+구조분해 할당으로
+(state, { payload })
+이렇게 작용
+
+여기서 한층 더 별칭으로 payload에 무엇을 담고 있는지 나타내 줄 수 있다.
+(state, { payload: id })
+
+
+============================
+Q.장바구니 cart에서 
+수량을 눌렀을 때 인풋창 나타내게 해서 변경시키기 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { increaseCount, decreaseCount, selectCartList } from '../features/cart/cartSlice';
+import { increaseCount, decreaseCount, selectCartList, removeItemFromCart } from '../features/cart/cartSlice';
 
 function Cart(props) {
   const dispatch = useDispatch();
@@ -17,6 +17,7 @@ function Cart(props) {
             <th>상품명</th>
             <th>수량</th>
             <th>가격</th>
+            <th>삭제</th>
           </tr>
         </thead>
         <tbody>
@@ -41,6 +42,10 @@ function Cart(props) {
                   <button type="button" onClick={() => {dispatch(increaseCount(cart.id))}}> + </button>
                 </td>
                 <td>{ cart.price * cart.count }원</td>
+                <td>
+                  {/* <button type="button" onClick={()=> {dispatch(removeItemFromCart({ id: cart.id, index }))}}>🗑️</button> */}
+                  <button type="button" onClick={()=> {dispatch(removeItemFromCart({ id: cart.id }))}}>🗑️</button>
+                </td>
               </tr>
             );
           })}
