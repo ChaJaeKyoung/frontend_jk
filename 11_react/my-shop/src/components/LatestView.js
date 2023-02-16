@@ -17,11 +17,11 @@ function LatestView(props) {
   const productList = useSelector(getProductList);
   const latestViewed = JSON.parse(localStorage.getItem('latestViewed')); // 없으면 null 반환
     
-  const latestViewedProducts = latestViewed.map((id) => {
+  const latestViewedProducts = latestViewed?.map((id) => {
     return productList.find((product) => {
       return product.id === id;
     });
-  });
+  }); // 옵셔널 체이닝에 의해 undefined반환 -> 최근 본 상품 배열이 null이더라도 오류가 나지 않게됨!!! 물음표 하나를 latestViewed뒤에 직어준다..!!
 
   if (productList.lengt < 1 || !latestViewedProducts) {
     return null; // 렌더링을 안한다
