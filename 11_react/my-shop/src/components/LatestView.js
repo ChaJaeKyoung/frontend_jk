@@ -23,7 +23,10 @@ function LatestView(props) {
     });
   }); // 옵셔널 체이닝에 의해 undefined반환 -> 최근 본 상품 배열이 null이더라도 오류가 나지 않게됨!!! 물음표 하나를 latestViewed뒤에 직어준다..!!
 
-  if (productList.lengt < 1 || !latestViewedProducts) {
+  console.log(productList);
+  console.log(latestViewed);
+  console.log(latestViewedProducts);
+  if (productList.length < 1 || !latestViewedProducts) {
     return null; // 렌더링을 안한다
   }
 
@@ -36,7 +39,7 @@ function LatestView(props) {
           <React.Fragment key={product.id}>  
           {/* key값을 줄 때에는 생략했던 React.Fragment를 다시 입력해서 감싸주는 태그에 map에서 쓸 key를 넣어준다. */}
             <img src={product.imagePath} alt={`img-${index}`}/>
-            <ListGroup.Item>{product.title}</ListGroup.Item>
+            <ListGroup.Item className="text-ellipsis">{product.title}</ListGroup.Item>
           </React.Fragment>
         )})}
       </ListGroup>
