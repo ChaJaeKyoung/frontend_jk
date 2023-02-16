@@ -99,7 +99,8 @@ function Main(props) {
         {/* 상품 더보기 */}
         <Button variant="secondary" className='mb-4'
           onClick={() => {
-            axios.get('http://localhost:4000/products')
+            // axios.get('http://localhost:4000/products')
+            axios.get('https://my-json-server.typicode.com/ChaJaeKyoung/db-store')
               .then((response) => {
                 console.log(response.data);
                 // 스토어에 dispatch로 요청 보내기
