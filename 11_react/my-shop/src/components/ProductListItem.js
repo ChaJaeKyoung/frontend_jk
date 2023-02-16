@@ -13,6 +13,9 @@ const StyledCol = styled(Col)`
 // 아래 <Col>에 클래스네임을 줘서 "cursor-pointer"로 스타일 변화를 준다.
 // 공통 스타일로 여기저기서 사용하는 것이 더 편리하므로 여기서는 클래스네임을 주기로!
 
+// 숫자 포맷 적용  ( 포멧형태 ,스타일인자 ) 
+const formatter = new Intl.NumberFormat('ko-KR'); // 선생님께서 보내주신 날짜관련 js 유튜브
+
 function ProductListItem(props) {
   console.log(props);
   const { imagePath, content, title, price, id } = props.productInfo;
@@ -34,7 +37,7 @@ function ProductListItem(props) {
           navigate(`/detail/${id}`);
         }}/>
         <h4>{title}</h4>
-        <p>{price}원</p>
+        <p>{formatter.format(price)}원</p>
       </Col>
     </>
   );
