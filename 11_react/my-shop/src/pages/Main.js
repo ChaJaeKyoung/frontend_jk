@@ -22,6 +22,7 @@ import ProductListItem from '../components/ProductListItem';
 import { getProducts } from '../api/productAPI';
 import LatestView from '../components/LatestView';
 
+
 const MainBackground = styled.div`
   height: 500px;
   background-image: url(${yonexImg});
@@ -100,7 +101,7 @@ function Main(props) {
         <Button variant="secondary" className='mb-4'
           onClick={() => {
             // axios.get('http://localhost:4000/products')
-            axios.get('https://my-json-server.typicode.com/ChaJaeKyoung/db-store')
+            axios.get('https://my-json-server.typicode.com/ChaJaeKyoung/db-store/products')
               .then((response) => {
                 console.log(response.data);
                 // 스토어에 dispatch로 요청 보내기

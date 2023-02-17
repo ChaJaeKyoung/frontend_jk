@@ -44,7 +44,8 @@ const productSlice = createSlice({
     // 더보기 버튼 클릭 시 전역상태에 상품 목록 추가하는 리듀서
     getMoreProducts: (state, action) => {
       console.log(action.payload);
-      state.productList.push(...action.payload);
+      // state.productList.push(...action.payload);
+      state.productList = [...action.payload]; // 데이터 덮어쓰기
     },
   },
   // 비동기적인 작업에는 extraReducers를 사용
