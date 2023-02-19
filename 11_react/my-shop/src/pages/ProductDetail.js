@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Alert, Button, Col, Container, Form, Nav, Row } from 'react-bootstrap';
+import { Alert, Button, Col, Container, Form, Modal, Nav, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from 'react-toastify';
 
 import { getProductById, getSelectedProduct } from '../features/product/productSlice';
@@ -43,9 +43,15 @@ function ProductDetail(props) {
   // input 주문값 상태
   const [orderCount, setOrderCount] = useState(1); // 주문 수량 상태
   // 탭 index 상태 -> 방법3. 배열에서 사용
-  const [showTabIndex, setShowTabIndex] = useState(0); 
+  const [showTabIndex, setShowTabIndex] = useState(0); // 탭 index 상태
   // 탭 상태 -> 방법3. 객체에서 사용
-  const [showTab, setshowTab] = useState('detail');
+  const [showTab, setshowTab] = useState('detail'); 
+  // 모달창 조건부 렌더링 나타내는 state
+  const [showModal, setShowModal] = useState(false); // 모달상태
+  const handleClose = () => setShowModal(false); // 닫기
+  const handleOpen = () => setShowModal(true); // 열기
+
+  const navigate = useNavigate();
 
   const handleChangeOrderCount = useCallback((e) => {
     // 유효성 검사
@@ -68,6 +74,20 @@ function ProductDetail(props) {
     });
 
     dispatch(getProductById(foundProduct));
+
+    // 상세 페이지에 들어오면 해당 상품의 id를 localStorage에 추가
+    let latestViewed = JSON.parse(localStorage.getItem('latestViewed')) || []; //local storage에 아무것도 없으면 null이 반환되므로, 뒤에 빈배열이 반환됨
+    // localstorage에 id가 중복적으로 들어감 -> 해결하기위해서
+    // id를 넣기전에 기존 배열에 존재하는 검사하거나
+    // 또는 일단 넣고 Set 자료형을 이용하여 중복 제거
+    latestViewed.push(productId);
+    latestViewed = new Set(latestViewed); // Set에 들어가는 순간 중복이 제거가 되지만,,, 배열이 아니게 됨-> Set은 객체임!!
+    // 배열화 방법1.
+    // Array.from(latestViewed); // Array : 반복 가능한 객체들을 유사배열등등을 배열로 만들어주는 객체
+    // 배열화 방법2. spread 연산자
+    latestViewed = [...latestViewed ];
+    localStorage.setItem('latestViewed', JSON.stringify(latestViewed));
+
     // 3초 뒤에 info창 사라지게 만들기
     const timeout = setTimeout(() => {
       setShowInfo(false);
@@ -122,6 +142,8 @@ function ProductDetail(props) {
                   price: selectedProduct.price, 
                   count: orderCount 
                 }));
+
+                handleOpen(); // 장바구니 모달 열기
               }}
             >장바구니</Button>
           </Col>
@@ -181,6 +203,26 @@ function ProductDetail(props) {
             'exchange': <div>탭 내용4</div> // 위에서 setShowTab('exchange')
           }[showTab]
         }
+        {/* react-bootstrap modals 두번째 */}
+        <Modal show={showModal} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>이상한 장난감 샵 알림</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            장바구니에 상품을 담았습니다.<br />
+            장바구니로 이동하시겠습니까?
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              취소
+            </Button>
+            <Button variant="primary" 
+              onClick={() => { navigate('/cart'); }}
+            >
+              확인
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </Container>
     </>
   );

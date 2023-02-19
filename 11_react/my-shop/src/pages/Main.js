@@ -20,6 +20,8 @@ import yonexImg from "../images/yonex.jpg";
 import data from "../data.json";
 import ProductListItem from '../components/ProductListItem';
 import { getProducts } from '../api/productAPI';
+import LatestView from '../components/LatestView';
+
 
 const MainBackground = styled.div`
   height: 500px;
@@ -98,7 +100,8 @@ function Main(props) {
         {/* 상품 더보기 */}
         <Button variant="secondary" className='mb-4'
           onClick={() => {
-            axios.get('http://localhost:4000/products')
+            // axios.get('http://localhost:4000/products')
+            axios.get('https://my-json-server.typicode.com/ChaJaeKyoung/db-store/products')
               .then((response) => {
                 console.log(response.data);
                 // 스토어에 dispatch로 요청 보내기
@@ -129,6 +132,8 @@ function Main(props) {
           더보기3{status}
         </Button>
       </section>
+      
+      <LatestView />
     </>
   );
 }

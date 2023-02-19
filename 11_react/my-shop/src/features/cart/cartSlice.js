@@ -56,9 +56,17 @@ const cartSlice = createSlice({
         ); 
   
     },
+    removeItemFromCart : (state, { payload: item }) => {
+      // id를 이용해서 일치하면 cartList 에서 제거
+      console.log(item.id);
+      // const targetItem = state.cartList.find((cart) => { return item.id === cart.id });
+      // targetItem && state.cartList.splice(item.index,1);
+      const targetIndex = state.cartList.findIndex((cart) => cart.id === item.id );
+      state.cartList.splice(targetIndex,1);
+    }
   }
 });
 
-export const { increaseCount, decreaseCount, addItemToCart } = cartSlice.actions;
+export const { increaseCount, decreaseCount, addItemToCart, removeItemFromCart } = cartSlice.actions;
 export const selectCartList = state => state.cart.cartList;
 export default cartSlice.reducer;

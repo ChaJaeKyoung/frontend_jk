@@ -39,7 +39,14 @@ const GlobalStyle = createGlobalStyle`
   .odd-color {
     &:nth-child(odd) {
     background: #ffddcc;
+    }
   }
+
+  .text-ellipsis {
+    /* 말줄임표 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 `;
 
