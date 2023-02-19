@@ -33,7 +33,12 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: 0.1s background ease-in;
+  &:hover {
+    background: #adb5bd;
+  }
 `;
+
 
 // 새로운 항목을 입력하고 추가할 수 있는 컴포넌트
 // state를 통해 input의 상태를 관리
