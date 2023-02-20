@@ -10,3 +10,6 @@ git flow ( main, develop, feature, hotfix, release )
 
 # 다른 기능 추가
 팀원이 다른기능 만드는중~~
+
+# img 추가
+기능만드는중~
