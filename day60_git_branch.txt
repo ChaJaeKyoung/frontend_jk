@@ -1,0 +1,16 @@
+day60 git branch 만들기
+reviwer : 권위자
+assign : 담당자
+
+* pull request  
+
+main <- branch 
+제목
+내용
+
+
+main에 pull이 되었으면? 
+
+branch를 지워야한다.
+
+
