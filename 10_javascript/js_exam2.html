@@ -15,6 +15,148 @@
     // git config --global user.name 'my name'
     // git config --global user.email myemail@naver.com
 
+    // 2. 
+    // 모든 파일의 변경사항을 추적하도록 지정하고 stage(index) 영역에 올리는 명령어를 작성해보세요.
+
+    // 답안2.
+    // git add .
+
+    // 3. 
+    // '로그인 기능 추가' 라는 커밋메시지로 커밋을 만드는 명령어를 작성해보세요.
+    
+    // 답안3.
+    // git commit -m "로그인 기능 추가"
+    
+    // 4. 
+    // backup 이라는 별칭으로 아래 원격 저장소를 연결하는 명령어를 작성해보세요.
+    // https://github.com/abcdef/frontend_backup.git
+
+    // 답안4.
+    // git remote add backup https://github.com/abcdef/frontend_backup.git
+
+    // 문제5.
+    // origin 이라는 별칭의 원격 저장소로 로컬 main 브랜치의 커밋 내역을 전송(업로드)하는 명령어를 작성해보세요.
+
+    // 답안5.
+    // git push origin main
+
+    // 문제 6.
+    // 아래 함수 선언문을 화살표 함수로 리팩터링 하세요.
+    // function hello(val) {
+    // return 'Hello ' + val;
+    // }
+    
+    // 답안6.
+    const hello = (val) => {
+      // return console.log('Hello' +' '+val);
+      return 'Hello'+val ;
+    }
+
+    hello('world');
+
+    // 문제 7.
+    // 아래 함수 선언문을 화살표 함수로 리팩터링 하세요.
+    // function getFavoriteMovie() {
+    //   return {
+    //     name: 'Inception',
+    //     year: '2010',
+    //     director: 'Nolan',
+    //     rating: 9.6
+    //   };
+    // }
+
+    // 답안7.
+    const getFavoriteMovie = () => {
+      return console.log({
+        name: 'Inception',
+        year: '2010',
+        director: 'Nolan',
+        rating: 9.6
+      });
+    }
+
+    getFavoriteMovie();
+
+    // 문제 8.
+    // 아래 자기 소개(greeting)를 템플릿 리터럴을 사용하여 리팩터링 해보세요.
+    const name = 'JH Kim';
+    const age = 30;
+    const hobby = 'minton';
+    // const greeting = 'Hello my name is ' + name + '. I\'m ' + age + ' years old. My hobby is ' + hobby + '.';
+
+    // 답안8.
+    const greeting = `Hello my name is ${name} I'm ${age} years old. My hobby is ${hobby}.`;
+
+    console.log(greeting);
+
+    // 9.
+    // 아래 액션 객체의 payload안에 데이터들(id, title, content, done)을 구조 분해 할당 해보세요.
+    // (한 줄 또는 여러 줄에 걸쳐서 분해하여도 상관없음)
+    const action = {
+      type: 'action/name',
+      payload: {
+        id: '1',
+        title: '메인 화면 구성하기',
+        content: '메인 이미지와 아이템 목록 만들기',
+        done: true
+      }
+    };
+
+    // 답안9.
+    // const { type, payload } = action;
+    // const { id, title, content, done } = payload;
+    // console.log(id, title, content, done);
+
+    // 한줄로 표기
+    const { id, title, content, done } = action.payload;
+    console.log(id, title, content, done);
+
+
+    // 10.  아래와 같은 객체 구조에서 옵셔널 체이닝을 사용하여 대학 전공에 접근해보세요.
+    // (optional 이라는 주석이 붙은 속성은 있을 수도 있고, 없을 수도 있는 선택적 속성임)
+    const person = {
+      name: 'JH Kim',
+      job: 'teacher',
+      education: { // optional
+        high_school: { /* ... */ }, // optional
+        university: { // optional
+          name: 'Incheon Hawaii',
+          major: 'ICE',
+        }
+      }
+    };
+    const person2 = {
+      name: 'JK Cha',
+      job: 'teacher',
+      // education: { // optional
+      //   high_school: { /* ... */ }, // optional
+      //   university: { // optional
+      //     name: 'Incheon Hawaii',
+      //     major: 'ICE',
+      //   }
+      // }
+    };
+
+    // 옵셔널 체이닝 미사용시
+    let universityMajor;
+    if (person.education &&
+        person.education.university) {
+      universityMajor = person.education.university.major;
+    }
+    console.log(universityMajor);
+    
+    universityMajor = person2.education?.university?.major;
+    console.log(universityMajor); 
+
+    // 답안10.
+    // 옵셔널 체이닝 사용시
+    const optionalChaniningFindMajor = person.education?.university?.major;
+    console.log(optionalChaniningFindMajor); 
+
+
+
+
+
   </script>
 </head>
 <body>
