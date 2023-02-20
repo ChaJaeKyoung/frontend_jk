@@ -12,5 +12,3 @@ main <- branch
 main에 pull이 되었으면? 
 
 branch를 지워야한다.
-
-
