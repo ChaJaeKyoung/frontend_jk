@@ -1,0 +1,24 @@
+react-responsive
+props로 상태를 넘겨줘서
+display 값에 is mobile? colume : row
+이런식으로 값을 변경시켜준다.
+
+
+아니면  css에 일일이 넣어주고
+@media 에 분기점으로 
+div마다 
+class넣어서 display none 
+display: block 처리 해준다.
+
+
+
+================
+11.4 input 
+onChange 
+함수를 하나 만들어서
+name이라는 속성을 만들어서
+
+=============
+
+마지막
+button 호버 했을 때 변경
