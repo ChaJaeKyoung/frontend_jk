@@ -1,0 +1,57 @@
+npm
+패키지 설치
+순차적으로
+package.json
+
+
+yarn (npm보다 빠르다)
+병렬적으로 
+동시에 설치
+yarn.lock
+
+==============
+둘중에 하나를 써야함
+설치된 파일들이 나온 파일이 다름
+package, yarn
+=========
+빌드: 배포 전 파일들을 압축하는 것
+
+npm run build  : 내 로컬에서 빌드가 되는 것
+==================
+배포:(정적 웹사이트를 배포해주는 사이트netlify, aws, github 등등)
+aws: s3 서비스 
+스토리지에 빌드산출물들을 올려놓고 설정해주면
+자동으로 배포가 된다.
+==================
+
+github /fork 
+팀장님 repository에 있는 우리 프로젝트를 내 repository에 가져오기
+
+fork의 또다른 쓰임?
+open source 프로젝트에서
+내꺼로 가져와서 신나게 수정하고 
+원작자에게 pull request를 요청하면 기여할 수도 있음
+==============
+Build command 란에
+CI=false npm run build
+CI=false: warning이 떠도 무시하겠다라는 뜻
+
+=============
+site overview
+site settings
+change site name 
+사이트명 변경 가능
+wheredowemeet, wheredowemeet1,2,3
+==============================
+1. 팀소개: 팀장, 팀원소개
+2. 앱소개: 어떤 앱인지에 대한 전반적인 개요
+3. 개발환경(기술스택):
+HTML,CSS,JS,React,Redux,ajax(Axios),Bootstrap, Git/Github. Chrome 등
+4.개발기간, 업무분담
+5.앱 시연
+앱을 처음부터 끝까지 어떻게 사용하는지에 대한 유저 시나리오를 순서대로 소개
+특별히 소개하고 싶은 구현 기술(방법)이 있다면 같이 설명
+(이 과정에서 각자 맡은 부분을 담당자가 소개해도 되고 발표자 한 사람이 쭉 설명해도 됨)
+6.질의 응답시간
+
+3,4번제외
