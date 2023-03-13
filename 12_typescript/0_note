@@ -44,3 +44,15 @@ npm install -g typescript
 
 4. tsconfig.json 작성(타입스크립트 설정)
 프로젝트의 root쪽에 작성
+
+5. .ts 파일에 코딩 시작
+
+6. 브라우저는 TS를 이해하지 못하기 때문에 일반 JS로 트랜스파일(변환) 해야됨
+.js파일로 변환하는 명령어
+tsc -w 
+tsc는 TypeScript Compiler(compiler:번역기 라는 뜻), -w watch모드 옵션: 켜두면 저장할때마다 자동 변환됨  
+일반 JS로 번역되어 .js 파일이 자동 생성
+
+7. 번역된 .js 파일을 열어보면 name: string 코드는 컴파일 과정에서 제거됨
+이렇게 TS에서 자료형을 명시하면 디버깅하고 잠재적 오류를 줄이는데 도움이 되고
+최종적으로 동일한 JS 코드가 생성이 됨

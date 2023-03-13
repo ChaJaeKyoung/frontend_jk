@@ -3,6 +3,14 @@
   "compilerOptions": { // ts -> js 컴파일 시 옵션 설정
     "target": "ES6", // 호환성을 생각한다면 ES5, 신문법을 쓰려면 ES6 이후
     "module": "ESNext", // import 문법 사용에 대한 설정
+
+    // 유용한 추가 옵션들..
+    "strictNullChecks": true,
+    // 변수 조작하기 전에 이게 null인지 아닌지 캐치를 할 수 있음
+    // 예: HTML 조작할 때 셀렉터로 찾으면 null 관련 오류가 많이 발생하는데 그거 잡을 때도 도움
+    "noImplicitAny": true, // any 타입 금지 여부
+    // *주의: 기존 JS 프로젝트를 TS로 마이그레이션 하는 경우에는 false 사용
+    
   }
 }
 
