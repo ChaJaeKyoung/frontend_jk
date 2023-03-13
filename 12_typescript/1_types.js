@@ -153,3 +153,34 @@ value = '나무';
 // 선언과 동시에 초기화 시 타입 지정은 자동으로 됨
 let value2 = 123; // 타입 지정을 별도로 하지 않아도 자동으로 number로 됨
 // value2= '토끼'; // Type Error
+// Quiz
+// Q4. 다음 변수 4개에 타입을 지정해보세요.
+// let userName = 'Kim';
+// let userAge = undefined;
+// let married = false; 
+// let userInfo = [userName, userAge, married];
+// 단, userAge 변수엔 undefined 말고 숫자도 들어올 수 있음
+let userName = 'cha';
+let userAge = undefined;
+let married = false;
+let userInfo = [userName, userAge, married];
+// Q5. frontClass라는 변수에 타입을 지정해보세요.
+// let frontClass = {
+//   subject: ['html', 'css', 'js', 'react'],
+//   score: [100, 95, 85, 90],
+//   teacher: 'Kim',
+//   student: 'Lee'
+// };
+// frontClass.subject[5] = false;
+// frontClass.student = ['Lee', 'Park'];
+// 타입 지정을 안해주면 터미널에 에러 발생
+// 에러가 안나게 frontClass라는 변수에 타입 지정
+let frontClass = {
+    subject: ['html', 'css', 'js', 'react'],
+    score: [100, 95, 85, 90],
+    teacher: 'Kim',
+    student: 'Lee'
+};
+frontClass.subject[5] = false;
+frontClass.student = ['Lee', 'Park'];
+console.log(frontClass);
