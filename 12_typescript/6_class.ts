@@ -66,6 +66,7 @@ ironMan3.fight();
 ironMan3.laser();
 
 // ES6 클래스와 차이점은 클래스의 멤버에 접근하는 권한을 설정 가능(접근 제한자)
+// 클래스 내부에서 필드나 매서드에 사용 , 아무것도 지정안하면 public이 기본값
 // public(전체 공개)
 // protected(상속 받은 클래스에서만 접근 가능)
 // private(비공개, 해당 클래스 내부에서만 접근 가능)
@@ -79,9 +80,9 @@ ironMan3.laser();
 // 3. 각 속성의 타입 지정하기. tax() 함수의 return 타입 지정하기.
 
 class Car {
-  company: string;
-  model: string;
-  price: number;
+  public company: string;
+  public model: string;
+  public price: number;
 
   constructor(company: string, model: string, price: number) {
     this.company = company;
@@ -89,7 +90,7 @@ class Car {
     this.price = price;
   };
 
-  tax = () => {
+  public tax = () => {
     return this.price * 0.1;
   }
 }

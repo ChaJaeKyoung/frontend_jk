@@ -74,11 +74,25 @@ type Cat = { age: number } & Animal; // & 기호(intersection type)
 
 // Quiz
 // Q1. interface를 이용해서 타입을 만들어보세요.
-// let product = { 
+// let product:ProductType = { 
 //   brand: 'Samsung', 
 //   serialNumber: 12345, 
 //   model: ['TV', 'phone']
 // };
+
+interface ProductType {
+  brand: string ;
+  serialNumber: number;
+  model:string[];
+}
+
+let product:ProductType = { 
+  brand: 'Samsung', 
+  serialNumber: 12345, 
+  model: ['TV', 'phone']
+};
+
+console.log(product);
 
 
 // Q2. interface를 이용해서 타입을 만들어보세요.
@@ -89,9 +103,42 @@ type Cat = { age: number } & Animal; // & 기호(intersection type)
 //   { product: '마우스', price: 150000 } 
 // ]; 
 // 이렇게 객체들이 잔뜩 들어갈 수 있는 배열은 어떻게 타입을 지정할지?
+interface ProductsType {
+  product: string;
+  price: number;
+}
+let cartList:ProductsType[] = [
+  { product: '냉장고', price: 2000000 }, 
+  { product: '모니터', price: 800000 },
+  { product: '마우스', price: 150000 } 
+]; 
+console.log(cartList);
 
+// Answer .teacher
+interface CartItem {
+  product: string;
+  price: number;
+}
+let cartList2:CartItem[] = [
+  { product: '냉장고', price: 2000000 }, 
+  { product: '모니터', price: 800000 },
+  { product: '마우스', price: 150000 } 
+]
 
 // Q3. 위에서 만든 interface 타입을 확장해보세요.
 // 갑자기 서비스가 업데이트 되어서 일부 상품은 soldout 속성이 들어가야합니다. 
 // let item = { product: '청소기', price: 700000, soldout: true };
 // 위에서 만든 interface를 확장해서 타입을 만들어보세요.
+
+interface Products2Type extends ProductsType {
+  soldout?: boolean;
+}
+
+let item:Products2Type = { product: '청소기', price: 700000, soldout: true };
+console.log(item);
+
+// Answer
+interface NewCartItem extends CartItem {
+  soldout?: boolean;
+}
+let item2:NewCartItem = { product: '청소기', price: 700000, soldout: true }
