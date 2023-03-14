@@ -163,7 +163,8 @@ let value2 = 123; // 타입 지정을 별도로 하지 않아도 자동으로 nu
 let userName = 'cha';
 let userAge = undefined;
 let married = false;
-let userInfo = [userName, userAge, married];
+// let userInfo:[string,(number | undefined),boolean] = [userName, userAge, married]; // 배열 안의 세가지 요소만 이렇게 넣겠다 라는 뜻
+let userInfo = [userName, userAge, married]; // 배열 안의 모든 요소가 string, number, undefined, boolean type만 들어올 수 있다.
 // Q5. frontClass라는 변수에 타입을 지정해보세요.
 // let frontClass = {
 //   subject: ['html', 'css', 'js', 'react'],
