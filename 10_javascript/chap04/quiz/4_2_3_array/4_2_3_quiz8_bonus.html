@@ -30,6 +30,12 @@
     // }
     // 1. includes는 function을 인자값으로 받아오지 않는다 => sort는 function이 인자값으로 받아오게 자바스크립트 내에서 구현 되어 있다. 23-01-08 확인
     // ES6차 끝나고나서 다시 푼다
+
+    const removeDup = new Set(num);
+    const arrRemoveDup1 = Array.from(removeDup);
+    const arrRemoveDup2 = [...removeDup];
+    console.log(removeDup,arrRemoveDup1,arrRemoveDup2);
+    
   </script>
 </head>
 <body>
