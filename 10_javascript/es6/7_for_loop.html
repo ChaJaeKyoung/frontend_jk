@@ -76,12 +76,12 @@
     // 3. for of와 for in의 차이 정리
     const list = [4, 5, 6];
 
-    // for in은 키의 목록을 반환
+    // for in은 키의 목록을 반환 // string과 array는 key 값이 index이다. 
     for (const key in list) {
       console.log(key);
     }
 
-    // for of는 키의 값을 반환
+    // for of는 키의 값을 반환 // map 은 새로운 배열로 반환해 주지만 for of 는 반복문만 해줄 뿐 반환되는 값이 저장이 되지 않고 console로만 확인가능하다.
     for (const value of list) {
       console.log(value);
     }
